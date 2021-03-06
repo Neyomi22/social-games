@@ -1,25 +1,25 @@
 class EventsController < ApplicationController
 
   def index
-      if params[:location].nil?
-        @events = Event.all
-        @users = User.all
-      else
-        @events = []
-        @user.near("#{params[:location]}", params[:location].to_i, order: :distance)
-        @users.each do |user|
-          @events << Event.where(user_id: user.id)
-        end
-        @events.flatten!
+    if params[:location].nil?
+      @events = Event.all
+       @users = User.all
+    else
+      @events = []
+      @user.near("#{params[:location]}", params[:location].to_i, order: :distance)
+      @users.each do |user|
+        @events << Event.where(user_id: user.id)
       end
+      @events.flatten!
+    end
     # the `geocoded` scope filters only events with coordinates (latitude & longitude)
-      @markers = @events.geocoded.map do |event|
-        {
-          lat: event.latitude,
-          lng: event.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { event: event })
-        }
-      end
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
+      }
+    end
   end
 
   def create
@@ -48,6 +48,7 @@ class EventsController < ApplicationController
   
   def show
     @event = Event.find(params[:id])
+    @booking = Booking.new
   end
 
   def destroy
