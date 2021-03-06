@@ -1,8 +1,17 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
-
+    if params[:location].nil?
+      @events = Event.all
+      @users = User.all
+    else
+      @events = []
+      @user.near("#{params[:location]},"params[:location].to_i order: :distance)
+      @users.each do |user|
+        @events << Event.where(user_id: user.id)
+      end
+      @events.flatten!
+    end
     # the `geocoded` scope filters only events with coordinates (latitude & longitude)
     @markers = @eventss.geocoded.map do |event|
       {
@@ -12,4 +21,51 @@ class EventsController < ApplicationController
       }
     end
   end
+
+  def create
+    @event = Event.new(event_params)
+    @event.user_id = current_user.id
+    if @event.save
+      redirect_to events_show_path
+    else
+      render :new
+  end
+
+  def new
+    @events = Event.new()
+  end
+
+  def edit
+    @event = Event.where(params[:id])
+  end
+
+  def update
+    @events = Event.find(params[:id])
+    @events.update(event_params)
+    redirect_to events_show_path(@event)
+  end
+  
+  def show
+    @event = Event.find(params[:id])
+  end
+
+  def destroy
+    @events = event.find(params[:id])
+    if @events.destroy
+      redirect_to dashboard_path
+    else
+      render event_path
+    end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:title, :location, :time, :date, :sport, :number_of_participants, :description, :private)
+    
+  end
+  
+  
+  
+  
+  
 end
