@@ -54,7 +54,7 @@ class EventsController < ApplicationController
   def destroy
     @events = Event.find(params[:id])
     if @events.destroy
-      redirect_to events_path
+      redirect_to events_path, :notice => "Your event has been deleted!"
     else
       render event_path
     end
