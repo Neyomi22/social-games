@@ -2,10 +2,9 @@
 <h3><strong><%= @event.title%></strong></h3>
  <p><%= @event.description %></p>
 <p><%= @event.location %></p>
-<p><%= @event.date %></p>
-<p><%= @event.time %></p>
+<p><%= @event.starts_at %></p>
 <p><%= @event.duration %> hours</p>
 <p><%= @event.number_of_participants %></p>
 
-<%= link_to "Edit Event", events_path %>
+<%= link_to "Edit Event", edit_event_path %>
 <%= link_to "Delete Event", events_path %>

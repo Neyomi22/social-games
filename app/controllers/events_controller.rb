@@ -37,13 +37,13 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.where(params[:id])
+    @event = Event.find(params[:id])
   end
 
   def update
     @events = Event.find(params[:id])
     @events.update(event_params)
-    redirect_to events_show_path(@event)
+    redirect_to event_path(@events)
   end
   
   def show
@@ -51,9 +51,9 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @events = event.find(params[:id])
+    @events = Event.find(params[:id])
     if @events.destroy
-      redirect_to dashboard_path
+      redirect_to events_path
     else
       render event_path
     end
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :location, :time, :date, :sport, :number_of_participants, :description, :private, :duration)
+    params.require(:event).permit(:title, :location, :starts_at, :sport, :number_of_participants, :description, :private, :duration)
   end
 
 end

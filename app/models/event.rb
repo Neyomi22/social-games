@@ -13,8 +13,7 @@ class Event < ApplicationRecord
   # validations
   validates :user_id, presence: true
   validates :title, presence: true
-  validates :date, presence: true
-  validates :time, presence: true
+  validates :starts_at, presence: true
   validates :location, presence: true
   validates :sport, presence:true
   validates :duration, presence: true
