@@ -7,7 +7,8 @@ class DashboardsController < ApplicationController
   end
 
   def show
-    
+    @event = Event.find(params[:id])
+    @bookings = Booking.where(event: @event)
   end
 
 end

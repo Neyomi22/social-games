@@ -2,8 +2,8 @@ class EventsController < ApplicationController
 
   def index
     if params[:location].nil?
-      @events = Event.all
-       @users = User.all
+      @events = Event.where(user: current_user)
+      @users = User.all
     else
       @events = []
       @user.near("#{params[:location]}", params[:location].to_i, order: :distance)
