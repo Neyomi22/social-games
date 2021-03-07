@@ -3,7 +3,7 @@
 	<%= f.input :title %>
 	<%= f.input :description %>
 	<%= f.input :location %>
-	<%= f.input :sport, as: :select %>
+	<%= f.input :sport, :collection => %w[Basketball Badminton Netball Cricket Tennis] %>
 	<%= f.input :number_of_participants %>
 	<%= f.input :starts_at %>
 	<%= f.input	:duration %>
