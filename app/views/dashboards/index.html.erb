@@ -1,0 +1,29 @@
+<div class="container d-flex my-5">
+  <div class="w-50 mt-3">
+    <h2 class="text-center">My Events</h2>
+    <div class="d-flex flex-column align-items-center">
+      <% @events.each do |event| %>
+          <h4><%= event.title %></h4>
+          <p><%= event.location %></p>
+          <p><%= event.starts_at %></p>
+          <p>duration: <%= event.duration %></p>
+          <p><%= event.sport %></p>
+          <p>participants: <%= event.number_of_participants %></p>
+          <p><%= event.description %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="w-50 mt-3">
+    <h2 class="text-center">My Bookings</h2>
+    <div class="d-flex flex-column align-items-center">
+      <% @bookings.each do |booking| %>
+        <div class="p-3 my-3 border">
+          <h4><%= booking.event.title %></h4>
+          <p><%= booking.event.sport %></p>
+          <p><%= booking.event.location %></p>
+          <p><%= booking.event.starts_at %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
