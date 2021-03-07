@@ -2,13 +2,20 @@
 <h1>ALL EVENTS</h1>
 <div class="event-index-container">
 	<div class="event-index-card">
-		<% @events.each do |event| %>
-			<%= event.title %>
-			<%= event.starts_at %>
-			<p><%= event.number_of_participants - event.bookings.count %> spots available.</p>	
-			<%= link_to 'Show event', event_path(event)%>
-			<br>
-		<% end %>
+		</ul>
+			<% @events.each do |event| %>
+					<p><strong><%= event.title %></strong></p>	
+					<p><%= event.starts_at.strftime("%d-%m-%Y") %></p>	
+					<p><%= event.starts_at.strftime("%I:%M%p") %>
+					<% if event.number_of_participants - event.bookings.count <= 0 %>
+          <p><%= "Fully booked" %> </p>
+          <% else %>
+          <p><%= event.number_of_participants - event.bookings.count %> spots available.</p>
+          <% end %> 
+					<%= link_to 'Show event', event_path(event)%>
+					<br>
+			<% end %>
+		</ul>
 	</div>
 	
   <div id="map"
