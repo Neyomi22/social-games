@@ -30,7 +30,7 @@ end
     description: descriptions.sample,
     title: titles.sample,
     duration: rand(1..3),
-    skill_level: skill.sample
+    skill_level: skill.sample,
     private: [nil, "superman"].sample,
     user_id: rand(1..7),
     location: location.sample
