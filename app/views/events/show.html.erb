@@ -28,7 +28,7 @@
         <p><%= message.content %></p>
       </div>
     <% end %>
-    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+    <%= simple_form_for [ @chatroom, @message ] do |f| %>
       <%= f.input :content, label: false, placeholder: "Type your message" %>
       <%= f.button :submit %>
     <% end %>
