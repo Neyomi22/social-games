@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 
   def index
     if params[:location].nil?
-      @events = Event.where(user: current_user)
+      @events = Event.where.not(user: current_user)
       @users = User.all
     else
       @events = []
@@ -52,8 +52,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @events = Event.find(params[:id])
-    if @events.destroy
+    @event = Event.find(params[:id])
+    if @event.destroy && @event.user == @current_user 
       redirect_to events_path, :notice => "Your event has been deleted!"
     else
       render event_path
