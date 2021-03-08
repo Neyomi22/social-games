@@ -19,7 +19,7 @@ end
     title: Faker::Music.album,
     duration: rand(1..3),
     private: [nil, "superman"].sample,
-    user_id: rand(1..3)
+    user_id: rand(1..3),
     location: "#{location.sample}, Victoria, Australia"
   }
   Event.create(hash)
