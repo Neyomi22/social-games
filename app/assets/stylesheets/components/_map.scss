@@ -6,3 +6,27 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.event-index-container {
+  display: flex; 
+}
+
+#map {
+  /* width: 100%; */
+  position: sticky;
+  border-radius: 8px;
+	box-shadow: 4px 4px 16px rgb(165, 165, 165);
+  top: 0;
+  height: 100vh;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.event-index-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+  width : 50%;
+  margin-left: 10px;
+}
