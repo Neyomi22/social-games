@@ -2,8 +2,8 @@
 <%= link_to "All Bookings", bookings_path %>
 
 <ul>
-  <li class="list-unstyled">
-    <div class="border d-flex flex-column w-50 align-items-center my-4 p-3">
+  <li>
+    <div class="booking_show_card">
       <p><strong>Booked event: </strong><%= Booking.last.event.title%></p>
       <p><strong>Organiser: </strong><%= Booking.last.event.user.email %></p>
       <p><strong>Description: </strong><%= Booking.last.event.description %></p>

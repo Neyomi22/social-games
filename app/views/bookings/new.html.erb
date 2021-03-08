@@ -1,8 +1,8 @@
-<h1 class="text-center my-3">Booking</h1>
-<p class="text-center my-1 booking-event__title"><%= @event.title %></p>
-<p class="text-center my-1 booking-event__description"><%= @event.description %></p>
-<p class="text-center my-1 booking-event__date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
-<p class="text-center my-1 booking-event__time"><%= @event.starts_at.strftime("%I:%M%p")%></p>
+<h1>Booking</h1>
+<p class="booking-event-title"><%= @event.title %></p>
+<p class="booking-event-description"><%= @event.description %></p>
+<p class="booking-event-date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
+<p class="booking-event-time"><%= @event.starts_at.strftime("%I:%M%p")%></p>
 
 <%= simple_form_for [@event, @booking] do |f| %>
   <%= f.button :submit, 'Join The Game' %>
