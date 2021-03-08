@@ -1,0 +1,14 @@
+
+<%= simple_form_for @event do |f| %>
+	<%= f.input :title %>
+	<%= f.input :description %>
+	<%= f.input :location %>
+	<%= f.input :sport, as: :select %>
+	<%= f.input :number_of_participants %>
+	<%= f.input :starts_at %>
+	<%= f.input	:duration %>
+	<%= f.button :submit %>
+<% end %>
+
+<%# <%= f.input :sport, :collection => %w[Mike Nick Jason Other] %>
+<%# <%= f.input :sport, :as => :hidden, :input_html => { :sport => "Other" }%> 

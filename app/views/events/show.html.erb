@@ -1,0 +1,15 @@
+
+<h3 class="booking-event-title"><strong><%= @event.title %></strong></h3>
+<p class="booking-event-description"><%= @event.description %></p>
+<p class="booking-event-date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
+<p class="booking-event-date"><%= @event.starts_at.strftime("%I:%M%p")%></p>
+
+<%# <%= simple_form_for [@event, @booking] do |f| %>
+  <%# <%= f.button :submit,'Join to play'%> 
+<%# <% end %> 
+
+<%# <p><%= @booking.errors.full_messages if @booking.errors %>
+
+<%= link_to "Edit Event", edit_event_path %>
+<%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
+<%= link_to 'Join Game', new_event_booking_path(@event) %>
