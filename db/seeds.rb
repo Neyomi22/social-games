@@ -12,7 +12,7 @@ end
 # Events
 20.times do 
   hash = {
-    date: Faker::Date.forward(days: 10),
+    starts_at: Faker::Time.forward(days: 10,  period: :evening, format: :long),
     sport: sport.sample,
     number_of_participants: rand(1..11),
     description: Faker::Lorem.paragraph,
