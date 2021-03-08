@@ -1,2 +1,17 @@
 <h1>YOUR BOOKING</h1>
 <%= link_to "Book", bookings_path %>
+
+<ul>
+  <li>
+    <%= @booking.event.title %>
+  </li>
+  <li>
+    <%= @booking.event.description %>
+  </li>
+  <li>
+    <%= @booking.event.date%>
+  </li>
+  <li>
+    <%= @booking.event.time %>
+  </li>
+</ul>
