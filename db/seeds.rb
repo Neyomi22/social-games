@@ -1,14 +1,15 @@
-# Users
 users = %w(akash@gmail.com amanda@gmail.com ian@gmail.com)
 password = '123456'
 sports = %w(Footy Soccer Badminton Tennis Chess)
 location = %w(Officer Watsonia Clyde)
+skill = %w(Basic Intermediate Advanced)
+
+# Users
 users.each do |user|
   User.create(email: user, password: password)
 end
 
 # Events
-
 20.times do 
   hash = {
     date: Faker::Date.forward(days: 10),
