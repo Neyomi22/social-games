@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.event = @event
     @booking.user = current_user
     if @booking.save
-      redirect_to event_path(@event), notice: "Event successfully booked"
+      redirect_to booking_path(@booking), notice: "Event successfully booked"
     else 
       render "events/show"
     end
