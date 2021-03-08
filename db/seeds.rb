@@ -29,5 +29,5 @@ end
 20.times do
   event = Event.find(rand(1..20))
   user = [1,2,3].reject { |num| num == event.user_id}.sample
-  Booking.create(user_id: user.id, event_id: event.id)
+  Booking.create(user_id: user, event_id: event.id)
 end
