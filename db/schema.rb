@@ -47,8 +47,7 @@ ActiveRecord::Schema.define(version: 2021_03_07_203232) do
 
   create_table "events", force: :cascade do |t|
     t.string "location"
-    t.date "date"
-    t.time "time"
+    t.datetime "starts_at"
     t.string "sport"
     t.integer "number_of_participants"
     t.text "description"
