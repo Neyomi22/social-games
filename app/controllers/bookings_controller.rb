@@ -14,16 +14,17 @@ class BookingsController < ApplicationController
     @booking.event = @event
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to event_path(@event), notice: "Event successfully booked"
+
     else 
-      render :new
+      render "events/show"
     end
   end 
 
   def destroy
     @booking = Booking.find(params[:id])
     if @booking.destroy
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :new
     end
@@ -36,6 +37,6 @@ class BookingsController < ApplicationController
   end
 
   # def booking_params
-  #   params.require(:booking).permit(:event_id, :user_id)
+  #   params.require(:booking).permit(:event_id )
   # end
 end
