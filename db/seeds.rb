@@ -13,7 +13,7 @@ end
 20.times do 
   hash = {
     starts_at: Faker::Time.forward(days: 10,  period: :evening, format: :long),
-    sport: sport.sample,
+    sport: sports.sample,
     number_of_participants: rand(1..11),
     description: Faker::Lorem.paragraph,
     title: Faker::Music.album,
