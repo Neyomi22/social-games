@@ -4,11 +4,12 @@
 <p class="text-center my-1 booking-event__date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
 <p class="text-center my-1 booking-event__date"><%= @event.starts_at.strftime("%I:%M%p")%></p>
 
-<%= simple_form_for [@event, @booking] do |f| %>
-  <%= f.button :submit,'Join to play'  %>
-<% end %>
+<%# <%= simple_form_for [@event, @booking] do |f| %>
+  <%# <%= f.button :submit,'Join to play'%> 
+<%# <% end %> 
+
+<%# <p><%= @booking.errors.full_messages if @booking.errors %>
 
 <%= link_to "Edit Event", edit_event_path %>
 <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
-
-<p><%= @booking.errors.full_messages if @booking.errors %></p>
+<%= link_to 'Join Game', new_event_booking_path(@event) %>

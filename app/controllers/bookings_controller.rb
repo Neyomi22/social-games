@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking), notice: "Event successfully booked"
     else 
-      render "events/show"
+      render :new
     end
   end 
 

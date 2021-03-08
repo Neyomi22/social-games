@@ -4,6 +4,7 @@
 		<% @events.each do |event| %>
 			<%= event.title %>
 			<%= event.starts_at %>
+			<%= link_to 'Show event', event_path(event)%>
 		<% end %>
 	</div>
 <%= link_to 'Add event', new_event_path %>
