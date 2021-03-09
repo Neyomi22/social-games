@@ -50,6 +50,10 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @bookings = Booking.where(event: @event)
+    # initialize chatroom
+    @chatroom = Chatroom.find(params[:id])
+    @message = Message.new
+    @chatrooms = Chatroom.all
   end
 
   def destroy
