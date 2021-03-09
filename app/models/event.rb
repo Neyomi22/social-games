@@ -1,6 +1,4 @@
 class Event < ApplicationRecord
-  # validation method
-  # define_attribute_methods :starts_at
   #association
   belongs_to :user
   has_many :bookings, dependent: :destroy
@@ -19,6 +17,4 @@ class Event < ApplicationRecord
   validates :location, presence: true
   validates :sport, presence:true
   validates :duration, presence: true
-
-  def starts_at=(value)
 end
