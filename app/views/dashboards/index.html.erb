@@ -1,2 +1,20 @@
-<%# @bookings.each do |booking| %>
-Dashboard
+<div class="container d-flex my-5">
+  <div class="w-50 mt-3">
+    <h2 class="text-center">My Events</h2>
+    <div class="d-flex flex-column align-items-center">
+      <% @events.each do |event| %>
+          <h4><%= event.title %></h4>
+          <p><%= event.location %></p>
+          <p><%= event.starts_at %></p>
+          <p>duration: <%= event.duration %></p>
+          <p><%= event.sport %></p>
+          <p>participants: <%= event.number_of_participants %></p>
+          <p><%= event.description %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="w-50 mt-3">
+    <h2 class="text-center">My Bookings</h2>
+
+  </div>
+</div>
