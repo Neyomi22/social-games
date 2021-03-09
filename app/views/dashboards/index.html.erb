@@ -6,8 +6,6 @@
         <h4>
           <%= link_to event.title, event_path(event.id) %>
         </h4>
-
-        
         <p><%= event.location %></p>
         <p><%= event.starts_at %></p>
         <p>duration: <%= event.duration %></p>
@@ -26,6 +24,7 @@
           <p><%= booking.event.sport %></p>
           <p><%= booking.event.location %></p>
           <p><%= booking.event.starts_at %></p>
+          <%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
