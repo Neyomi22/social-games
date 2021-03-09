@@ -4,4 +4,4 @@
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
 
-chatroom_channel()
+// chatroom_channel()
