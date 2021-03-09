@@ -1,0 +1,22 @@
+.banner {
+	width: 100vw;
+	height: 140vh;
+	background: rgb(179, 48, 255);
+	display: flex;
+	.container {
+		margin: 64px auto;
+		border-radius: 16px;
+		background: rgb(237, 238, 229);
+		box-shadow: 2px 2px 2px rgb(180, 180, 180);
+		display: flex;
+		align-items: center;
+		background-image: url('https://cdn.pixabay.com/photo/2020/02/02/03/39/man-4811935_1280.png');
+		background-position: top;
+		background-size: cover;
+		.heading {
+			background: whitesmoke;
+			padding: 24px 36px;
+			border-radius: 8px;
+		}
+	}
+}
