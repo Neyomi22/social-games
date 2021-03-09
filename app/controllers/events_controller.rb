@@ -52,8 +52,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @events = Event.find(params[:id])
-    if @events.destroy
+    @event = Event.find(params[:id])
+    if @event.destroy && @event.user == @current_user 
       redirect_to events_path, :notice => "Your event has been deleted!"
     else
       render event_path
