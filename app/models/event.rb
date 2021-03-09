@@ -1,4 +1,7 @@
 class Event < ApplicationRecord
+  # Call back after create
+  after_create :create_chatroom
+
   #association
   belongs_to :user
   has_many :bookings, dependent: :destroy
@@ -18,5 +21,9 @@ class Event < ApplicationRecord
   validates :sport, presence:true
   validates :duration, presence: true
   
+  private
 
+  def create_chatroom
+    Chatroom.create
+  end
 end
