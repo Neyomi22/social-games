@@ -15,6 +15,7 @@ skill = %w(Basic Intermediate Advanced)
 users.each do |user|
   User.create(email: user, password: password)
 end
+
 # Events
 20.times do 
   hash = {
@@ -30,14 +31,10 @@ end
   }
   Event.create(hash)
 end
+
 # Bookings booking 20
 20.times do
   event = Event.find(rand(1..20))
   user = [1,2,3].reject { |num| num == event.user_id}.sample
   Booking.create(user_id: user, event_id: event.id)
-
-  end
-
-end
-
 end
