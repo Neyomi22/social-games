@@ -3,6 +3,12 @@
 <p class="booking-event-description"><%= @event.description %></p>
 <p class="booking-event-date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
 <p class="booking-event-date"><%= @event.starts_at.strftime("%I:%M%p")%></p>
+<p><strong>Participants: </strong>
+<ul>
+  <% @event.bookings.each do |event| %>
+    <li><%= event.bookings %></p></li>
+  <% end %>
+</ul>  
 
 <%# <%= simple_form_for [@event, @booking] do |f| %>
   <%# <%= f.button :submit,'Join to play'%> 

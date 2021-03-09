@@ -6,7 +6,7 @@
 		<% @events.each do |event| %>
 			<%= event.title %>
 			<%= event.starts_at %>
-			<p><%= event.number_of_participants %> spots available.</p>	
+			<p><%= event.number_of_participants - event.bookings.count %> spots available.</p>	
 			<%= link_to 'Show event', event_path(event)%>
 			<br>
 		<% end %>
