@@ -67,6 +67,16 @@ class EventsController < ApplicationController
 
   private
 
+  #  def total_participants
+  #   @events.each do |event|
+  #     if event.number_of_participants - event.bookings.count <= 0
+  #       "Fully booked"
+  #     else
+  #       "#{event.number_of_participants - event.bookings.count} spots available"
+  #     end
+  #   end
+  # end
+
   def event_params
     params.require(:event).permit(:title, :location, :starts_at, :sport, :number_of_participants, :description, :private, :duration)
   end

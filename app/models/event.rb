@@ -18,6 +18,7 @@ class Event < ApplicationRecord
   validates :title, presence: true
   validates :starts_at, presence: true
   validates :location, presence: true
+  validates :number_of_participants, presence: true 
   validates :sport, presence:true
   validates :duration, presence: true
   

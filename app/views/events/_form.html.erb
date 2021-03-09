@@ -3,10 +3,10 @@
 	<%= f.input :title %>
 	<%= f.input :description %>
 	<%= f.input :location %>
-	<%= f.input :sport, :collection => %w[Basketball Badminton Netball Cricket Tennis] %>
-	<%= f.input :number_of_participants %>
+	<%= f.input :sport, :collection => %w[Basketball Badminton Netball Tennis] %>
+	<%= f.input :number_of_participants, input_html: { min: '1', step: 'any' }  %>
 	<%= f.input :starts_at %>
-	<%= f.input	:duration %>
+	<%= f.input	:duration,  as: :select, collection: (1..5) %>
 	<%= f.button :submit %>
 <% end %>
 
