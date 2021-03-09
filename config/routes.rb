@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [ :index, :show, :destroy, :update ]
   resources :profiles, only: [ :edit, :update ]
+  resources :dashboards, only: [ :index, :show ]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
