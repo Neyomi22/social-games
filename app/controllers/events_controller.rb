@@ -48,7 +48,7 @@ class EventsController < ApplicationController
   
   def show
     @event = Event.find(params[:id])
-    @booking = Booking.new
+    @bookings = Booking.where(event: @event)
   end
 
   def destroy

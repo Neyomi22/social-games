@@ -5,8 +5,8 @@
 <p class="booking-event-date"><%= @event.starts_at.strftime("%I:%M%p")%></p>
 <p><strong>Participants: </strong>
 <ul>
-  <% @event.bookings.each do |event| %>
-    <li><%= event.bookings %></p></li>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.user.email %></p></li>
   <% end %>
 </ul>  
 
