@@ -1,0 +1,9 @@
+.landing-card__container {
+	margin-top: 48px;
+	min-height: 60vh;
+	.cards {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+}
