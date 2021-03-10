@@ -1,8 +1,12 @@
-<%= simple_form_for @user, url: profile_path(@user.id) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :user_name %>
-  <%= f.input :email %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+	<div class="profile-form d-flex justify-content-center">
+		<%= simple_form_for @user, url: profile_path(@user.id) do |f| %>
+			<%= f.input :first_name, placeholder: "What's Your first name?", label: false %>
+			<%= f.input :last_name, placeholder: "What's Your last name?", label: false  %>
+			<%= f.input :user_name, placeholder: "Choose a username", label: false %>
+			<%= f.input :email, placeholder: "What's Your email?", label: false %>
+			<%= f.input :photo, as: :file %>
+			<%= f.button :submit %>
+		<% end %>
+	</div>
+</div>

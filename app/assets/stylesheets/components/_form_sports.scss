@@ -1,0 +1,33 @@
+.sports-form {
+    margin-top: 50px;
+    
+    input, select {
+        background-color: white;
+        color:black;
+        width: 100%;
+        height: 30px;
+        border-radius: 30px;
+        border: none;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        padding: 20px;
+        font-family: sans-serif;
+        font-weight: 300;
+        
+        
+    
+        
+    }
+    input[type=submit] {
+        background-color: rgba(179, 48, 255, 0.7);
+        padding: 3px;
+    }
+    
+
+    .descript {
+        border-radius: 30px;
+    }
+
+
+}
+
