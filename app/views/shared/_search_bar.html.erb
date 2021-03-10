@@ -1,18 +1,21 @@
 <div class="container my-5 search-bar">
   <div class="row justify-content-center">
     <form class="d-flex flex-grow-1" action=<%# %> method="GET">
-      <select class="form-control" id="sel1" name="distance">
-        <option value=10>Address</option>
-        <option value=20>By Date</option>
-        <option value=50>Sports</option>
+      <select class="form-control" id="select-type" name="type">
+        <option value="address">Address</option>
+        <option value="date">By Date</option>
+        <option value="sport">Sports</option>
       </select>
-      <select class="form-control" id="sel1" name="distance">
+      <select class="form-control" id="select-address" name="distance" value="<%= params[:distance]%>">
         <option value=10>Within 10 kms</option>
         <option value=20>Within 20 kms</option>
         <option value=50>Within 50 kms</option>
         <option value=100>Show All</option>
       </select>
-      <input class="form-control me-2" name="location" type="search" placeholder="Enter your Australian postcode" aria-label="Search" value="<%= params[:location]%>">
+      <input class="form-control me-2" name="location" type="search" id="select-location" placeholder="Enter your address" value="<%= params[:location]%>">
+
+      <input type="datetime-local" class="form-control" id="select-date" placeholder= "Select start date and time"name="date" value="<%= params[:sport]%>">
+      <input class="form-control" id="select-sport" name="sport" placeholder="Enter sport" value="<%= params[:sport]%>">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
