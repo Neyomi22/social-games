@@ -4,7 +4,7 @@ import places from 'places.js';
 const selectTypeDom = document.getElementById('select-type');
 const selectAddressDom = document.getElementById('select-address');
 const selectLocationDom = document.getElementById('select-location');
-//const selectAutoDom = document.querySelector('.algolia-places');
+const selectAutoDom = document.querySelector('.search-bar-div');
 const selectDateDom = document.getElementById('select-date');
 const selectSportDom = document.getElementById('select-sport');
 
@@ -21,6 +21,7 @@ const changeToAddress = () => {
 	selectLocationDom.style.display = '';
 	selectDateDom.style.display = 'none';
 	selectSportDom.style.display = 'none';
+	selectAutoDom.style.display = '';
 };
 
 const changeToDate = () => {
@@ -28,6 +29,7 @@ const changeToDate = () => {
 	selectLocationDom.style.display = 'none';
 	selectDateDom.style.display = '';
 	selectSportDom.style.display = 'none';
+	selectAutoDom.style.display = 'none';
 };
 
 const changeToSport = () => {
@@ -35,6 +37,7 @@ const changeToSport = () => {
 	selectLocationDom.style.display = 'none';
 	selectDateDom.style.display = 'none';
 	selectSportDom.style.display = '';
+	selectAutoDom.style.display = 'none';
 };
 
 const initSearchBar = () => {

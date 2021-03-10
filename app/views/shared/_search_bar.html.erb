@@ -1,6 +1,6 @@
 <div class="container my-5 search-bar">
   <div class="row justify-content-center">
-    <form class="d-flex flex-grow-1" action=<%# %> method="GET">
+    <form class="d-flex flex-grow-1" action="<%=events_path%>" method="GET">
       <select class="form-control" id="select-type" name="type">
         <option value="address">Address</option>
         <option value="date">By Date</option>
@@ -12,7 +12,9 @@
         <option value=50>Within 50 kms</option>
         <option value=100>Show All</option>
       </select>
-      <input class="form-control me-2" name="location" type="search" id="select-location" placeholder="Enter your address" value="<%= params[:location]%>">
+      <div class="search-bar-div">
+        <input class="form-control me-2" name="location" type="search" id="select-location" placeholder="Enter your address" value="<%= params[:location]%>">
+      </div>
 
       <input type="date" class="form-control" id="select-date" placeholder= "Select start date and time"name="date" value="<%= params[:sport]%>">
       <input class="form-control" id="select-sport" name="sport" placeholder="Enter sport" value="<%= params[:sport]%>">
