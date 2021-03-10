@@ -74,7 +74,7 @@ class EventsController < ApplicationController
   def date_filter
     param_time = params[:date].empty? ? Time.now.in_time_zone('UTC') : param_time = params[:date].to_datetime.in_time_zone('UTC')
     end_time = param_time + 10.year
-    Event.where(starts_at: param_time..end_time)
+    Event.where(starts_at: param_time..end_time).order(:starts_at)
   end
 
   def sport_filter

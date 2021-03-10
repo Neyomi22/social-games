@@ -1,7 +1,7 @@
 <%= render 'shared/search_bar' %>
 <div class="event-index-container">
 	<div class="event-index-card">
-		<h3><%= @events.size %> result found</h3>
+		<h3><%= @events.size %> results found</h3>
 		<ul>
 			<% @events.each do |event| %>
 					<p><strong><%= event.title %></strong></p>	
