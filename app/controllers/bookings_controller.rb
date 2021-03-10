@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.event = @event
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking), notice: "Event successfully booked"
+      redirect_to dashboards_path, notice: "Event successfully booked"
     else 
       render :new
     end
@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     if @booking.destroy
-      redirect_to bookings_path
+      redirect_to dashboards_path
     else
       render :new
     end
