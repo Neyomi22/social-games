@@ -20,7 +20,7 @@
         <% else %>
           <p><%= event.number_of_participants - event.bookings.count %> spots available.</p>
         <% end %> 
-				<%= link_to 'Show event', event_path(event)%>
+				<%= link_to 'Show event', event_path(event), :class => "index-button"%>
 				<br>
 			<% end %>
 		</ul>

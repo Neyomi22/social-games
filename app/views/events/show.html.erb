@@ -13,6 +13,8 @@
         <% @event.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
+      <% else %>
+				<%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
       <% end %>
     </div> 
   </div>
