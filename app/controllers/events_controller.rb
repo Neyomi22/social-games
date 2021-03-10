@@ -4,15 +4,15 @@ class EventsController < ApplicationController
     # if params[:type] == "address"
     #   location_filter
     # end
-    if params.keys.count <= 2
-      @events = Event.where.not(user: current_user)
-      @users = User.all
-    elsif params[:type] == "address"
+    if params[:type] == "address"
       @events = location_filter
     elsif params[:type] == "sport"
       @events = sport_filter
-    # elsif params[:type] == "date"
-      # @events = date_filter
+    elsif params[:type] == "date" && !params[:date].empty?
+      @events = date_filter
+    else
+      @events = Event.where.not(user: current_user)
+      @users = User.all
     end
     # the `geocoded` scope filters only events with coordinates (latitude & longitude)
     @markers = @events.geocoded.map do |event|
@@ -79,13 +79,14 @@ class EventsController < ApplicationController
   end
 
   def date_filter
-    # events = Event.where
+    param_time = params[:date].empty? ? Time.now.in_time_zone('UTC') : param_time = params[:date].to_datetime.in_time_zone('UTC')
+    end_time = param_time + 10.year
+    Event.where(starts_at: param_time..end_time)
   end
 
   def sport_filter
     Event.where(sport: params[:sport].capitalize).order(:starts_at)
   end
-
 
   def event_params
     params.require(:event).permit(:title, :location, :starts_at, :sport, :number_of_participants, :description, :skill_level, :private, :duration)
