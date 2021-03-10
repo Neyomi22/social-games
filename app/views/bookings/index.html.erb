@@ -8,7 +8,6 @@
 
   <ul>
     <% @bookings.each do |booking| %>
-      <li>
         <div class="all-bookings-card">
           <p><strong>Booked by: </strong><%= booking.user.email %></p>
           <p><strong>Booked event: </strong><%= booking.event.title%></p>
@@ -19,7 +18,6 @@
 					  <%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
 					</div>
         </div>
-      </li>
     <% end %>  
   </ul>
   <% end %>

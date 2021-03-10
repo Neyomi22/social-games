@@ -5,8 +5,7 @@
 	<div class="event-index-card">
 		</ul>
 			<% @events.each do |event| %>
-				<li>
-					<p><%= event.title %></p>	
+					<p><strong><%= event.title %></strong></p>	
 					<p><%= event.starts_at.strftime("%d-%m-%Y") %></p>	
 					<p><%= event.starts_at.strftime("%I:%M%p") %>
 					<% if event.number_of_participants - event.bookings.count <= 0 %>
@@ -16,7 +15,6 @@
           <% end %> 
 					<%= link_to 'Show event', event_path(event)%>
 					<br>
-				</li>
 			<% end %>
 		</ul>
 	</div>
