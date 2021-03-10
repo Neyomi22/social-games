@@ -1,7 +1,8 @@
 <%= render 'shared/search_bar' %>
 <div class="event-index-container">
 	<div class="event-index-card">
-		</ul>
+		<h3><%= @events.size %> result found</h3>
+		<ul>
 			<% @events.each do |event| %>
 					<p><strong><%= event.title %></strong></p>	
 					<p>Game date: <%= event.starts_at.strftime("%d-%m-%Y") %></p>	
@@ -23,4 +24,3 @@
 		data-markers="<%= @markers.to_json %>"
 		data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-<%= link_to 'Add event', new_event_path %>

@@ -1,9 +1,6 @@
 class EventsController < ApplicationController
 
   def index
-    # if params[:type] == "address"
-    #   location_filter
-    # end
     if params[:type] == "address"
       @events = location_filter
     elsif params[:type] == "sport"
@@ -70,12 +67,8 @@ class EventsController < ApplicationController
   private
 
   def location_filter
-    events = []
-    @user.near(params[:location], params[:distance].to_i, order: :distance)
-      @users.each do |user|
-        events << Event.where(user_id: user.id)
-      end
-      events.flatten!
+    # Event.near(params[:location], params[:distance].to_i, order: :distance).each do |user|
+    Event.near(params[:location], params[:distance].to_i, order: :distance)
   end
 
   def date_filter
