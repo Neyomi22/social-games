@@ -1,16 +1,18 @@
 class EventsController < ApplicationController
 
   def index
-    if params[:location].nil?
+    # if params[:type] == "address"
+    #   location_filter
+    # end
+    if params.keys.count <= 2
       @events = Event.where.not(user: current_user)
       @users = User.all
-    else
-      @events = []
-      @user.near("#{params[:location]}", params[:location].to_i, order: :distance)
-      @users.each do |user|
-        @events << Event.where(user_id: user.id)
-      end
-      @events.flatten!
+    elsif params[:type] == "address"
+      @events = location_filter
+    elsif params[:type] == "sport"
+      @events = sport_filter
+    # elsif params[:type] == "date"
+      # @events = date_filter
     end
     # the `geocoded` scope filters only events with coordinates (latitude & longitude)
     @markers = @events.geocoded.map do |event|
@@ -67,15 +69,23 @@ class EventsController < ApplicationController
 
   private
 
-  #  def total_participants
-  #   @events.each do |event|
-  #     if event.number_of_participants - event.bookings.count <= 0
-  #       "Fully booked"
-  #     else
-  #       "#{event.number_of_participants - event.bookings.count} spots available"
-  #     end
-  #   end
-  # end
+  def location_filter
+    events = []
+    @user.near(params[:location], params[:distance].to_i, order: :distance)
+      @users.each do |user|
+        events << Event.where(user_id: user.id)
+      end
+      events.flatten!
+  end
+
+  def date_filter
+    # events = Event.where
+  end
+
+  def sport_filter
+    Event.where(sport: params[:sport].capitalize).order(:starts_at)
+  end
+
 
   def event_params
     params.require(:event).permit(:title, :location, :starts_at, :sport, :number_of_participants, :description, :skill_level, :private, :duration)
