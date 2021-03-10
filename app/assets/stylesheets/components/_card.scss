@@ -29,3 +29,15 @@
 		}
 	}
 }
+
+.event-index-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-grow: 1;
+  width : 50%;
+  margin-left: 20px;
+}
+
+.event-show-card {
+	text-align: center;
+}

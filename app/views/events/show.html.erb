@@ -1,21 +1,23 @@
+<div class="event-show-card">
+  <h3 class="booking-event-title"><strong><%= @event.title %></strong></h3>
+  <p class="booking-event-description"><%= @event.description %></p>
+  <p class="booking-event-date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
+  <p class="booking-event-date"><%= @event.starts_at.strftime("%I:%M%p")%></p>
+  <p><strong>Participants: </strong>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <%= booking.user.email %></p>
+    <% end %>
+  </ul>
 
-<h3 class="booking-event-title"><strong><%= @event.title %></strong></h3>
-<p class="booking-event-description"><%= @event.description %></p>
-<p class="booking-event-date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
-<p class="booking-event-date"><%= @event.starts_at.strftime("%I:%M%p")%></p>
-<p><strong>Participants: </strong>
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= booking.user.email %></p></li>
+
+  <% unless current_user == @event.user %>
+    <%= link_to 'Join Game', new_event_booking_path(@event) %>
+  <% else %>
+    <%= link_to "Edit Event", edit_event_path %>
+    <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
   <% end %>
-</ul>
-
-<% unless current_user == @event.user %>
-  <%= link_to 'Join Game', new_event_booking_path(@event) %>
-<% else %>
-  <%= link_to "Edit Event", edit_event_path %>
-  <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
-<% end %>
+</div>
 
 <div class="container">
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
@@ -28,7 +30,7 @@
         <p><%= message.content %></p>
       </div>
     <% end %>
-    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+    <%= simple_form_for [ @chatroom, @message ] do |f| %>
       <%= f.input :content, label: false, placeholder: "Type your message" %>
       <%= f.button :submit %>
     <% end %>

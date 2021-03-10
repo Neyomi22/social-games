@@ -1,20 +1,28 @@
-<%= link_to 'Add event', new_event_path %>
 
 <h1>ALL EVENTS</h1>
 <%= render 'shared/search_bar' %>
 <div class="event-index-container">
 	<div class="event-index-card">
-		<% @events.each do |event| %>
-			<%= event.title %>
-			<%= event.starts_at %>
-			<p><%= event.number_of_participants - event.bookings.count %> spots available.</p>	
-			<%= link_to 'Show event', event_path(event)%>
-			<br>
-		<% end %>
+		</ul>
+			<% @events.each do |event| %>
+					<p><strong><%= event.title %></strong></p>	
+					<p>Game date: <%= event.starts_at.strftime("%d-%m-%Y") %></p>	
+					<p>Game time: <%= event.starts_at.strftime("%I:%M%p") %>
+					<p>Game level: <%= event.skill_level %></p>
+					<% if event.number_of_participants - event.bookings.count <= 0 %>
+          <p><%= "Fully booked" %> </p>
+          <% else %>
+          <p><%= event.number_of_participants - event.bookings.count %> spots available.</p>
+          <% end %> 
+					<%= link_to 'Show event', event_path(event)%>
+					<br>
+			<% end %>
+		</ul>
 	</div>
 	
   <div id="map"
-		style="width: 100%; height: 600px;"
+		style="width: 50%; height: 800px;"
 		data-markers="<%= @markers.to_json %>"
 		data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
+<%= link_to 'Add event', new_event_path %>
