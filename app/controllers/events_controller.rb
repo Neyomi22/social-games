@@ -1,16 +1,15 @@
 class EventsController < ApplicationController
 
   def index
-    if params[:location].nil?
+    if params[:type] == "address"
+      @events = location_filter
+    elsif params[:type] == "sport"
+      @events = sport_filter
+    elsif params[:type] == "date" && !params[:date].empty?
+      @events = date_filter
+    else
       @events = Event.where.not(user: current_user)
       @users = User.all
-    else
-      @events = []
-      @user.near("#{params[:location]}", params[:location].to_i, order: :distance)
-      @users.each do |user|
-        @events << Event.where(user_id: user.id)
-      end
-      @events.flatten!
     end
     # the `geocoded` scope filters only events with coordinates (latitude & longitude)
     @markers = @events.geocoded.map do |event|
@@ -58,27 +57,32 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    if @event.destroy && @event.user == @current_user 
+    if @event.user == current_user && @event.destroy
       redirect_to events_path, :notice => "Your event has been deleted!"
     else
-      render event_path
+      render "events/show" 
     end
   end
 
   private
 
-  #  def total_participants
-  #   @events.each do |event|
-  #     if event.number_of_participants - event.bookings.count <= 0
-  #       "Fully booked"
-  #     else
-  #       "#{event.number_of_participants - event.bookings.count} spots available"
-  #     end
-  #   end
-  # end
+  def location_filter
+    # Event.near(params[:location], params[:distance].to_i, order: :distance).each do |user|
+    Event.near(params[:location], params[:distance].to_i, order: :distance)
+  end
+
+  def date_filter
+    param_time = params[:date].empty? ? Time.now.in_time_zone('UTC') : param_time = params[:date].to_datetime.in_time_zone('UTC')
+    end_time = param_time + 10.year
+    Event.where(starts_at: param_time..end_time).order(:starts_at)
+  end
+
+  def sport_filter
+    Event.where(sport: params[:sport].capitalize).order(:starts_at)
+  end
 
   def event_params
-    params.require(:event).permit(:title, :location, :starts_at, :sport, :number_of_participants, :description, :skill_level, :private, :duration)
+    params.require(:event).permit(:title, :location, :starts_at, :sport, :number_of_participants, :description, :skill_level, :private, :duration, photos: [] )
   end
 
 end
