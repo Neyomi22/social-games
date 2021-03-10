@@ -5,5 +5,14 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+		.card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			img {
+				width: 64px;
+				max-height: 64px;
+			}
+		}
 	}
 }
