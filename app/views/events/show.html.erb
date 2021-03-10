@@ -1,7 +1,7 @@
 <div class="event-show">
   <div class="organiser">
-    <div class="img-circle-container">
-			<% if current_user.photo.attached? %>
+    <div class="img-circle-event-container">
+			<% if @event.user.photo.attached? %>
 				<%= cl_image_tag @event.user.photo.key, class: "img-profile"%> 
 			<% else %>
 				<%= cl_image_tag 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png', class: 'img-profile' %>
@@ -30,7 +30,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="messages-container">
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
