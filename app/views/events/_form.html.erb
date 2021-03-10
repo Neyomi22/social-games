@@ -8,6 +8,7 @@
 	<%= f.input :number_of_participants, input_html: { min: '1', step: 'any' } %>
 	<%= f.input :starts_at %>
 	<%= f.input	:duration, as: :select, collection: (1..5) %>
+	<%= f.input :photos, as: :file, input_html: { multiple: true } %>
 	<%= f.button :submit %>
 <% end %>
 

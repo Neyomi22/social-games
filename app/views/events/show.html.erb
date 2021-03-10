@@ -2,12 +2,19 @@
   <div class="organiser">
     <div class="img-circle-event-container">
 			<% if @event.user.photo.attached? %>
-				<%= cl_image_tag @event.user.photo.key, height: 300, width: 400, crop: :fill class: "img-thumbnail"%> 
+				<%= cl_image_tag @event.user.photo.key, height: 300, width: 400, crop: :fill, class: "img-thumbnail"%> 
 			<% else %>
 				<%= cl_image_tag 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png', class: 'img-thumbnail' %>
 			<% end %>
-		</div>
+    </div>
     <p>Organiser: <%= @event.user.email.split("@").first.capitalize %></p>
+    <div class="event-photos">
+      <% if @event.photos.attached? %>
+        <% @event.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      <% end %>
+    </div> 
   </div>
 
   <div class="event-show-card">
@@ -41,11 +48,6 @@
         <p><%= message.content %></p>
       </div>
     <% end %>
-    
-    <% if  %>
-      
-    <% end %>
-    
     <%= simple_form_for [ @chatroom, @message ] do |f| %>
       <%= f.input :content, label: false, placeholder: "Type your message" %>
       <%= f.button :submit %>
