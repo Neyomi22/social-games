@@ -6,7 +6,7 @@
   <p><strong>Participants: </strong>
   <ul>
     <% @bookings.each do |booking| %>
-      <li><%= booking.user.email %></p></li>
+      <%= booking.user.email %></p>
     <% end %>
   </ul>
 
