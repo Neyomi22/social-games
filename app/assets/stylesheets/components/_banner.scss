@@ -33,6 +33,7 @@
 			.heading {
 				padding: 24px 36px;
 				border-radius: 8px;
+				z-index: 10;
 				h1 {
 					font-weight: bold;
 				}
@@ -43,7 +44,6 @@
 					padding: 8px 12px;
 					font-weight: bold;
 					font-size: 24px;
-
 					&:hover {
 						background: rgb(147, 38, 211);
 					}
