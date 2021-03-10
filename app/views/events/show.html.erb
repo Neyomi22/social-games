@@ -12,7 +12,7 @@
 
 
   <% unless current_user == @event.user %>
-    <%= link_to 'Join Game', new_event_booking_path(@event) %>
+    <%= link_to "Press to confirm", new_event_booking_path(@event) %>
   <% else %>
     <%= link_to "Edit Event", edit_event_path %>
     <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>

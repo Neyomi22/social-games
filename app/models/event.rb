@@ -4,7 +4,7 @@ class Event < ApplicationRecord
   #association
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  has_one :chatroom
+  has_one :chatroom, dependent: :destroy
   
   # event picture
   has_one_attached :photo
