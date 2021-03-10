@@ -6,7 +6,7 @@
 				<%= f.input :location, placeholder: "Whats the address?", label: false %>
 				<%= f.input :sport, placeholder: "Select your Sport", :collection => %w[Basketball Badminton Netball Tennis], label: false %>
 				<%= f.input :skill_level, placeholer: "Rate your skill", :collection => %w[Basic Intermediate Advanced], label: false %>
-				<%= f.input :number_of_participants, placeholder: "How many people can play with you?", input_html: { min: '1', step: 'any' }, label: false  %>
+				<%= f.input :number_of_participants, placeholder: "How many people can join this event?", input_html: { min: '1', step: 'any' }, label: false  %>
 				<%= f.input :starts_at, placeholder: "Date", label: false %>
 				<%= f.input	:duration, placeholder: "How many hours?",  as: :select, collection: (1..5), label: false %>
 				<%= f.button :submit %>
