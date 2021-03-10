@@ -6,12 +6,13 @@
 			<% @events.each do |event| %>
 			  <% if event.photos.attached? %>
           <% event.photos.each do |photo| %>
-            <%= cl_image_tag photo.key.first, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
           <% end %>
         <% else %>
 				  <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
         <% end %>
-				<p><strong><%= event.title %></strong></p>	
+				<p><strong><%= event.title %></strong></p>
+				<p>Sport: <%= event.sport %></p>
 				<p>Game date: <%= event.starts_at.strftime("%d-%m-%Y") %></p>	
 				<p>Game time: <%= event.starts_at.strftime("%I:%M%p") %>
 				<p>Game level: <%= event.skill_level %></p>
@@ -20,7 +21,7 @@
         <% else %>
           <p><%= event.number_of_participants - event.bookings.count %> spots available.</p>
         <% end %> 
-				<%= link_to 'Show event', event_path(event)%>
+				<%= link_to 'Show event', event_path(event), :class => "index-button"%>
 				<br>
 			<% end %>
 		</ul>
