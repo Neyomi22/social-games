@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row justify-content-center">
-    <%= link_to 'Add Event', events_path, class: "btn btn-info" %>
     <form class="d-flex flex-grow-1" action=<%# %> method="GET">
+      <select class="form-control" id="sel1" name="distance">
+        <option value=10>Address</option>
+        <option value=20>By Date</option>
+        <option value=50>Sports</option>
+      </select>
       <select class="form-control" id="sel1" name="distance">
         <option value=10>Within 10 kms</option>
         <option value=20>Within 20 kms</option>
