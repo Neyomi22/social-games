@@ -1,29 +1,33 @@
 <div class="banner">
   <div class="container">
-    <div class="heading">
-      <h1>Social Games</h1>
-      <p class="text-muted">Best platform to search your next game</p>
-      <%= link_to 'Find Sports', events_path, class: "btn" %>
+    <div class="landing-page">
+    </div>
+    <div class="heading-container">
+      <div class="heading">
+          <h1>Social Games</h1>
+          <p class="text-muted">Best platform to search your playing buddy</p>
+          <%= link_to 'Find Sports', events_path, class: "btn" %>
+      </div>
     </div>
   </div>
 </div>
 <div class="landing-card__container">
-  <h2 class="text-center">Recently added</h2>
+  <h2 class="text-center">What we offer</h2>
   <div class="cards">
     <div class="card">
-      <img src="" alt="">
-      <h2>card 1</h2>
-      <p>This is a card body</p>
+      <%= image_tag 'credit-card.png' %>
+      <h4>No Credit Card</h4>
+      <p>You don't need credit card to use this platform</p>
     </div>
     <div class="card">
-      <img src="" alt="">
-      <h2>card 2</h2>
-      <p>This is a card body</p>
+      <%= image_tag 'handshake.png' %>
+      <h4>No Commitments</h4>
+      <p>You can join any events and you don't have to commit to it</p>
     </div>
     <div class="card">
-      <img src="" alt="">
-      <h2>card 3</h2>
-      <p>This is a card body</p>
+      <%= image_tag 'fireworks.png' %>
+      <h4>1000+ Events</h4>
+      <p>1000s of events around you with easy to join feature</p>
     </div>
   </div>
 </div>

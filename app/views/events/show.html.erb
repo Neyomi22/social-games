@@ -41,6 +41,11 @@
         <p><%= message.content %></p>
       </div>
     <% end %>
+    
+    <% if  %>
+      
+    <% end %>
+    
     <%= simple_form_for [ @chatroom, @message ] do |f| %>
       <%= f.input :content, label: false, placeholder: "Type your message" %>
       <%= f.button :submit %>
