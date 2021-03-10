@@ -1,12 +1,18 @@
+import places from 'places.js';
+
 // DOM
 const selectTypeDom = document.getElementById('select-type');
 const selectAddressDom = document.getElementById('select-address');
 const selectLocationDom = document.getElementById('select-location');
+const selectAutoDom = document.querySelector('.algolia-places');
 const selectDateDom = document.getElementById('select-date');
 const selectSportDom = document.getElementById('select-sport');
 
 const init = () => {
 	selectTypeDom.value = 'address';
+	if (selectLocationDom) {
+		places({ container: selectLocationDom });
+	}
 	changeToAddress();
 };
 
