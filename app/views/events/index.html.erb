@@ -11,7 +11,8 @@
         <% else %>
 				  <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
         <% end %>
-				<p><strong><%= event.title %></strong></p>	
+				<p><strong><%= event.title %></strong></p>
+				<p>Sport: <%= event.sport %></p>
 				<p>Game date: <%= event.starts_at.strftime("%d-%m-%Y") %></p>	
 				<p>Game time: <%= event.starts_at.strftime("%I:%M%p") %>
 				<p>Game level: <%= event.skill_level %></p>
