@@ -19,7 +19,8 @@ button[type=submit] {
     border: none;
     color: white;
     &:hover {
-        background: rgb(195, 91, 255);
+        background: rgb(183, 58, 255);
+        color: white;
     }
 }
 // input[type=email] {

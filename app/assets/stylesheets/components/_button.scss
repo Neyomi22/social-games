@@ -10,4 +10,9 @@
   color: white;
   border-radius: 6px;
   padding: 3px;
+  &:hover {
+    text-decoration: none;
+    background: rgb(195, 91, 255);
+    color: white;
+}
 }
