@@ -1,27 +1,25 @@
-.event-show {
-	display: flex;
-	justify-content: center;
-	margin-top: 10px;
-	margin-bottom: 20px;
+// .event-show {
+// 	display: flex;
+// 	justify-content: center;
+// 	margin-top: 10px;
+// 	margin-bottom: 20px;
 
-	.organiser {
-		margin-right: 50px;
-	}
-}
+// 	.organiser {
+// 		margin-right: 50px;
+// 	}
+// }
 
-.event-show-card {
-	text-align: center;
-	margin-left: 50px;
-}
+// .event-show-card {
+// 	text-align: center;
+// 	margin-left: 50px;
+// }
 
-.messages-container {
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
+// .messages-container {
+// 	padding-left: 30px;
+// 	padding-right: 30px;
+// }
 .show-event__container {
-	background-color: $dark-blue;
-	min-height: 100vh;
+	min-height: 90vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -38,10 +36,11 @@
 			border-radius: 8px;
 			.event-image__container {
 				position: absolute;
-				left: -75px;
+				left: -200px;
 				img {
-					height: 200px;
-					width: 150px;
+					border: 1px solid $dark-blue;
+					height: 400px;
+					width: 300px;
 					border-radius: 12px;
 				}
 			}
