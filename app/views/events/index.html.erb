@@ -4,10 +4,8 @@
 		<h3><%= @events.size %> results found</h3>
 		<ul>
 			<% @events.each do |event| %>
-			  <% if event.photos.attached? %>
-          <% event.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
+			  <% if event.photo.attached? %>
+          <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill, class: "img-thumbnail" %>  
         <% else %>
 				  <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
         <% end %>
