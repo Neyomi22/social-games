@@ -1,20 +1,24 @@
 .event-show {
- display: flex;
- justify-content: center;
- margin-top: 10px;
- margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
 
-  .organiser {
-    margin-right: 50px;
-  }
+	.organiser {
+		margin-right: 50px;
+	}
 }
 
 .event-show-card {
 	text-align: center;
-  margin-left: 50px;
+	margin-left: 50px;
 }
 
 .messages-container {
-  padding-left: 30px;
-  padding-right: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.show-event__container {
+	background-color: $purple-secondary;
 }

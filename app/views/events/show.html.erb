@@ -1,60 +1,71 @@
-<div class="event-show">
-  <div class="organiser">
-    <div class="img-circle-event-container">
-			<% if @event.user.photo.attached? %>
-				<%= cl_image_tag @event.user.photo.key, height: 300, width: 400, crop: :fill, class: "img-thumbnail"%> 
-			<% else %>
-				<%= cl_image_tag 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png', class: 'img-thumbnail' %>
-			<% end %>
-    </div>
-    <p>Organiser: <%= @event.user.email.split("@").first.capitalize %></p>
-    <div class="event-photos">
-      <% if @event.photos.attached? %>
-        <% @event.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-      <% else %>
-				<%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
-      <% end %>
-    </div> 
-  </div>
+<div class="show-event__container">
+  <div class="container">
 
-  <div class="event-show-card">
-    <h3 class="booking-event-title"><strong><%= @event.title %></strong></h3>
-    <p class="booking-event-description"><%= @event.description %></p>
-    <p class="booking-event-location"><%= @event.location %></p>
-    <p class="booking-event-date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
-    <p class="booking-event-date"><%= @event.starts_at.strftime("%I:%M%p")%></p>
-    <p><strong>Participants: </strong>
-    <% @bookings.each do |booking| %>
-      <li><%= booking.user.email.split("@").first.capitalize %></p></li>
-    <% end %>
+  
 
-    <% unless current_user == @event.user %>
-      <%= link_to "Press to confirm", new_event_booking_path(@event) %>
-      <%= link_to 'Back', events_path %>
-    <% else %> 
-      <%= link_to "Edit Event", edit_event_path %>
-      <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
-      <%= link_to "Back", dashboards_path %>
-    <% end %>
-  </div>
-</div>
-
-<div class="messages-container">
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <div class="message-container" id="message-<%= message.id %>">
-        <i class="author">
-          <span><%= message.user.email.split("@").first.upcase %></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
-        <p><%= message.content %></p>
+<!--    <div class="event-show">
+      <div class="organiser">
+        <div class="img-circle-event-container">
+          <% if @event.user.photo.attached? %>
+            <%= cl_image_tag @event.user.photo.key, height: 300, width: 400, crop: :fill, class: "img-thumbnail"%> 
+          <% else %>
+            <%= cl_image_tag 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png', class: 'img-thumbnail' %>
+          <% end %>
+        </div>
+        <p>Organiser: <%= @event.user.email.split("@").first.capitalize %></p>
+        <div class="event-photos">
+          <% if @event.photos.attached? %>
+            <% @event.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <% else %>
+            <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
+          <% end %>
+        </div> 
       </div>
-    <% end %>
-    <%= simple_form_for [ @chatroom, @message ] do |f| %>
-      <%= f.input :content, label: false, placeholder: "Type your message" %>
-      <%= f.button :submit %>
-    <% end %>
+
+      <div class="event-show-card">
+        <h3 class="booking-event-title"><strong><%= @event.title %></strong></h3>
+        <p class="booking-event-description"><%= @event.description %></p>
+        <p class="booking-event-location"><%= @event.location %></p>
+        <p class="booking-event-date"><%= @event.starts_at.strftime("%d-%m-%Y")%></p>
+        <p class="booking-event-date"><%= @event.starts_at.strftime("%I:%M%p")%></p>
+        <p><strong>Participants: </strong>
+        <% @bookings.each do |booking| %>
+          <li><%= booking.user.email.split("@").first.capitalize %></p></li>
+        <% end %>
+
+        <% unless current_user == @event.user %>
+          <%= link_to "Press to confirm", new_event_booking_path(@event) %>
+          <%= link_to 'Back', events_path %>
+        <% else %> 
+          <%= link_to "Edit Event", edit_event_path %>
+          <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
+          <%= link_to "Back", dashboards_path %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="messages-container">
+      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+          <div class="message-container" id="message-<%= message.id %>">
+            <i class="author">
+              <span><%= message.user.email.split("@").first.upcase %></span>
+              <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+            </i>
+            <p><%= message.content %></p>
+          </div>
+        <% end %>
+        <%= simple_form_for [ @chatroom, @message ] do |f| %>
+          <%= f.input :content, label: false, placeholder: "Type your message" %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
   </div>
+
+-->
+
+
 </div>
