@@ -14,7 +14,15 @@
       <% else %>
 				<%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
       <% end %>
-    </div> 
+    </div>
+    <div>
+      <ul>
+        <% @event.user.badges.each do |badge| %>
+          <li><%= badge.name %></li>
+          <li><%= badge.custom_fields[:color] %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <div class="event-show-card">

@@ -35,4 +35,13 @@
     </div>
   </div>
 </div>
+
+<div>
+<ul>
+  <% current_user.badges.each do |badge| %>
+    <li><%= badge.name %></li>
+    <li><%= badge.custom_fields[:image] %></li>
+  <% end %>
+</ul>
+</div>
  
