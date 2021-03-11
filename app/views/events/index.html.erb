@@ -4,7 +4,6 @@
 	<div class="events__container">
 		<div class="events-cards">
 				<% @events.each do |event| %>
-				<% parse %>
 					<%= render 'shared/event_card', event: event %>
 				<% end %>
 		</div>

@@ -31,7 +31,7 @@ class Event < ApplicationRecord
     Chatroom.create(event_id: self.id)
   end
 
-  def update_time
-    self.starts_at = self.starts_at.in_time_zone('Melbourne')
-  end
+  # def update_time
+  #   self.starts_at = self.starts_at.in_time_zone('Melbourne')
+  # end
 end
