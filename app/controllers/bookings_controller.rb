@@ -25,10 +25,11 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    event = @booking.event
     unless @booking.destroy
       render :new
     else
-      redirect_to event_path(@event)
+      redirect_to event_path(event)
     end
   end
 
