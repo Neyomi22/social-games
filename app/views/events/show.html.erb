@@ -14,52 +14,56 @@
         </div>
       <% end %>
       <div class="event-body__container">
-      <div class="event__card">
-        <h2 class="text-center"><%= @event.title %></h2>
-        <div class="info">
-          <p><span>Description</span></p>
-          <p><%= @event.description %></p>
-        </div>
-        <div class="info-container">
+        <div class="event__card">
+          <h2 class="text-center"><%= @event.title %></h2>
           <div class="info">
-            <p><span>Starts</span></p>
-            <p><%= @event.starts_at.in_time_zone('Melbourne').to_formatted_s(:rfc822).first(22) %></p>
+            <p><span>Description</span></p>
+            <p><%= @event.description %></p>
+          </div>
+          <div class="info-container">
+            <div class="info">
+              <p><span>Starts</span></p>
+              <p><%= @event.starts_at.in_time_zone('Melbourne').to_formatted_s(:rfc822).first(22) %></p>
+            </div>
+            <div class="info">
+              <p><span>Duration</span></p>
+              <p><%= @event.duration %> hours</p>
+            </div>
+          </div>
+          <div class="info-container">
+            <div class="info">
+              <p><span>Sport</span></p>
+              <p><%= @event.sport %></p>
+            </div>
+            <div class="info">
+              <p><span>Skill Level</span></p>
+              <p><%= @event.skill_level %></p>
+            </div>
+          </div>
+          <% unless @event.private.empty? %>
+            <div class="info">
+              <p><span>Private</span></p>
+              <p><%= @event.private %></p>
+            </div>
+          <% end %>
+          <div class="info">
+            <p><span>Location</span></p>
+            <p><%= @event.location %></p>      
           </div>
           <div class="info">
-            <p><span>Duration</span></p>
-            <p><%= @event.duration %> hours</p>
+            <p><span>Organiser</span></p>
+            <p><%= @event.user.email.split("@").first.capitalize %></p>
+          </div>
+          <div class="info-container">
+            <div class="info">
+              <p><span>Number of Participants</span></p>
+              <p><%= @event.number_of_participants %></p>
+            </div>
+            <div class="participants">
+              <%# code for participants photos %>
+            </div>
           </div>
         </div>
-        <div class="info-container">
-          <div class="info">
-            <p><span>Sport</span></p>
-            <p><%= @event.sport %></p>
-          </div>
-          <div class="info">
-            <p><span>Skill Level</span></p>
-            <p><%= @event.skill_level %></p>
-          </div>
-        </div>
-        <div class="info">
-          <p><span>Number of Participants</span></p>
-          <p><%= @event.number_of_participants %></p>
-        </div>
-        <% unless @event.private.empty? %>
-          <div class="info">
-            <p><span>Private</span></p>
-            <p><%= @event.private %></p>
-          </div>
-        <% end %>
-        <div class="info">
-          <p><span>Location</span></p>
-          <p><%= @event.location %></p>      
-        </div>
-        <div class="info">
-          <p><span>Organiser</span></p>
-          <p><%= @event.user.email.split("@").first.capitalize %></p>
-        </div>
-      </div>
-
       </div>    
     </div>
 
