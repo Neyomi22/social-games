@@ -25,6 +25,7 @@ import 'bootstrap';
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initSearchBar } from '../component/search_bar';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -34,8 +35,6 @@ document.addEventListener('turbolinks:load', () => {
 	// initSelect2();
 	initMapbox();
 	initAutocomplete();
+	// Search bar action
+	initSearchBar();
 });
-
-// Search bar action
-import { initSearchBar } from '../component/search_bar';
-initSearchBar();
