@@ -82,7 +82,7 @@ end
     sport: "Netball",
     number_of_participants: rand(1..9),
     description: descriptions.sample,
-    title: titles_netballball.sample,
+    title: titles_netball.sample,
     duration: rand(1..3),
     skill_level: skill.sample,
     private: [nil, "superman"].sample,

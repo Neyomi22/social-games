@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
     unless @booking.destroy
       render :new
     else
-      redirect_to event_path(event)
+      redirect_to dashboards_path
     end
   end
 

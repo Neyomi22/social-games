@@ -38,6 +38,6 @@ Merit::Badge.create!(
 Merit::Badge.create!(
   id: 2,
   name: "Event badge",
-  description: "Joined the first event",
-  custom_fields: { difficulty: :bronze, color: "blue" }
+  description: "Booked the first event",
+  custom_fields: { difficulty: :bronze, color: "blue", image_url: "https://res.cloudinary.com/dqpzva5cw/image/upload/v1615436387/badge-1361_1_occqsx.png" }
 )
