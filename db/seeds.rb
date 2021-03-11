@@ -23,13 +23,13 @@ users.each do |user|
 end
 
 # Events
-10.times do 
+8.times do 
   hash = {
     starts_at: Faker::Time.forward(days: 10,  period: :evening, format: :long),
     sport: "Badminton",
     number_of_participants: rand(1..5),
     description: descriptions.sample,
-    title: ['Full of concentration and joy', 'Make your racket strings stronger', 'Smash me with your hot shot', 'Badminton, take it serious', 'Smash it and win it', 'Play with badminton Attitude', 'Keep calm and smash hard', 'Smash like a champion', 'Catch the shuttlecock','Serve it, smash it, win it, love it.', 'Are you fast enough to handle a badminton shuttle?']
+    title: titles_badminton.sample,
     duration: rand(1..3),
     skill_level: skill.sample,
     private: [nil, "superman"].sample,
@@ -40,7 +40,7 @@ end
   Event.create(hash)
 end
 
-10.times do 
+8.times do 
   hash = {
     starts_at: Faker::Time.forward(days: 10,  period: :evening, format: :long),
     sport: "Tennis",
@@ -76,7 +76,7 @@ end
 
 # Bookings booking 20
 20.times do
-  event = Event.find(rand(1..10))
+  event = Event.find(rand(1..14))
   user = [1,2,3,4,5,6,7,8,9,10,11,12].reject { |num| num == event.user_id}.sample
   Booking.create(user_id: user, event_id: event.id)
 end
