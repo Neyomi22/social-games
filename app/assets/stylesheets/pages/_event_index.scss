@@ -2,6 +2,13 @@
 	display: flex;
 	.events-cards {
 		padding: 0 12px;
-		border: 1px solid black;
+		border: 1px solid lightgray;
+		border-radius: 8px;
+		.event-card {
+			box-shadow: 2px 2px 8px lightgray;
+			margin: 12px 0;
+			padding: 16px 8px;
+			border-radius: 8px;
+		}
 	}
 }
