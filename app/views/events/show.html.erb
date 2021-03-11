@@ -23,7 +23,7 @@
           <div class="info-container">
             <div class="info">
               <p><span>Starts</span></p>
-              <p><%= @event.starts_at.in_time_zone('Melbourne').to_formatted_s(:rfc822).first(22) %></p>
+              <p><%= @event.starts_at.strftime("%d-%m-%Y")%> <%= @event.starts_at.strftime("%I:%M%p") %></p>
             </div>
             <div class="info">
               <p><span>Duration</span></p>
