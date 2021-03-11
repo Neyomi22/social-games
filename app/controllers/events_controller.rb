@@ -49,6 +49,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @bookings = Booking.where(event: @event)
+    @fully_booked = Booking.where(event: @event).count - @event.number_of_participants == 0
     # initialize chatroom
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
@@ -58,7 +59,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     if @event.user == current_user && @event.destroy
-      redirect_to events_path, :notice => "Your event has been deleted!"
+      redirect_to dashboards_path, :notice => "Your event has been deleted!"
     else
       render "events/show" 
     end

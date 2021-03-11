@@ -23,7 +23,7 @@
           <div class="info-container">
             <div class="info">
               <p><span>Starts</span></p>
-              <p><%= @event.starts_at.in_time_zone('Melbourne').to_formatted_s(:rfc822).first(22) %></p>
+              <p><%= @event.starts_at.strftime("%d-%m-%Y")%> <%= @event.starts_at.strftime("%I:%M%p") %></p>
             </div>
             <div class="info">
               <p><span>Duration</span></p>
@@ -75,12 +75,13 @@
           </div>
           <div class="info-container">
             <% unless current_user == @event.user %>
-              <% if Booking.where(event: @event, user: current_user).empty? %>
-                <%= link_to "Join", event_bookings_path(@event), method: :post, class: "btn btn-success rounded-pill" %>
-              <% else %>
-                <%= link_to "Unjoin", booking_path(Booking.where(event: @event, user: current_user).first), method: :delete, class: "btn btn-danger rounded-pill"  %>
-              <% end %>
-              
+              <% unless @fully_booked %>
+                <% if Booking.where(event: @event, user: current_user).empty? %>
+                  <%= link_to "Join", event_bookings_path(@event), method: :post, class: "btn btn-success rounded-pill" %>
+                <% else %>
+                  <%= link_to "Unjoin", booking_path(Booking.where(event: @event, user: current_user).first), method: :delete, class: "btn btn-danger rounded-pill"  %>
+                <% end %>
+              <% end %> 
             <% else %> 
               <%= link_to "Edit Event", edit_event_path %>
               <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
@@ -107,8 +108,17 @@
               <% end %>
             </div>
           </div>
+          
         </div> 
-      <% end %> 
+      <% end %>
     </div>
   </div>
+  <div class="badge-first">
+    <% @event.user.badges.each do |badge| %>
+      <%= badge.name %>
+      <%= cl_image_tag badge.custom_fields[:image_url], width: "75px" %>
+    <% end %>
+  </div>
 </div>
+
+
