@@ -36,13 +36,10 @@
   </div>
 </div>
 
-<div>
-<ul>
+<div class="badge-first">
   <% current_user.badges.each do |badge| %>
-    <li><%= badge.name %></li>
-    <li><%= badge.custom_fields[:image_url] %></li>
-    <li><%= badge.custom_fields[:color] %></li>
+    <%= badge.name %>
+    <%= cl_image_tag badge.custom_fields[:image_url], width: "75px" %>
   <% end %>
-</ul>
 </div>
  
