@@ -62,7 +62,7 @@ end
 9.times do 
   hash = {
     starts_at: Faker::Time.forward(days: 10,  period: :evening, format: :long),
-    sport: "Tennis",
+    sport: "Basketball",
     number_of_participants: rand(1..9),
     description: descriptions.sample,
     title: titles_basketball.sample,
@@ -79,7 +79,7 @@ end
 6.times do 
   hash = {
     starts_at: Faker::Time.forward(days: 10,  period: :evening, format: :long),
-    sport: "Tennis",
+    sport: "Netball",
     number_of_participants: rand(1..9),
     description: descriptions.sample,
     title: titles_netballball.sample,
