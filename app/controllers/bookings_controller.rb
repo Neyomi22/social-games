@@ -15,6 +15,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     unless @booking.save
       render :new
+    else
+      redirect_to event_path(@event)
     end
   end 
 
