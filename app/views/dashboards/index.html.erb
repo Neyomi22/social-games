@@ -7,10 +7,10 @@
           <%= link_to event.title, event_path(event.id) %>
         </h4>
         <p><%= event.location %></p>
-        <p><%= event.starts_at %></p>
-        <p>duration: <%= event.duration %></p>
+        <p><%= event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p>
+        <p>Duration: <%= event.duration %> hours</p>
         <p><%= event.sport %></p>
-        <p>participants: <%= event.number_of_participants %></p>
+        <p>Participants: <%= event.number_of_participants %></p>
         <p><%= event.description %></p>
       <% end %>
     </div>
