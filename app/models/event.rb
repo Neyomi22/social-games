@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   has_one :chatroom, dependent: :destroy
   
   # event picture
-  has_many_attached :photos
+  has_one_attached :photo
   
   #longitude and latitude
   geocoded_by :location
