@@ -1,20 +1,85 @@
-.event-show {
- display: flex;
- justify-content: center;
- margin-top: 10px;
- margin-bottom: 20px;
+.show-event__container {
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.container {
+		display: flex;
+		.main__container {
+			margin: 0 auto;
+			width: 60%;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: white;
+			border-radius: 8px;
+			.event-image__container {
+				position: absolute;
+				left: -200px;
+				img {
+					height: 400px;
+					width: 300px;
+					border-radius: 12px;
+				}
+			}
+			.user-image__container {
+				position: absolute;
+				bottom: -25px;
+				img {
+					height: 50px;
+					width: 50px;
+					border-radius: 50%;
+				}
+			}
+			.message-body__container {
+				background-color: white;
+				border-radius: 8px;
+				padding: 12px;
+				position: absolute;
+				overflow-y: scroll;
+				right: -200px;
+				width: 300px;
+				height: 300px;
+			}
 
-  .organiser {
-    margin-right: 50px;
-  }
+			.event-body__container {
+				width: 100%;
+				border-radius: 8px;
+				background-color: $purple-secondary;
+				.event__card {
+					margin: 80px 120px;
+					background-color: white;
+					border-radius: 8px;
+					padding: 16px 8px;
+					.info {
+						margin-bottom: 12px;
+						p {
+							font-size: 12px;
+							margin-bottom: 0;
+							span {
+								font-size: 14px;
+								color: rgb(158, 158, 158);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
-.event-show-card {
-	text-align: center;
-  margin-left: 50px;
-}
-
-.messages-container {
-  padding-left: 30px;
-  padding-right: 30px;
+.info-container {
+	display: flex;
+	justify-content: space-between;
+	.participants {
+		display: flex;
+		flex-wrap: wrap;
+		img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+		}
+	}
 }

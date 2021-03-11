@@ -13,7 +13,6 @@ const init = () => {
 	if (selectLocationDom) {
 		places({ container: selectLocationDom });
 	}
-	changeToAddress();
 };
 
 const changeToAddress = () => {

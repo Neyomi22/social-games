@@ -35,4 +35,11 @@
     </div>
   </div>
 </div>
+
+<div class="badge-first">
+  <% current_user.badges.each do |badge| %>
+    <%= badge.name %>
+    <%= cl_image_tag badge.custom_fields[:image_url], width: "75px" %>
+  <% end %>
+</div>
  
