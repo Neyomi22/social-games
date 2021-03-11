@@ -88,7 +88,7 @@
           </div>
         </div>
       </div>  
-      <% unless Booking.where(event: @event, user: current_user).empty? %>          
+      <% if current_user == @event.user || !Booking.where(event: @event, user: current_user).empty? %>          
         <div class="message-body__container">
           <div class="messages-container">
             <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
