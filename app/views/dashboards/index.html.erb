@@ -1,6 +1,6 @@
 <div class="container d-flex my-5">
   <div class="w-50 mt-3">
-    <h2 class="text-center">My Events</h2>
+    <h2 class="text-center">My Games</h2>
     <div class="d-flex flex-column align-items-center">
       <% @events.each do |event| %>
       <% parse %>
@@ -8,16 +8,16 @@
           <%= link_to event.title, event_path(event.id) %>
         </h4>
         <p><%= event.location %></p>
-        <p><%= event.starts_at %></p>
-        <p>duration: <%= event.duration %></p>
+        <p><%= event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p>
+        <p>Duration: <%= event.duration %> hours</p>
         <p><%= event.sport %></p>
-        <p>participants: <%= event.number_of_participants %></p>
+        <p>Participants: <%= event.number_of_participants %></p>
         <p><%= event.description %></p>
       <% end %>
     </div>
   </div>
   <div class="w-50 mt-3">
-    <h2 class="text-center">My Bookings</h2>
+    <h2 class="text-center">My Joined Games</h2>
     <div class="d-flex flex-column align-items-center">
       <% if @bookings.empty? %>
         <h2 class="no-booking-text">No Bookings</h2>
@@ -37,13 +37,14 @@
         <% end %>  
       <% end %>
     </div>
+    <div class="w-50 mt-3">
+    <h2 class="text-center">My Badges</h2>
+    <div class="d-flex flex-column align-items-center">
+      <% current_user.badges.each do |badge| %>
+        <%= badge.name %>
+        <%= cl_image_tag badge.custom_fields[:image_url], width: "75px" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div class="badge-first">
-  <% current_user.badges.each do |badge| %>
-    <%= badge.name %>
-    <%= cl_image_tag badge.custom_fields[:image_url], width: "75px" %>
-  <% end %>
-</div>
- 
