@@ -8,13 +8,11 @@
           <%= cl_image_tag('https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg') %>
         <% end %>
       </div>
-      <div class="user-image__container">
-        <% if @event.user.photo.attached? %>
-            <%= cl_image_tag @event.user.photo.key%>
-        <% else %>
-          <%= cl_image_tag('https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg') %>
-        <% end %>
-      </div>
+      <% if @event.user.photo.attached? %>
+        <div class="user-image__container">
+              <%= cl_image_tag @event.user.photo.key%>
+        </div>
+      <% end %>
       <div class="event-body__container">
       <div class="event__card">
         <h2 class="text-center"><%= @event.title %></h2>
