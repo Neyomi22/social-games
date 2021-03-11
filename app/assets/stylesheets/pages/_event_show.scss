@@ -47,10 +47,10 @@
 			}
 			.user-image__container {
 				position: absolute;
-				top: 0;
+				bottom: -25px;
 				img {
-					height: 200px;
-					width: 150px;
+					height: 50px;
+					width: 50px;
 					border-radius: 50%;
 				}
 			}
