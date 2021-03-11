@@ -67,11 +67,19 @@
             </div>
             <div class="participants">
               <% unless @bookings.empty? %>
-                <%= @bookings.each do |booking| %>
-                  <% cl_image_tag(booking.user.photo.key) if booking.user.photo.attached? %>
+                <% @bookings.each do |booking| %>
+                  <%= cl_image_tag(booking.user.photo.key) if booking.user.photo.attached? %>
                 <% end %>
               <% end %>
             </div>
+          </div>
+          <div class="info-container">
+            <% unless current_user == @event.user %>
+              <%= link_to "Book Event", new_event_booking_path(@event) %>
+            <% else %> 
+              <%= link_to "Edit Event", edit_event_path %>
+              <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
+            <% end %>
           </div>
         </div>
       </div>    
