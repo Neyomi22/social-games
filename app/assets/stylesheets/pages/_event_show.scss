@@ -63,8 +63,23 @@
 					background-color: white;
 					border-radius: 8px;
 					padding: 16px 8px;
+					.info {
+						p {
+							font-size: 12px;
+							margin-bottom: 0;
+							span {
+								font-size: 14px;
+								color: lightgray;
+							}
+						}
+					}
 				}
 			}
 		}
 	}
+}
+
+.info-container {
+	display: flex;
+	justify-content: space-between;
 }

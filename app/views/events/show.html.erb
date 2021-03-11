@@ -18,15 +18,49 @@
       <div class="event-body__container">
       <div class="event__card">
         <h2 class="text-center"><%= @event.title %></h2>
-        <p><%= @event.description %></p>
-        <p><%= @event.starts_at %></p>
-        <p><%= @event.sport %></p>
-        <p><%= @event.number_of_participants %></p>
-        <p><%= @event.duration %></p>
-        <p><%= @event.private %></p>
-        <p><%= @event.skill_level %></p>
-        <p><%= @event.location %></p>      
-        <p>Organiser: <%= @event.user.email.split("@").first.capitalize %></p>
+        <div class="info">
+          <p><span>Description</span></p>
+          <p><%= @event.description %></p>
+        </div>
+        <div class="info-container">
+          <div class="info">
+            <p><span>Starts</span></p>
+            <p><%= @event.starts_at.in_time_zone('Melbourne').to_formatted_s(:rfc822)[0..21] %></p>
+          </div>
+          <div class="info">
+            <p><span>Duration</span></p>
+            <p><%= @event.duration %> hours</p>
+          </div>
+        </div>
+        <div class="info-container">
+          <div class="info">
+            <p><span>Sport</span></p>
+            <p><%= @event.sport %></p>
+          </div>
+          <div class="info">
+            <p><span>Number of Participants</span></p>
+            <p><%= @event.number_of_participants %></p>
+          </div>
+        </div>
+        <div class="info-container">
+          <div class="info">
+            <p><span>Skill Level</span></p>
+            <p><%= @event.skill_level %></p>
+          </div>
+          <div class="info">
+            <p><span>Private</span></p>
+            <p><%= @event.private %></p>
+          </div>
+        </div>
+
+        <div class="info">
+          <p><span>Location</span></p>
+          <p><%= @event.location %></p>      
+        </div>
+        <div class="info">
+          <p><span>Organiser</span></p>
+          <p><%= @event.user.email.split("@").first.capitalize %></p>
+        </div>
       </div>
 
       </div>    
