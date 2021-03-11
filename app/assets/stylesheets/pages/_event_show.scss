@@ -21,4 +21,29 @@
 
 .show-event__container {
 	background-color: $purple-secondary;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.container {
+		.main__container {
+			margin: 0 auto;
+			width: 60%;
+			border: 1px solid red;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: white;
+			.event-image__container {
+				position: absolute;
+				left: -75px;
+				img {
+					height: 200px;
+					width: 150px;
+					border-radius: 12px;
+				}
+			}
+		}
+	}
 }
