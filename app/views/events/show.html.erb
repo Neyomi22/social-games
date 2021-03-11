@@ -62,7 +62,7 @@
             <div class="info">
               <p><span>Bookings</span></p>
               <p>
-                <%= @event.number_of_participants == @bookings.size ? 'Fully Booking' : "#{@event.number_of_participants - @bookings.size} left"%> 
+                <%= @event.number_of_participants == @bookings.size ? 'Fully Booked' : "#{@event.number_of_participants - @bookings.size} left"%> 
               </p>
             </div>
             <div class="participants">
@@ -75,7 +75,13 @@
           </div>
           <div class="info-container">
             <% unless current_user == @event.user %>
-              <%= link_to "Book Event", event_bookings_path(@event), method: :post, reload: true %>
+              <% if Booking.where(event: @event, user: current_user).empty? %>
+                <%= link_to "Join Event", event_bookings_path(@event), method: :post, reload: true %>
+              <% else %>
+              <%# link_to "Unjoin Event", event_bookings_path(@event), method: :delete, reload: true %>
+                <p class="w-100 text-muted text-center">Already booked by you</p>
+              <% end %>
+              
             <% else %> 
               <%= link_to "Edit Event", edit_event_path %>
               <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>

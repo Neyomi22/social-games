@@ -13,9 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.event = @event
     @booking.user = current_user
-    if @booking.save
-      redirect_to dashboards_path, notice: "Event successfully booked"
-    else 
+    unless @booking.save
       render :new
     end
   end 
