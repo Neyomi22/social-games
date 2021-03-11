@@ -25,10 +25,10 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    if @booking.destroy
-      redirect_to dashboards_path
-    else
+    unless @booking.destroy
       render :new
+    else
+      redirect_to event_path(@event)
     end
   end
 

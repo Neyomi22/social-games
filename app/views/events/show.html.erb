@@ -76,10 +76,9 @@
           <div class="info-container">
             <% unless current_user == @event.user %>
               <% if Booking.where(event: @event, user: current_user).empty? %>
-                <%= link_to "Join Event", event_bookings_path(@event), method: :post %>
+                <%= link_to "Join", event_bookings_path(@event), method: :post %>
               <% else %>
-              <%# link_to "Unjoin Event", event_bookings_path(@event), method: :delete, reload: true %>
-                <p class="w-100 text-muted text-center">Already booked by you</p>
+                <%= link_to "Unjoin", booking_path(Booking.where(event: @event, user: current_user).first), method: :delete %>
               <% end %>
               
             <% else %> 
