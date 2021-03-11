@@ -20,21 +20,22 @@
 }
 
 .show-event__container {
-	background-color: $purple-secondary;
+	background-color: $dark-blue;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	.container {
+		display: flex;
 		.main__container {
 			margin: 0 auto;
 			width: 60%;
-			border: 1px solid red;
 			position: relative;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			background-color: white;
+			border-radius: 8px;
 			.event-image__container {
 				position: absolute;
 				left: -75px;
@@ -42,6 +43,26 @@
 					height: 200px;
 					width: 150px;
 					border-radius: 12px;
+				}
+			}
+			.user-image__container {
+				position: absolute;
+				top: 0;
+				img {
+					height: 200px;
+					width: 150px;
+					border-radius: 50%;
+				}
+			}
+			.event-body__container {
+				width: 100%;
+				border-radius: 8px;
+				background-color: $blue;
+				.event__card {
+					margin: 80px 120px;
+					background-color: white;
+					border-radius: 8px;
+					padding: 16px 8px;
 				}
 			}
 		}

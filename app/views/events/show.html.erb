@@ -2,14 +2,33 @@
   <div class="container">
     <div class="main__container">
       <div class="event-image__container">
-        <% if @event.photos.attached? %>
-            <%= cl_image_tag @event.photos.first.key, height: 300, width: 400, crop: :fill %>
+        <% if @event.photo.attached? %>
+            <%= cl_image_tag @event.photo.key %>
         <% else %>
-          <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
+          <%= cl_image_tag('https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg') %>
+        <% end %>
+      </div>
+      <div class="user-image__container">
+        <% if @event.user.photo.attached? %>
+            <%= cl_image_tag @event.user.photo.key%>
+        <% else %>
+          <%= cl_image_tag('https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg') %>
         <% end %>
       </div>
       <div class="event-body__container">
+      <div class="event__card">
+        <h2 class="text-center"><%= @event.title %></h2>
+        <p><%= @event.description %></p>
+        <p><%= @event.starts_at %></p>
+        <p><%= @event.sport %></p>
+        <p><%= @event.number_of_participants %></p>
+        <p><%= @event.duration %></p>
+        <p><%= @event.private %></p>
+        <p><%= @event.skill_level %></p>
+        <p><%= @event.location %></p>      
         <p>Organiser: <%= @event.user.email.split("@").first.capitalize %></p>
+      </div>
+
       </div>    
     </div>
 
@@ -26,8 +45,8 @@
         </div>
         <p>Organiser: <%= @event.user.email.split("@").first.capitalize %></p>
         <div class="event-photos">
-          <% if @event.photos.attached? %>
-            <% @event.photos.each do |photo| %>
+          <% if @event.photo.attached? %>
+            <% @event.photo.each do |photo| %>
               <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
             <% end %>
           <% else %>
