@@ -49,6 +49,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @bookings = Booking.where(event: @event)
+    @fully_booked = Booking.where(event: @event).count - @event.number_of_participants == 0
     # initialize chatroom
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
