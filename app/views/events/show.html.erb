@@ -75,7 +75,7 @@
           </div>
           <div class="info-container">
             <% unless current_user == @event.user %>
-              <%= link_to "Book Event", new_event_booking_path(@event) %>
+              <%= link_to "Book Event", event_bookings_path(@event), method: :post, reload: true %>
             <% else %> 
               <%= link_to "Edit Event", edit_event_path %>
               <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
