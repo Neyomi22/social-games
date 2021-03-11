@@ -14,6 +14,7 @@ class Event < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
   
   after_create :create_chatroom
+  after_create :update_time
   # validations
   validates :user_id, presence: true
   validates :title, presence: true
@@ -28,5 +29,9 @@ class Event < ApplicationRecord
 
   def create_chatroom
     Chatroom.create(event_id: self.id)
+  end
+
+  def update_time
+    self.starts_at = self.starts_at.in_time_zone('Melbourne')
   end
 end
