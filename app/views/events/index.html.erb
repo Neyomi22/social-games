@@ -4,29 +4,11 @@
 	<div class="events__container">
 		<div class="events-cards">
 				<% @events.each do |event| %>
-					<div class="event-card">
-						<% if event.photo.attached? %>
-							<%= cl_image_tag event.photo.key %>  
-						<% else %>
-							<%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
-						<% end %>
-						<p><strong><%= event.title %></strong></p>
-						<p>Sport: <%= event.sport %></p>
-						<p>Game date: <%= event.starts_at.strftime("%d-%m-%Y") %></p>	
-						<p>Game time: <%= event.starts_at.strftime("%I:%M%p") %>
-						<p>Game level: <%= event.skill_level %></p>
-						<% if event.number_of_participants - event.bookings.count <= 0 %>
-							<p><%= "Fully booked" %> </p>
-						<% else %>
-							<p><%= event.number_of_participants - event.bookings.count %> spots available.</p>
-						<% end %> 
-						<%= link_to 'Show event', event_path(event), :class => "index-button"%>
-						<br>
-					</div>
+					<%= render 'shared/event_card', event: event %>
 				<% end %>
 		</div>
 		<div id="map"
-			style="width: 50%; height: 800px;"
+			style="width: 50%; height: 650px;"
 			data-markers="<%= @markers.to_json %>"
 			data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 		</div>
