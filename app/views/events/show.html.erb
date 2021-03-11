@@ -36,21 +36,20 @@
             <p><%= @event.sport %></p>
           </div>
           <div class="info">
-            <p><span>Number of Participants</span></p>
-            <p><%= @event.number_of_participants %></p>
-          </div>
-        </div>
-        <div class="info-container">
-          <div class="info">
             <p><span>Skill Level</span></p>
             <p><%= @event.skill_level %></p>
           </div>
+        </div>
+        <div class="info">
+          <p><span>Number of Participants</span></p>
+          <p><%= @event.number_of_participants %></p>
+        </div>
+        <% unless @event.private.empty? %>
           <div class="info">
             <p><span>Private</span></p>
             <p><%= @event.private %></p>
           </div>
-        </div>
-
+        <% end %>
         <div class="info">
           <p><span>Location</span></p>
           <p><%= @event.location %></p>      
