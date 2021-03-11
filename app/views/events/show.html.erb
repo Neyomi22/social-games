@@ -76,9 +76,9 @@
           <div class="info-container">
             <% unless current_user == @event.user %>
               <% if Booking.where(event: @event, user: current_user).empty? %>
-                <%= link_to "Join", event_bookings_path(@event), method: :post %>
+                <%= link_to "Join", event_bookings_path(@event), method: :post, class: "btn btn-success rounded-pill" %>
               <% else %>
-                <%= link_to "Unjoin", booking_path(Booking.where(event: @event, user: current_user).first), method: :delete %>
+                <%= link_to "Unjoin", booking_path(Booking.where(event: @event, user: current_user).first), method: :delete, class: "btn btn-danger rounded-pill"  %>
               <% end %>
               
             <% else %> 
