@@ -30,7 +30,7 @@
             <p><strong>Time: </strong><%= booking.event.starts_at.strftime("%I:%M%p") %></p>
             <div class="d-flex justify-content-between">
               <%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger", reload: true %>
-              <%= link_to 'Show', event_path(booking.event), data: {confirm: "Are you sure?"}, class: "btn btn-success", reload: true %>
+              <%= link_to 'Show', event_path(booking.event), class: "btn btn-success", reload: true %>
             </div>
           </div>
         <% end %>  
