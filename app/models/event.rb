@@ -14,7 +14,7 @@ class Event < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
   
   after_create :create_chatroom
-  after_create :update_time
+  # after_create :update_time
   # validations
   validates :user_id, presence: true
   validates :title, presence: true
