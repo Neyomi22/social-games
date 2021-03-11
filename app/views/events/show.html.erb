@@ -19,7 +19,6 @@
       <ul>
         <% @event.user.badges.each do |badge| %>
           <li><%= badge.name %></li>
-          <li><%= badge.custom_fields[:color] %></li>
         <% end %>
       </ul>
     </div>

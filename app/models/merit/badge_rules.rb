@@ -30,7 +30,7 @@ module Merit
       end
 
       grant_on 'events#create', badge_id: 2, to: :user do |event|
-        Event.all.count == 3
+        Event.where(user: event.user).count == 1
       end
       # If it has 10 comments, grant commenter-10 badge
       # grant_on 'comments#create', badge: 'commenter', level: 10 do |comment|
