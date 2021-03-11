@@ -40,7 +40,7 @@
               <p><%= @event.skill_level %></p>
             </div>
           </div>
-          <% unless @event.private.empty? %>
+          <% unless @event.private.nil? || @event.private.empty? %>
             <div class="info">
               <p><span>Private</span></p>
               <p><%= @event.private %></p>
@@ -54,13 +54,23 @@
             <p><span>Organiser</span></p>
             <p><%= @event.user.email.split("@").first.capitalize %></p>
           </div>
+          <div class="info">
+            <p><span>Maximum Participants</span></p>
+            <p><%= @event.number_of_participants %></p>
+          </div>
           <div class="info-container">
             <div class="info">
-              <p><span>Number of Participants</span></p>
-              <p><%= @event.number_of_participants %></p>
+              <p><span>Bookings</span></p>
+              <p>
+                <%= @event.number_of_participants == @bookings.size ? 'Fully Booking' : "#{@event.number_of_participants - @bookings.size} left"%> 
+              </p>
             </div>
             <div class="participants">
-              <%# code for participants photos %>
+              <% unless @bookings.empty? %>
+                <%= @bookings.each do |booking| %>
+                  <% cl_image_tag(booking.user.photo.key) if booking.user.photo.attached? %>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>
