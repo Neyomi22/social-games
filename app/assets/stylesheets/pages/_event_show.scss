@@ -72,31 +72,3 @@
 		}
 	}
 }
-
-.message-body__container {
-	background-color: white;
-	border-radius: 8px;
-	padding: 12px;
-	position: fixed;
-	overflow-y: scroll;
-	right: 20px;
-	width: 300px;
-	height: 300px;
-	bottom: 10px;
-	visibility: hidden;
-}
-
-.message-icon {
-	position: fixed;
-	right: 40px;
-	bottom: 10px;
-	width: 64px;
-	height: 64px;
-	img {
-		height: 100%;
-		width: 100%;
-		&:hover {
-			cursor: pointer;
-		}
-	}
-}

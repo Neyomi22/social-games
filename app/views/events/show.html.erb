@@ -96,6 +96,9 @@
       <% if current_user == @event.user || !Booking.where(event: @event, user: current_user).empty? %>          
         <div class="message-body__container">
           <div class="messages-container">
+            <div class="close-message">
+              <p>Group Message</p>
+            </div> 
             <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
               <% @chatroom.messages.each do |message| %>
                 <div class="message__container" id="message-<%= message.id %>">

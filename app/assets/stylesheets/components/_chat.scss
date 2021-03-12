@@ -1,0 +1,58 @@
+.message-body__container {
+	background-color: white;
+	border-radius: 8px;
+	position: fixed;
+	overflow: scroll;
+	scrollbar-width: none;
+	right: 20px;
+	width: 300px;
+	height: 300px;
+	bottom: 10px;
+	visibility: hidden;
+	.messages-container {
+		position: relative;
+		height: 100%;
+		.close-message {
+			position: absolute;
+			top: 0;
+			height: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			background-color: $purple-secondary;
+			color: white;
+			font-weight: bold;
+			p {
+				margin-bottom: 0;
+			}
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		#messages {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			form {
+				margin-top: auto;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.message-icon {
+	position: fixed;
+	right: 40px;
+	bottom: 10px;
+	width: 64px;
+	height: 64px;
+	img {
+		height: 100%;
+		width: 100%;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
