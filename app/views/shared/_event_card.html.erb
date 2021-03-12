@@ -6,13 +6,18 @@
   <% end %>
   <p><strong><%= event.title %></strong></p>
   <p>Sport: <%= event.sport %></p>
-  <p>Game date: <%= event.starts_at.strftime("%d-%m-%Y") %></p>	
-  <p>Game time: <%= event.starts_at.strftime("%I:%M%p") %>
+  <p>Game time: <%= event.starts_at.strftime("%d-%m-%Y") %> <%= event.starts_at.strftime("%I:%M%p") %></p>	
   <p>Game level: <%= event.skill_level %></p>
   <% if event.number_of_participants - event.bookings.count <= 0 %>
-    <p><%= "Fully booked" %> </p>
+    <p><span class="badge badge-pill badge-danger">Fully booked</span></p>
+  <% elsif event.number_of_participants - event.bookings.count == 1 %>
+    <p><span class="badge badge-pill badge-warning">Last spot available</span></p>
   <% else %>
-    <p><%= event.number_of_participants - event.bookings.count %> spots available.</p>
+    <p>
+      <span class="badge badge-pill badge-success">
+        <%= event.number_of_participants - event.bookings.count %> spots available
+      </span>
+    </p>
   <% end %> 
   <%= link_to 'Show event', event_path(event), :class => "index-button"%>
   <br>

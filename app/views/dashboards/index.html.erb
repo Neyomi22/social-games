@@ -3,7 +3,6 @@
     <h2 class="text-center">My Games</h2>
     <div class="d-flex flex-column align-items-center">
       <% @events.each do |event| %>
-      <%# <% parse %> %>
         <h4>
           <%= link_to event.title, event_path(event.id) %>
         </h4>
