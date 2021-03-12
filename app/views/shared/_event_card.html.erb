@@ -6,8 +6,7 @@
   <% end %>
   <p><strong><%= event.title %></strong></p>
   <p>Sport: <%= event.sport %></p>
-  <p>Game date: <%= event.starts_at.strftime("%d-%m-%Y") %></p>	
-  <p>Game time: <%= event.starts_at.strftime("%I:%M%p") %>
+  <p>Game time: <%= event.starts_at.strftime("%d-%m-%Y") %> <%= event.starts_at.strftime("%I:%M%p") %></p>	
   <p>Game level: <%= event.skill_level %></p>
   <% if event.number_of_participants - event.bookings.count <= 0 %>
     <p><span class="badge badge-pill badge-danger">Fully booked</span></p>
