@@ -90,10 +90,10 @@
           </div>
         </div>
       </div>  
+      <% if current_user == @event.user || !Booking.where(event: @event, user: current_user).empty? %>          
       <div class="message-icon">
         <%= image_tag 'chat.png' %>
       </div>
-      <% if current_user == @event.user || !Booking.where(event: @event, user: current_user).empty? %>          
         <div class="message-body__container">
           <div class="messages-container">
             <div class="close-message">
