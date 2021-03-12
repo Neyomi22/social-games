@@ -40,7 +40,7 @@
               <p><%= @event.skill_level %></p>
             </div>
           </div>
-          <% unless @event.private.nil? || @event.private.empty? %>
+          <% unless true || @event.private.nil? || @event.private.empty? %>
             <div class="info">
               <p><span>Private</span></p>
               <p><%= @event.private %></p>
