@@ -38,7 +38,9 @@
 			padding-top: 40px;
 			.messages {
 				overflow-y: scroll;
+				padding: 0 4px;
 				padding-bottom: 65px;
+				font-size: 14px;
 			}
 			form {
 				position: absolute;
