@@ -18,10 +18,12 @@
 			display: flex;
 			.event-card__image {
 				flex-grow: 1;
-				height: 160px;
-				width: 240px;
+				height: 200px;
+				width: 250px;
 				overflow: hidden;
 				margin-right: 16px;
+				border-radius: 8px;
+
 				img {
 					border-radius: 8px;
 					height: 100%;

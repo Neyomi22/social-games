@@ -8,7 +8,7 @@
       <% end %>
     </div>
     <div class="event-card__body">
-      <h4><%= event.title %></h4>
+      <h4 class="text-center"><%= event.title %></h4>
       <p><strong>Starts: </strong><%= event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p>	
       <div class="tag">
         <p><span class="badge badge-pill badge-light"><%= event.sport %></span></p>
@@ -25,6 +25,7 @@
           </span>
         </p>
       <% end %> 
+      <p><%= event.location %></p>
     </div>
   </div>  
 <% end %>
