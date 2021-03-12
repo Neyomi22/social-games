@@ -22,3 +22,20 @@
     </form>
   </div>
 </div>
+
+<!--
+<div class="container my-5 search-bar">
+  <div class="row d-flex justify-content-center">
+    <%= simple_form_for :search, url: events_path do |f| %>
+      <%= f.input :type, as: :select, collection: ["address", "date", "sport"] %>
+      <%= f.input :distance, as: :select, collection: [10, 20, 50, 100] %>
+      <div class="search-bar-div w-100">
+        <%= f.input :location, as: :string %>
+      </div>    
+      <%= f.input :date, as: :date %>
+      <%= f.input :sport, as: :string %>
+      <%= f.submit 'Search'%>
+    <% end %>
+  </div>
+</div>
+-->
