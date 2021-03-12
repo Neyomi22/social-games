@@ -1,31 +1,31 @@
-<div class="event-card">
-  <div class="event-card__image">
-    <% if event.photo.attached? %>
-      <%= cl_image_tag event.photo.key %>  
-    <% else %>
-      <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
-    <% end %>
-  </div>
-  <div class="event-card__body">
-    <h4><%= event.title %></h4>
-    <p>Start: <%= event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p>	
-    <div class="tag">
-      <p><span class="badge badge-pill badge-light"><%= event.sport %></span></p>
-      <p><span class="badge badge-pill badge-light"><%= event.skill_level %></span></p> 
+<%= link_to event_path(event) do %>
+  <div class="event-card">
+    <div class="event-card__image">
+      <% if event.photo.attached? %>
+        <%= cl_image_tag event.photo.key %>  
+      <% else %>
+        <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
+      <% end %>
     </div>
-    <% if event.number_of_participants - event.bookings.count <= 0 %>
-      <p><span class="badge badge-pill badge-danger">Fully booked</span></p>
-    <% elsif event.number_of_participants - event.bookings.count == 1 %>
-      <p><span class="badge badge-pill badge-warning">Last spot available</span></p>
-    <% else %>
-      <p>
-        <span class="badge badge-pill badge-success">
-          <%= event.number_of_participants - event.bookings.count %> spots available
-        </span>
-      </p>
-    <% end %> 
-    <div class="show-btn">
-      <%= link_to 'Show event', event_path(event), class: "btn badge badge-pill badge-primary"%>
+    <div class="event-card__body">
+      <h4><%= event.title %></h4>
+      <p>Start: <%= event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p>	
+      <div class="tag">
+        <p><span class="badge badge-pill badge-light"><%= event.sport %></span></p>
+        <p><span class="badge badge-pill badge-light"><%= event.skill_level %></span></p> 
+      </div>
+      <% if event.number_of_participants - event.bookings.count <= 0 %>
+        <p><span class="badge badge-pill badge-danger">Fully booked</span></p>
+      <% elsif event.number_of_participants - event.bookings.count == 1 %>
+        <p><span class="badge badge-pill badge-warning">Last spot available</span></p>
+      <% else %>
+        <p>
+          <span class="badge badge-pill badge-success">
+            <%= event.number_of_participants - event.bookings.count %> spots available
+          </span>
+        </p>
+      <% end %> 
     </div>
-  </div>
-</div>
+  </div>  
+<% end %>
+  
