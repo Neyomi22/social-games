@@ -28,18 +28,21 @@ const initSearchBar = () => {
 	// init();
 	// DOM
 	const selectTypeDom = document.getElementById('select-type');
+	if (selectTypeDom) {
 
-	changeToAddress();
-	// change input selection
-	selectTypeDom.addEventListener('change', (e) => {
-		if (e.target.value === 'address') {
-			changeToAddress();
-		} else if (e.target.value === 'sport') {
-			changeToSport();
-		} else if (e.target.value === 'date') {
-			changeToDate();
-		}
-	});
+		changeToAddress();
+		// change input selection
+		selectTypeDom.addEventListener('change', (e) => {
+			if (e.target.value === 'address') {
+				changeToAddress();
+			} else if (e.target.value === 'sport') {
+				changeToSport();
+			} else if (e.target.value === 'date') {
+				changeToDate();
+			}
+		});
+	}
+
 };
 
 export { initSearchBar };
