@@ -30,14 +30,14 @@ end
 # end
 Merit::Badge.create!(
   id: 1,
-  name: "First badge",
-  description: "Joined the first event",
+  name: "THE JOINER",
+  description: "HOORAY!!! You joined your first event",
   custom_fields: { difficulty: :bronze, color: "blue", image_url: "https://res.cloudinary.com/dqpzva5cw/image/upload/v1615437663/clipart772288_tjj3qq.png" }
 )
 
 Merit::Badge.create!(
   id: 2,
-  name: "Event badge",
-  description: "Booked the first event",
+  name: "THE COMMITED",
+  description: "GREAT! You booked your first event",
   custom_fields: { difficulty: :bronze, color: "blue", image_url: "https://res.cloudinary.com/dqpzva5cw/image/upload/v1615436387/badge-1361_1_occqsx.png" }
 )
