@@ -24,14 +24,14 @@ class Event < ApplicationRecord
   validates :skill_level, presence: true 
   validates :sport, presence:true
   validates :duration, presence: true
+
+  # def starts_at
+  #   self.starts_at.in_time_zone('Melbourne')
+  # end
   
   private
 
   def create_chatroom
     Chatroom.create(event_id: self.id)
   end
-
-  # def update_time
-  #   self.starts_at = self.starts_at.in_time_zone('Melbourne')
-  # end
 end

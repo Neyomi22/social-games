@@ -29,12 +29,11 @@ import { initSearchBar } from '../component/search_bar';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
 document.addEventListener('turbolinks:load', () => {
 	// Call your functions here, e.g:
 	// initSelect2();
-	initMapbox();
-	initAutocomplete();
 	// Search bar action
 	initSearchBar();
+	initMapbox();
+	initAutocomplete();
 });

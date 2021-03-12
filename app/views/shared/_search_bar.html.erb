@@ -13,12 +13,29 @@
         <option value=1000>Show All</option>
       </select>
       <div class="search-bar-div w-100">
-        <input class="form-control me-2"name="location" type="search" id="select-location" placeholder="Enter your address" value="<%= params[:location]%>">
+        <input class="form-control me-2" name="location" type="search" id="select-location" placeholder="Enter your address" value="<%= params[:location]%>">
       </div>
 
-      <input type="date" class="form-control" style="display:none" id="select-date" placeholder= "Select start date and time"name="date" value="<%= params[:date]%>">
-      <input class="form-control" id="select-sport"  style="display:none" name="sport" placeholder="Enter sport" value="<%= params[:sport]%>">
+      <input type="date" class="form-control" id="select-date" placeholder= "Select start date and time"name="date" value="<%= params[:date]%>">
+      <input class="form-control" id="select-sport" name="sport" placeholder="Enter sport" value="<%= params[:sport]%>">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
 </div>
+
+<!--
+<div class="container my-5 search-bar">
+  <div class="row d-flex justify-content-center">
+    <%= simple_form_for :search, url: events_path do |f| %>
+      <%= f.input :type, as: :select, collection: ["address", "date", "sport"] %>
+      <%= f.input :distance, as: :select, collection: [10, 20, 50, 100] %>
+      <div class="search-bar-div w-100">
+        <%= f.input :location, as: :string %>
+      </div>    
+      <%= f.input :date, as: :date %>
+      <%= f.input :sport, as: :string %>
+      <%= f.submit 'Search'%>
+    <% end %>
+  </div>
+</div>
+-->
