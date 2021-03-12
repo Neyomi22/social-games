@@ -24,6 +24,8 @@
         </span>
       </p>
     <% end %> 
-    <%= link_to 'Show event', event_path(event), :class => "index-button"%>
+    <div class="show-btn">
+      <%= link_to 'Show event', event_path(event), class: "btn badge badge-pill badge-primary"%>
+    </div>
   </div>
 </div>
