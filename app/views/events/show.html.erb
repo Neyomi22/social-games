@@ -75,7 +75,7 @@
           </div>
           <div class="info-container">
             <% unless current_user == @event.user %>
-              <% unless @fully_booked %>
+              <% if !@fully_booked || !Booking.where(event: @event, user: current_user).empty?%>
                 <% if Booking.where(event: @event, user: current_user).empty? %>
                   <%= link_to "Join", event_bookings_path(@event), method: :post, class: "btn btn-success rounded-pill" %>
                 <% else %>
