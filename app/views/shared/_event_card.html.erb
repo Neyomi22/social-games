@@ -7,10 +7,12 @@
     <% end %>
   </div>
   <div class="event-card__body">
-    <p><strong><%= event.title %></strong></p>
-    <p>Sport: <%= event.sport %></p>
-    <p>Game time: <%= event.starts_at.strftime("%d-%m-%Y") %> <%= event.starts_at.strftime("%I:%M%p") %></p>	
-    <p>Game level: <%= event.skill_level %></p>
+    <h4><%= event.title %></h4>
+    <p>Start: <%= event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p>	
+    <div class="tag">
+      <p><span class="badge badge-pill badge-light"><%= event.sport %></span></p>
+      <p><span class="badge badge-pill badge-light"><%= event.skill_level %></span></p> 
+    </div>
     <% if event.number_of_participants - event.bookings.count <= 0 %>
       <p><span class="badge badge-pill badge-danger">Fully booked</span></p>
     <% elsif event.number_of_participants - event.bookings.count == 1 %>

@@ -9,7 +9,32 @@
 			margin: 12px 0;
 			padding: 16px 8px;
 			border-radius: 8px;
+			display: flex;
 			.event-card__image {
+				height: 180px;
+				width: 280px;
+				overflow: hidden;
+				margin-right: 16px;
+				img {
+					border-radius: 8px;
+					height: 100%;
+				}
+			}
+			.event-card__body {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				p {
+					padding: 0;
+					margin: 0;
+					font-size: 12px;
+					color: gray;
+				}
+				.tag {
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+				}
 			}
 
 			.badge {
