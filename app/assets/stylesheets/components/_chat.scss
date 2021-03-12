@@ -38,12 +38,18 @@
 			padding-top: 40px;
 			.messages {
 				overflow-y: scroll;
-				padding-bottom: 80px;
+				padding-bottom: 65px;
 			}
 			form {
 				position: absolute;
 				width: 100%;
 				bottom: 0;
+				display: flex;
+				flex-direction: column;
+				.form-group {
+					margin-bottom: 0;
+					outline: hidden;
+				}
 			}
 		}
 	}
