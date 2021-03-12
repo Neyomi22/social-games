@@ -70,17 +70,17 @@ class EventsController < ApplicationController
 
   def location_filter
     # Event.near(params[:location], params[:distance].to_i, order: :distance).each do |user|
-    Event.near(params[:location], params[:distance].to_i, order: :distance)
+    Event.where.not(user:current_user).near(params[:location], params[:distance].to_i, order: :distance)
   end
 
   def date_filter
     param_time = params[:date].empty? ? Time.now.in_time_zone('UTC') : param_time = params[:date].to_datetime.in_time_zone('UTC')
     end_time = param_time + 10.year
-    Event.where(starts_at: param_time..end_time).order(:starts_at)
+    Event.where.not(user: current_user).where(starts_at: param_time..end_time).order(:starts_at)
   end
 
   def sport_filter
-    Event.where(sport: params[:sport].capitalize).order(:starts_at)
+    Event.where.not(user:current_user).where(sport: params[:sport].capitalize).order(:starts_at)
   end
 
   def event_params
