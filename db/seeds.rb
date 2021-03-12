@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = %w(akash@gmail.com amanda@gmail.com ian@gmail.com lucy@gmail.com henry@gmail.com james@gmail.com donna@gmail.com george@gmail.com allana@gmail.com julie@gmail.com sam@gmail.com sonya@gmail.com)
+# users = %w(akash@gmail.com amanda@gmail.com ian@gmail.com lucy@gmail.com henry@gmail.com james@gmail.com donna@gmail.com george@gmail.com allana@gmail.com julie@gmail.com sam@gmail.com sonya@gmail.com)
+users = %w(amanda@gmail.com akash@gmail.com ian@gmail.com lucy@gmail.com)
 password = '123456'
 sports = %w(Basketball Badminton Tennis Netball)
 # location = %w(Officer Watsonia Clyde)
@@ -35,7 +36,7 @@ end
     duration: rand(1..2),
     skill_level: skill.sample,
     private: [nil, "superman"].sample,
-    user_id: rand(1..12),
+    user_id: rand(2..4),
     location: location.sample
     # location: "#{location.sample}, Victoria, Australia"
   }
@@ -52,7 +53,7 @@ end
     duration: rand(1..2),
     skill_level: skill.sample,
     private: [nil, "superman"].sample,
-    user_id: rand(1..12),
+    user_id: rand(2..4),
     location: location.sample
     # location: "#{location.sample}, Victoria, Australia"
   }
@@ -69,7 +70,7 @@ end
     duration: rand(1..3),
     skill_level: skill.sample,
     private: [nil, "superman"].sample,
-    user_id: rand(1..12),
+    user_id: rand(2..4),
     location: location.sample
     # location: "#{location.sample}, Victoria, Australia"
   }
@@ -86,7 +87,7 @@ end
     duration: rand(1..3),
     skill_level: skill.sample,
     private: [nil, "superman"].sample,
-    user_id: rand(1..12),
+    user_id: rand(2..4),
     location: location.sample
     # location: "#{location.sample}, Victoria, Australia"
   }
@@ -113,6 +114,6 @@ end
 # Bookings booking 20
 20.times do
   event = Event.find(rand(1..20))
-  user = [1,2,3,4,5,6,7,8,9,10,11,12].reject { |num| num == event.user_id}.sample
+  user = [2,3,4].reject { |num| num == event.user_id}.sample
   Booking.create(user_id: user, event_id: event.id)
 end
