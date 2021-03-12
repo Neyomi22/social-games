@@ -92,6 +92,9 @@
       </div>  
       <% if current_user == @event.user || !Booking.where(event: @event, user: current_user).empty? %>          
         <div class="message-body__container">
+          <div class="message-icon">
+            <%= image_tag 'chat.png' %>
+          </div>
           <div class="messages-container">
             <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
               <% @chatroom.messages.each do |message| %>
