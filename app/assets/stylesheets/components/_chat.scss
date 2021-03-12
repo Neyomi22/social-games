@@ -2,11 +2,11 @@
 	background-color: white;
 	border-radius: 8px;
 	position: fixed;
-	overflow: scroll;
+	overflow: hidden;
 	scrollbar-width: none;
 	right: 20px;
 	width: 300px;
-	height: 300px;
+	max-height: 500px;
 	bottom: 10px;
 	visibility: hidden;
 	.messages-container {
@@ -31,13 +31,19 @@
 			}
 		}
 		#messages {
+			position: relative;
 			display: flex;
 			flex-direction: column;
 			height: 100%;
 			padding-top: 40px;
+			.messages {
+				overflow-y: scroll;
+				padding-bottom: 80px;
+			}
 			form {
-				margin-top: auto;
+				position: absolute;
 				width: 100%;
+				bottom: 0;
 			}
 		}
 	}
