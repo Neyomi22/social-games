@@ -32,8 +32,8 @@ import { initSearchBar } from '../component/search_bar';
 document.addEventListener('turbolinks:load', () => {
 	// Call your functions here, e.g:
 	// initSelect2();
-	initMapbox();
-	initAutocomplete();
 	// Search bar action
 	initSearchBar();
+	initMapbox();
+	initAutocomplete();
 });

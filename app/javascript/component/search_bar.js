@@ -1,8 +1,5 @@
 import places from 'places.js';
 
-// DOM
-const selectTypeDom = document.getElementById('select-type');
-
 const changeToAddress = () => {
 	const selectLocationDom = document.getElementById('select-location');
 	document.getElementById('select-address').style.display = '';
@@ -29,6 +26,9 @@ const changeToSport = () => {
 const initSearchBar = () => {
 	// default value when website loads
 	// init();
+	// DOM
+	const selectTypeDom = document.getElementById('select-type');
+
 	changeToAddress();
 	// change input selection
 	selectTypeDom.addEventListener('change', (e) => {
