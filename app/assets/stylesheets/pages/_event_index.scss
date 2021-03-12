@@ -1,7 +1,7 @@
 .events__container {
 	display: flex;
 	.events-cards {
-		padding: 0 12px;
+		padding: 0 4px;
 		border: 1px solid lightgray;
 		border-radius: 8px;
 		a {
@@ -11,7 +11,7 @@
 			}
 		}
 		.event-card {
-			box-shadow: 2px 2px 8px lightgray;
+			box-shadow: 2px 2px 8px rgb(153, 153, 153);
 			margin: 36px 0;
 			padding: 0;
 			border-radius: 8px;
