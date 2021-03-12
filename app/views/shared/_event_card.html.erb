@@ -1,24 +1,27 @@
 <div class="event-card">
-  <% if event.photo.attached? %>
-    <%= cl_image_tag event.photo.key %>  
-  <% else %>
-    <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
-  <% end %>
-  <p><strong><%= event.title %></strong></p>
-  <p>Sport: <%= event.sport %></p>
-  <p>Game time: <%= event.starts_at.strftime("%d-%m-%Y") %> <%= event.starts_at.strftime("%I:%M%p") %></p>	
-  <p>Game level: <%= event.skill_level %></p>
-  <% if event.number_of_participants - event.bookings.count <= 0 %>
-    <p><span class="badge badge-pill badge-danger">Fully booked</span></p>
-  <% elsif event.number_of_participants - event.bookings.count == 1 %>
-    <p><span class="badge badge-pill badge-warning">Last spot available</span></p>
-  <% else %>
-    <p>
-      <span class="badge badge-pill badge-success">
-        <%= event.number_of_participants - event.bookings.count %> spots available
-      </span>
-    </p>
-  <% end %> 
-  <%= link_to 'Show event', event_path(event), :class => "index-button"%>
-  <br>
+  <div class="event-card__image">
+    <% if event.photo.attached? %>
+      <%= cl_image_tag event.photo.key %>  
+    <% else %>
+      <%= cl_image_tag('http://www.sportswearable.net/wp-content/uploads/2019/03/sports-New-Brunswick.jpg') %>
+    <% end %>
+  </div>
+  <div class="event-card__body">
+    <p><strong><%= event.title %></strong></p>
+    <p>Sport: <%= event.sport %></p>
+    <p>Game time: <%= event.starts_at.strftime("%d-%m-%Y") %> <%= event.starts_at.strftime("%I:%M%p") %></p>	
+    <p>Game level: <%= event.skill_level %></p>
+    <% if event.number_of_participants - event.bookings.count <= 0 %>
+      <p><span class="badge badge-pill badge-danger">Fully booked</span></p>
+    <% elsif event.number_of_participants - event.bookings.count == 1 %>
+      <p><span class="badge badge-pill badge-warning">Last spot available</span></p>
+    <% else %>
+      <p>
+        <span class="badge badge-pill badge-success">
+          <%= event.number_of_participants - event.bookings.count %> spots available
+        </span>
+      </p>
+    <% end %> 
+    <%= link_to 'Show event', event_path(event), :class => "index-button"%>
+  </div>
 </div>
