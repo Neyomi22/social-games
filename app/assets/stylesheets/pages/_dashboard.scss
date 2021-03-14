@@ -19,3 +19,20 @@
 .dashboard-user-info__container {
 	flex-grow: 1;
 }
+
+.dashboard-event__cards {
+	h4 {
+		flex-grow: 1;
+	}
+	.dashboard-event__card {
+		height: 30px;
+		width: 100%;
+		align-items: center;
+		a {
+			img {
+				height: 100%;
+				width: 30px;
+			}
+		}
+	}
+}
