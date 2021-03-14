@@ -35,15 +35,13 @@
     </div>
   </div>
   <div class="row mt-5">
-    <div class="col-12 col-md-6">
-      <h2>My Games (<%= @events.size %>)</h2>
+    <div class="col-12 col-md-6 my-games-column">
+      <h2 class="mb-5">My Games (<%= @events.size %>)</h2>
       <div class="d-flex flex-column dashboard-event__cards">
         <% @events.each do |event| %>
         <div class="d-flex dashboard-event__card">
           <h4><%= event.title %></h4>
-            <%= link_to  event_path(event) do %>
-              <%= image_tag 'pen.png' %>
-            <% end %>
+            <%= link_to 'Edit', event_path(event), class: "btn badge-pill btn-success mr-2"%>
         </div>
         <% end %>
       </div>

@@ -20,19 +20,21 @@
 	flex-grow: 1;
 }
 
+.my-games-column {
+	height: 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
 .dashboard-event__cards {
 	h4 {
+		flex-wrap: wrap;
 		flex-grow: 1;
 	}
 	.dashboard-event__card {
-		height: 30px;
+		margin-bottom: 28px;
+		margin-left: 16px;
 		width: 100%;
 		align-items: center;
-		a {
-			img {
-				height: 100%;
-				width: 30px;
-			}
-		}
 	}
 }
