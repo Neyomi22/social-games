@@ -11,6 +11,16 @@
       <div class="dashboard-user-info__container">
         <p>Welcome back, <%= current_user.name %></p>
         <p>Get excited to create or join events</p>
+        <div class="user-info">
+          <div class="info">
+            <h6>Your Games</h6>
+            <p class="text-center"><%= Event.where(user: current_user).count %></p>
+          </div>
+          <div class="info">
+            <h6>Your Bookings</h6>
+            <p class="text-center"><%= Booking.where(user: current_user).count %></p>
+          </div>
+        </div>
       </div>
       <div class="dashboard-user-info__container">
         <h2 class="text-center">My Badge</h2>
@@ -22,6 +32,20 @@
           <% end %>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 col-md-6">
+      <h2>My Games (<%= @events.size %>)</h2>
+      <div class="d-flex flex-column">
+        <% @events.each do |event| %>
+          <h4>
+            <%= link_to event.title, event_path(event.id) %>
+          </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
     </div>
   </div>
 </div>

@@ -11,6 +11,10 @@
 
 .dashboard-user-info__container {
 	margin-left: 50px;
+	.user-info {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 .dashboard-user-info__container {
 	flex-grow: 1;
