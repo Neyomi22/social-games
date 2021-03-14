@@ -1,3 +1,28 @@
+<div class="container">
+  <div class="row mt-5 py-3">
+    <div class="col-12 d-flex justify-content-around align-items-center">
+      <div class="dashboard-user-img__container">
+        <% if current_user.photo.attached? %>
+          <%= image_tag current_user.photo.key %>
+        <% else %>
+          <%= image_tag 'profile-picture.png'%>
+        <% end %>
+      </div>
+      <div class="dashboard-user-info__container">
+        <p>Welcome back, <%= current_user.name %></p>
+      </div>
+      <div class="dashboard-user-info__container">
+      <p>Badges</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!---
 <div class="container d-flex my-5">
   <div class="w-50 mt-3">
     <h2 class="text-center">My Games</h2>
@@ -48,3 +73,4 @@
   </div>
 </div>
 
+->

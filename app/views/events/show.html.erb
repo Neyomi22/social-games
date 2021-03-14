@@ -52,7 +52,7 @@
           </div>
           <div class="info">
             <p><span>Organiser</span></p>
-            <p><%= @event.user.email.split("@").first.capitalize %></p>
+            <p><%= @event.user.name %></p>
           </div>
           <div class="info">
             <p><span>Maximum Participants</span></p>
@@ -104,7 +104,7 @@
                 <% @chatroom.messages.each do |message| %>
                   <div class="message__container" id="message-<%= message.id %>">
                     <i class="author">
-                      <span><%= message.user.email.split("@").first.upcase %></span>
+                      <span><%= message.user.name%></span>
                       <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
                     </i>
                     <p><%= message.content %></p>

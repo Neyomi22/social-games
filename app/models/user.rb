@@ -6,10 +6,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-   # profile picture
-   has_one_attached :photo
-   
-   # association
-   has_many :events, dependent: :destroy
-   has_many :bookings, through: :events
+  # profile picture
+  has_one_attached :photo
+  
+  # association
+  has_many :events, dependent: :destroy
+  has_many :bookings, through: :events
+
+  def name
+    if first_name.nil? || last_name.nil?
+      email.split("@").first.capitalize
+    else
+      "#{first_name} #{last_name}".strip
+    end
+  end
 end
