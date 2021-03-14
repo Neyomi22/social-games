@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row mt-5 py-3">
-    <div class="col-12 d-flex justify-content-around align-items-center">
+  <div class="row py-5 bg-primary">
+    <div class="col-12 d-flex align-items-center">
       <div class="dashboard-user-img__container">
         <% if current_user.photo.attached? %>
           <%= image_tag current_user.photo.key %>
