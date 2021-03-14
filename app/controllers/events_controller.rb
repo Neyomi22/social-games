@@ -55,6 +55,13 @@ class EventsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
     @chatrooms = Chatroom.all
+
+    @marker = @event.geocode
+      {
+        lat: @event.latitude,
+        lng: @event.longitude,
+        infoWindow: render_to_string(partial: "info_window", local: { event: @event })
+      }
   end
 
   def destroy
