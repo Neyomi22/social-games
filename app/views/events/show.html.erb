@@ -3,7 +3,7 @@
     <div class="main__container">
       <div class="event-image__container">
         <% if @event.photo.attached? %>
-            <%= cl_image_tag @event.photo.key %>
+            <%= cl_image_tag(@event.photo.key, width: 300,:quality=>"auto", :fetch_format=>:auto ) %>
         <% else %>
           <%= cl_image_tag('https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg') %>
         <% end %>
