@@ -10,9 +10,17 @@
       </div>
       <div class="dashboard-user-info__container">
         <p>Welcome back, <%= current_user.name %></p>
+        <p>Get excited to create or join events</p>
       </div>
       <div class="dashboard-user-info__container">
-      <p>Badges</p>
+        <h2 class="text-center">My Badge</h2>
+        <div class="d-flex flex-column align-items-center">
+          <% unless current_user.badges.empty? %>
+            <% current_user.badges.last.name %>
+            <%= cl_image_tag current_user.badges.last.custom_fields[:image_url], width: "75px" %>
+            <%= current_user.badges.last.description %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -62,14 +70,14 @@
       <% end %>
     </div>
     <div class="w-50 mt-3">
-    <h2 class="text-center">My Badges</h2>
-    <div class="d-flex flex-column align-items-center">
-      <% current_user.badges.each do |badge| %>
-        <%= badge.name %>
-        <%= cl_image_tag badge.custom_fields[:image_url], width: "75px" %>
-        <%= badge.description %>
-      <% end %>
-    </div>
+      <h2 class="text-center">My Badges</h2>
+      <div class="d-flex flex-column align-items-center">
+        <% current_user.badges.each do |badge| %>
+          <%= badge.name %>
+          <%= cl_image_tag badge.custom_fields[:image_url], width: "75px" %>
+          <%= badge.description %>
+        <% end %>
+      </div>
   </div>
 </div>
 
