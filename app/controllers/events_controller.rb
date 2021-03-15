@@ -13,13 +13,7 @@ class EventsController < ApplicationController
       @users = User.all
     end
     # the `geocoded` scope filters only events with coordinates (latitude & longitude)
-    @markers = @events.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
-      }
-    end
+    @markers = add_marker(@events)
   end
 
   def create
@@ -55,13 +49,7 @@ class EventsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
     @chatrooms = Chatroom.all
-
-    @marker = @event.geocode
-      {
-        lat: @event.latitude,
-        lng: @event.longitude,
-        infoWindow: render_to_string(partial: "info_window", local: { event: @event })
-      }
+    @markers = add_marker(Event.where(id: params[:id]))
   end
 
   def destroy
@@ -92,6 +80,16 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :location, :starts_at, :sport, :number_of_participants, :description, :skill_level, :private, :duration, :photo )
+  end
+
+  def add_marker(map_arr)
+    map_arr.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
+      }
+    end
   end
 
 end

@@ -28,6 +28,8 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
+    console.log(markers);
+    console.log(mapElement.dataset.markers);
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
