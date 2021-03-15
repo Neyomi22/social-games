@@ -97,7 +97,7 @@
 		  
 		}
   }
-	// .event_inside_container {
+	.event_inside_container {
 	// 		// display: flex;
 	// 		// width: 65%;
 	// 		// margin-top: 20px;
@@ -105,8 +105,8 @@
 	// 		// margin-bottom: 10px;
 	// 		// border-radius: 10px;
 	// 		// background-color: transparent;
-	// 	box-shadow: 1px -1px 5px 22px rgba(255, 255, 255, 0.2);
-	// 	-webkit-box-shadow: 1px -1px 5px 22px rgba(255, 255, 255, 0.2);
-	// 	-moz-box-shadow: 1px -1px 5px 22px rgba(255, 255, 255, 0.2);
-	// }
+		box-shadow: 1px -1px 5px 22px rgba(255, 253, 255, 0.1);
+		-webkit-box-shadow: 1px -1px 5px 22px rgba(255, 253, 255, 0.1);
+		-moz-box-shadow: 1px -1px 5px 22px rgba(255, 253, 255, 0.1);
+	}
 }
