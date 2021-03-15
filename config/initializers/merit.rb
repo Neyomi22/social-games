@@ -44,12 +44,12 @@ Merit::Badge.create!(
 Merit::Badge.create!(
   id:3,
   name:"5 Events",
-  description: "AWESOME! You have created 5 events"
-  custom_fields: { difficulty: :silver, color: "silver", image_url: "../images/purple-first.png"}
+  description: "AWESOME! You have created 5 events",
+  custom_fields: { difficulty: :silver, color: "silver", image_url: "/images/purple-first.png" }
 )
 Merit::Badge.create!(
   id:4,
   name: "YOU STAR",
   description: "YOU STAR! You have attended 10 events",
-  custom_fields: { difficulty: :gold, color: "gold", image_url: "/images/purple-gold.png"}
+  custom_fields: { difficulty: :gold, color: "gold", image_url: "/images/purple-gold.png" }
 )

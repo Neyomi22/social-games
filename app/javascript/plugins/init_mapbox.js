@@ -8,6 +8,19 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
+// const createCustomMarker = (marker) => {
+//   // Create a HTML element for your custom marker
+
+//   const element = document.createElement('div');
+//   element.className = 'marker';
+//   element.style.backgroundImage = `url('${marker.image_url}')`;
+//   element.style.backgroundSize = 'contain';
+//   element.style.backgroundColor = 'transparent';
+//   element.style.width = '25px';
+//   element.style.height = '25px';
+//   return element
+// }
+
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
@@ -26,8 +39,10 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/neyomi22/ckma16fagf83717o03msclrwl'
     });
+    console.log(markers);
+    console.log(mapElement.dataset.markers);
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
