@@ -13,5 +13,18 @@
     text-decoration: none;
     background: rgb(195, 91, 255);
     color: white;
+  }
 }
+
+.btn-search {
+  background: rgb(179, 48, 255);
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0;
+  // padding: 3px;
+  &:hover {
+    text-decoration: none;
+    background: #9326D3;
+    color: white;
+  }
 }
