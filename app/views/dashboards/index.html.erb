@@ -1,50 +1,99 @@
-<div class="container d-flex my-5">
-  <div class="w-50 mt-3">
-    <h2 class="text-center">My Games</h2>
-    <div class="d-flex flex-column align-items-center">
-      <% @events.each do |event| %>
-        <h4>
-          <%= link_to event.title, event_path(event.id) %>
-        </h4>
-        <p><%= event.location %></p>
-        <p><%= event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p>
-        <p>Duration: <%= event.duration %> hours</p>
-        <p><%= event.sport %></p>
-        <p>Participants: <%= event.number_of_participants %></p>
-        <p><%= event.description %></p>
-      <% end %>
+<div class="container">
+  <div class="row py-5 dashboard-banner">
+    <div class="col-12 d-flex align-items-center">
+      <div class="dashboard-user-img__container">
+        <% if current_user.photo.attached? %>
+          <%= image_tag current_user.photo.key %>
+        <% else %>
+          <%= image_tag 'profile-picture.png'%>
+        <% end %>
+      </div>
+      <div class="dashboard-user-info__container">
+        <p class="user-info__welcome">Welcome, <%= current_user.name %></p>
+        <div class="user-info">
+          <div class="info">
+            <h6>Your Games</h6>
+            <p class="text-center"><%= Event.where(user: current_user).count %></p>
+          </div>
+          <div class="info">
+            <h6>Your Bookings</h6>
+            <p class="text-center"><%= Booking.where(user: current_user).count %></p>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard-user-info__container">
+        <h2 class="text-center">My Badge</h2>
+        <div class="d-flex flex-column align-items-center">
+          <% unless current_user.badges.empty? %>
+            <%= cl_image_tag current_user.badges.last.custom_fields[:image_url], width: "75px" %>
+            <%= current_user.badges.last.description %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="w-50 mt-3">
-    <h2 class="text-center">My Joined Games</h2>
-    <div class="d-flex flex-column align-items-center">
-      <% if @bookings.empty? %>
-        <h2 class="no-booking-text">No Bookings</h2>
-      <% else %>
-        <% @bookings.each do |booking| %>
-          <div class="p-3 my-3 border">
-            <p><strong>Booked by: </strong><%= booking.user.email.split("@").first.capitalize  %></p>
-            <p><strong>Booked event: </strong><%= booking.event.title%></p>
-            <p><strong>Organiser: </strong><%= booking.event.user.email.split("@").first.capitalize  %></p>
-            <p><strong>Date: </strong><%= booking.event.starts_at.strftime("%d-%m-%Y") %></p>
-            <p><strong>Time: </strong><%= booking.event.starts_at.strftime("%I:%M%p") %></p>
-            <div class="d-flex justify-content-between">
-              <%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger", reload: true %>
-              <%= link_to 'Show', event_path(booking.event), class: "btn btn-success", reload: true %>
-            </div>
-          </div>
-        <% end %>  
-      <% end %>
+  <div class="row mt-5 px-3 py-2">
+    <div class="col-12 col-md-4 my-games-column border-right">
+      <h2 class="mb-5">My Games (<%= @events.size %>)</h2>
+      <div class="d-flex flex-column dashboard-event__cards">
+        <% @events.each do |event| %>
+        <div class="dashboard-event__card">
+          <h4><%= event.title %></h4>
+          <%= link_to event_path(event), class: "btn btn-link mr-2" do %>
+            <i class="fas fa-pen"></i>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
     </div>
-    <div class="w-50 mt-3">
-    <h2 class="text-center">My Badges</h2>
-    <div class="d-flex flex-column align-items-center">
-      <% current_user.badges.each do |badge| %>
-        <%= badge.name %>
-        <%= cl_image_tag badge.custom_fields[:image_url], width: "75px" %>
-        <%= badge.description %>
-      <% end %>
+    <div class="col-12 col-md-8 my-booking-column">
+      <h2 class="mb-5">My Bookings (<%= @bookings.size %>)</h2>
+      <div class="dashboard-booking__cards">
+        <% if @bookings.empty? %>
+          <h2 class="no-booking-text">No Bookings</h2>
+        <% else %>
+          <div class="row">
+            <div class="col-sm-4"><p class="text-center"><strong>Booked event</strong></p></div> 
+            <div class="col-sm-4"><p class="text-center"><strong>Date & Time</strong></p></div> 
+            <div class="col-sm-2"><p class="text-center"><strong>Participants</strong></p></div> 
+            <div class="col-sm-2"><p class="text-center"><strong>Action</strong></p></div> 
+          </div>
+          <% @bookings.each do |booking| %>
+              <div class="row px-2">
+                <div class="col-sm-4"><p class="text-center"><%= link_to booking.event.title, event_path(booking.event) %></p></div> 
+                <div class="col-sm-4"><p class="text-center"><%= booking.event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p></div> 
+                <div class="col-sm-2"><p class="text-center"><%= booking.event.booked_participants %>/ <%= booking.event.number_of_participants %></p></div> 
+                <div class="col-sm-2">
+                  <div class="d-flex justify-content-between">
+                    <%= link_to booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn rounded-circle btn-danger", reload: true do %>
+                      <i class="fas fa-times"></i>
+                    <% end %>
+                    <%= link_to event_path(booking.event), class: "btn rounded-circle btn-light", reload: true do %>
+                      <i class="far fa-eye"></i>
+                    <% end %>
+                  </div>
+                </div> 
+              </div>
+            <% end %>  
+            </div>
+
+        <% end %>
+      </div>
+    </div>
+  <div class="row my-5">
+    <div class="col-12">
+    <h2 class="text-left ml-3 mb-2">My Badges (<%= current_user.badges.size %>)</h2>
+      <div class="badge-cards">
+        <% current_user.badges.each do |badge| %>
+          <div class="badge-card">
+            <%= badge.name %>
+            <div class="badge-img__container">
+              <%= cl_image_tag badge.custom_fields[:image_url] %>
+            </div>
+            <%= badge.description %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-

@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   #association
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :users, through: :bookings
   has_one :chatroom, dependent: :destroy
   
   # event picture
@@ -25,9 +26,9 @@ class Event < ApplicationRecord
   validates :sport, presence:true
   validates :duration, presence: true
 
-  # def starts_at
-  #   self.starts_at.in_time_zone('Melbourne')
-  # end
+  def booked_participants
+    Booking.where(event_id: id).size
+  end
   
   private
 

@@ -27,6 +27,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initSearchBar } from '../component/search_bar';
 import { initChatBox } from '../live_chat/chat_box';
+import { initNotificationCable } from '../channels/notification_channel';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -36,5 +37,6 @@ document.addEventListener('turbolinks:load', () => {
 	initSearchBar();
 	initMapbox();
 	initAutocomplete();
+	initNotificationCable();
 	initChatBox();
 });
