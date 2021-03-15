@@ -88,7 +88,7 @@
           <div class="badge-card">
             <%= badge.name %>
             <div class="badge-img__container">
-              <%= image_tag badge.custom_fields[:image_url] %>
+              <%= cl_image_tag badge.custom_fields[:image_url] %>
             </div>
             <%= badge.description %>
           </div>
