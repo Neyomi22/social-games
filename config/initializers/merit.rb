@@ -32,12 +32,24 @@ Merit::Badge.create!(
   id: 1,
   name: "THE JOINER",
   description: "HOORAY!!! You joined your first event",
-  custom_fields: { difficulty: :bronze, color: "blue", image_url: "https://res.cloudinary.com/dqpzva5cw/image/upload/v1615437663/clipart772288_tjj3qq.png" }
+  custom_fields: { difficulty: :bronze, color: "blue", image_url: '/images/purple-part.png' }
 )
 
 Merit::Badge.create!(
   id: 2,
   name: "THE COMMITED",
   description: "GREAT! You booked your first event",
-  custom_fields: { difficulty: :bronze, color: "blue", image_url: "https://res.cloudinary.com/dqpzva5cw/image/upload/v1615436387/badge-1361_1_occqsx.png" }
+  custom_fields: { difficulty: :bronze, color: "blue", image_url: "images/purple-gold.png" }
+)
+Merit::Badge.create!(
+  id:3,
+  name:"5 Events",
+  description: "AWESOME! You have created 5 events"
+  custom_fields: { difficulty: :silver, color: "silver", image_url: "../images/purple-first.png"}
+)
+Merit::Badge.create!(
+  id:4,
+  name: "YOU STAR",
+  description: "YOU STAR! You have attended 10 events",
+  custom_fields: { difficulty: :gold, color: "gold", image_url: "/images/purple-gold.png"}
 )

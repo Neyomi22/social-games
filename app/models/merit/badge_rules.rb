@@ -28,9 +28,16 @@ module Merit
       grant_on 'bookings#create', badge_id: 1, to: :user do |booking|
         Booking.where(user: booking.user).count == 1
       end
+      grant_on 'bookings#create', badge_id: 4, to: :user do |booking|
+        Booking.where(user: booking.user).count == 10
+      end
 
       grant_on 'events#create', badge_id: 2, to: :user do |event|
         Event.where(user: event.user).count == 1
+      end
+
+      grant_on 'events#create', badge_id: 3, to: :user do |event|
+        Event.where(user: event.user).count == 5
       end
       # If it has 10 comments, grant commenter-10 badge
       # grant_on 'comments#create', badge: 'commenter', level: 10 do |comment|
