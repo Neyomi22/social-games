@@ -17,14 +17,14 @@
 }
 
 .btn-search {
-  background: rgb(179, 48, 255);
+  background:  rgb(179, 48, 255);
   color: white;
   border-radius: 4px;
-  box-shadow: 0;
+  border-style: none;
   // padding: 3px;
   &:hover {
     text-decoration: none;
-    background: #9326D3;
+    background: rgb(147, 38, 211);
     color: white;
   }
 }

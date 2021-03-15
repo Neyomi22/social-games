@@ -1,25 +1,27 @@
 <div class="container my-5 search-bar">
-  <div class="row justify-content-center">
-    <form class="d-flex flex-grow-1" action=<%= events_path %> method="GET">
-      <select class="form-control" id="select-type" name="type">
-        <option value="address">Address</option>
-        <option value="date">By Date</option>
-        <option value="sport">Sports</option>
-      </select>
-      <select class="form-control" id="select-address" name="distance" value="<%= params[:distance]%>">
-        <option value=10>Within 10 kms</option>
-        <option value=20>Within 20 kms</option>
-        <option value=50>Within 50 kms</option>
-        <option value=1000>Show All</option>
-      </select>
-      <div class="search-bar-div w-100">
-        <input class="form-control me-2" name="location" type="search" id="select-location" placeholder="Enter your address" value="<%= params[:location]%>">
-      </div>
+  <div class="search_container">
+    <div class="row justify-content-center">
+      <form class="d-flex flex-grow-1" action=<%= events_path %> method="GET">
+        <select class="form-control" id="select-type" name="type">
+          <option value="address">Address</option>
+          <option value="date">By Date</option>
+          <option value="sport">Sports</option>
+        </select>
+        <select class="form-control" id="select-address" name="distance" value="<%= params[:distance]%>">
+          <option value=10>Within 10 kms</option>
+          <option value=20>Within 20 kms</option>
+          <option value=50>Within 50 kms</option>
+          <option value=1000>Show All</option>
+        </select>
+        <div class="search-bar-div w-100">
+          <input class="form-control me-2" name="location" type="search" id="select-location" placeholder="Enter your address" value="<%= params[:location]%>">
+        </div>
 
-      <input type="date" class="form-control" id="select-date" placeholder= "Select start date and time"name="date" value="<%= params[:date]%>">
-      <input class="form-control" id="select-sport" name="sport" placeholder="Enter sport" value="<%= params[:sport]%>">
-      <button class="btn-search" type="submit">Search</button>
-    </form>
+        <input type="date" class="form-control" id="select-date" placeholder= "Select start date and time"name="date" value="<%= params[:date]%>">
+        <input class="form-control" id="select-sport" name="sport" placeholder="Enter sport" value="<%= params[:sport]%>">
+        <button class="btn-search" type="submit">Search</button>
+      </form>
+    </div>
   </div>
 </div>
 

@@ -1,6 +1,6 @@
 .event_container{
-	// background-image: linear-gradient(to right, #e3d4ff, #c7aaff);
-	background-color:  #e7d9ff;
+	background-image: linear-gradient(to right, #e6daff, $purple-secondary );
+  // background-color: #e0d0ff;
   display: flex;
 	justify-content: center;
   padding-top: 30px;
@@ -91,8 +91,8 @@
 			// margin-bottom: 10px;
 			// border-radius: 10px;
 			// background-color: transparent;
-		box-shadow: 1px -1px 5px 22px #d8c5ff;
-		-webkit-box-shadow: 1px -1px 5px 22px #d8c5ff;
-		-moz-box-shadow: 1px -1px 5px 22px #d8c5ff;
+		box-shadow: 1px -1px 5px 22px rgba(172,128,248,0.3);
+		-webkit-box-shadow: 1px -1px 5px 22px rgba(172,128,248,0.3);
+		-moz-box-shadow: 1px -1px 5px 22px rgba(172,128,248,0.3);
 	}
 }	
