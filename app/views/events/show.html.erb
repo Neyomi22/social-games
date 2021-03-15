@@ -120,10 +120,10 @@
           </div> 
         </div> 
       <% end %>
+      <div id="map"
+      style="width: 50%; height: 650px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
 </div>
-<div id="map"
-style="width: 50%; height: 650px;"
-data-markers="<%= @markers.to_json %>"
-data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
