@@ -9,10 +9,14 @@ class User < ApplicationRecord
   # profile picture
   has_one_attached :photo
   
+
+  # profile picture
+  has_one_attached :photo
+  
   # association
   has_many :events, dependent: :destroy
   has_many :bookings, through: :events
-
+  has_many :notifications, foreign_key: :recipient_id
   def name
     if first_name.nil? || last_name.nil?
       email.split("@").first.capitalize
