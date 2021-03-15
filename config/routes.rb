@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   resources :profiles, only: [:edit, :update]
   resources :dashboards, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+  #for notifications
+  resources :notifications, only: [:index, :show ] do
+    collection do
+      post :mark_as_read
+    end
+  end
 end

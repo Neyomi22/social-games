@@ -12,4 +12,5 @@ class User < ApplicationRecord
    # association
    has_many :events, dependent: :destroy
    has_many :bookings, through: :events
+   has_many :notifications, foreign_key: :recipient_id
 end
