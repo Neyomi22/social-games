@@ -23,8 +23,8 @@
 .my-games-column {
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
-		width: 0; /* Remove scrollbar space */
-		background: transparent; /* Optional: just make scrollbar invisible */
+		width: 0;
+		background: transparent;
 	}
 	overflow-x: hidden;
 }
@@ -48,8 +48,8 @@
 	overflow-x: hidden;
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
-		width: 0; /* Remove scrollbar space */
-		background: transparent; /* Optional: just make scrollbar invisible */
+		width: 0;
+		background: transparent;
 	}
 	display: flex;
 	flex-direction: column;
@@ -68,22 +68,22 @@
 .badge-cards {
 	display: flex;
 	justify-content: flex-start;
-	max-width: 100%;
 	align-items: center;
 	overflow-x: scroll;
+	width: 100%;
 	padding-top: 16px;
 	padding-left: 16px;
-	border-left: 2px solid lightgray;
 	&::-webkit-scrollbar {
-		width: 0; /* Remove scrollbar space */
-		background: transparent; /* Optional: just make scrollbar invisible */
+		background-color: lightgray;
 	}
 	.badge-card {
 		display: flex;
 		margin-right: 24px;
+		margin-bottom: 16px;
 		flex-direction: column;
 		align-items: center;
 		padding: 8px 4px;
+		min-width: 300px;
 		border: 2px solid lightgray;
 		border-radius: 8px;
 		.badge-img__container {
