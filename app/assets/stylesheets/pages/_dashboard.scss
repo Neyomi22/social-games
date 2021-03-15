@@ -21,12 +21,16 @@
 }
 
 .my-games-column {
-	height: 400px;
 	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0; /* Remove scrollbar space */
+		background: transparent; /* Optional: just make scrollbar invisible */
+	}
 	overflow-x: hidden;
 }
 
 .dashboard-event__cards {
+	height: 300px;
 	h4 {
 		flex-wrap: wrap;
 		flex-grow: 1;
@@ -36,5 +40,27 @@
 		margin-left: 16px;
 		width: 100%;
 		align-items: center;
+	}
+}
+
+.dashboard-booking__cards {
+	height: 400px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0; /* Remove scrollbar space */
+		background: transparent; /* Optional: just make scrollbar invisible */
+	}
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 20px;
+	.dashboard-booking__card {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: 15px;
+		p {
+			margin-bottom: 0;
+		}
 	}
 }

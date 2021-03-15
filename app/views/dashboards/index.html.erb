@@ -10,7 +10,6 @@
       </div>
       <div class="dashboard-user-info__container">
         <p>Welcome back, <%= current_user.name %></p>
-        <p>Get excited to create or join events</p>
         <div class="user-info">
           <div class="info">
             <h6>Your Games</h6>
@@ -34,19 +33,47 @@
       </div>
     </div>
   </div>
-  <div class="row mt-5">
-    <div class="col-12 col-md-6 my-games-column">
+  <div class="row mt-5 px-3 py-2 border rounded">
+    <div class="col-12 col-md-4 my-games-column border-right">
       <h2 class="mb-5">My Games (<%= @events.size %>)</h2>
       <div class="d-flex flex-column dashboard-event__cards">
         <% @events.each do |event| %>
         <div class="d-flex dashboard-event__card">
           <h4><%= event.title %></h4>
-            <%= link_to 'Edit', event_path(event), class: "btn badge-pill btn-success mr-2"%>
+            <%= link_to 'Show', event_path(event), class: "btn badge-pill btn-success mr-2"%>
         </div>
         <% end %>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-8">
+      <h2 class="mb-5">My Bookings (<%= @bookings.size %>)</h2>
+      <div class="dashboard-booking__cards">
+        <% if @bookings.empty? %>
+          <h2 class="no-booking-text">No Bookings</h2>
+        <% else %>
+          <div class="row">
+            <div class="col-sm-3"><p class="text-center"><strong>Booked event</strong></p></div> 
+            <div class="col-sm-4"><p class="text-center"><strong>Date & Time</strong></p></div> 
+            <div class="col-sm-2"><p class="text-center"><strong>Participants</strong></p></div> 
+            <div class="col-sm-3"><p class="text-center"><strong>Action</strong></p></div> 
+          </div>
+          <% @bookings.each do |booking| %>
+              <div class="row px-2">
+                <div class="col-sm-3"><p class="text-center"><%= link_to booking.event.title, event_path(booking.event) %></p></div> 
+                <div class="col-sm-4"><p class="text-center"><%= booking.event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p></div> 
+                <div class="col-sm-2"><p class="text-center"><%= booking.event.booked_participants %>/ <%= booking.event.number_of_participants %></p></div> 
+                <div class="col-sm-3">
+                  <div class="d-flex justify-content-between">
+                    <%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger", reload: true %>
+                    <%= link_to 'Show', event_path(booking.event), class: "btn btn-success", reload: true %>
+                  </div>
+                </div> 
+              </div>
+            <% end %>  
+            </div>
+
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
