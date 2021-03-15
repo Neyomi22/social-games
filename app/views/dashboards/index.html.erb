@@ -25,7 +25,6 @@
         <h2 class="text-center">My Badge</h2>
         <div class="d-flex flex-column align-items-center">
           <% unless current_user.badges.empty? %>
-            <% current_user.badges.last.name %>
             <%= cl_image_tag current_user.badges.last.custom_fields[:image_url], width: "75px" %>
             <%= current_user.badges.last.description %>
           <% end %>
@@ -72,6 +71,21 @@
             <% end %>  
             </div>
 
+        <% end %>
+      </div>
+    </div>
+  <div class="row my-5">
+    <div class="col-12">
+    <h2 class="text-left ml-3 mb-2">My Badges (<%= current_user.badges.size %>)</h2>
+      <div class="badge-cards">
+        <% current_user.badges.each do |badge| %>
+          <div class="badge-card">
+            <%= badge.name %>
+            <div class="badge-img__container">
+              <%= cl_image_tag badge.custom_fields[:image_url] %>
+            </div>
+            <%= badge.description %>
+          </div>
         <% end %>
       </div>
     </div>
