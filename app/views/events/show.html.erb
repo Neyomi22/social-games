@@ -3,7 +3,7 @@
     <div class="main__container">
       <div class="event-image__container">
         <% if @event.photo.attached? %>
-            <%= cl_image_tag @event.photo.key %>
+            <%= cl_image_tag(@event.photo.key, width: 300,:quality=>"auto", :fetch_format=>:auto ) %>
         <% else %>
           <%= cl_image_tag('https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg') %>
         <% end %>
@@ -87,42 +87,43 @@
               <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
               <%= link_to "Your Dashboard", dashboards_path %>
             <% end %>
-            <%= simple_form_for [ @chatroom, @message ] do |f| %>
-                <%= f.input :content, label: false, placeholder: "Type your message" %>
-                <%= f.button :submit, class: "btn btn-primary rounded" %>
-              <% end %>
           </div>
         </div>
-      </div>  
+      </div> 
       <% if current_user == @event.user || !Booking.where(event: @event, user: current_user).empty? %>          
-      <div class="message-icon">
-        <%= image_tag 'chat.png' %>
-      </div>
-        <div class="message-body__container">
-          <div class="messages-container">
-            <div class="close-message">
-              <p>Group Message</p>
-            </div> 
-            <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-              <div class="messages">
-                <% @chatroom.messages.each do |message| %>
-                  <div class="message__container" id="message-<%= message.id %>">
-                    <i class="author">
-                      <span><%= message.user.name%></span>
-                      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-                    </i>
-                    <p><%= message.content %></p>
-                  </div>
-                <% end %>
+        <div class="message-icon">
+          <%= image_tag 'chat.png' %>
+        </div>
+          <div class="message-body__container">
+            <div class="messages-container">
+              <div class="close-message">
+                <p>Group Message</p>
+              </div> 
+              <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+                <div class="messages">
+                  <% @chatroom.messages.each do |message| %>
+                    <div class="message__container" id="message-<%= message.id %>">
+                      <i class="author">
+                        <span><%= message.user.name%></span>
+                        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                        <%= simple_form_for [ @chatroom, @message ] do |f| %>
+                            <%= f.input :content, label: false, placeholder: "Type your message" %>
+                            <%= f.button :submit, class: "btn btn-primary rounded" %>
+                          <% end %>
+                      </i>
+                      <p><%= message.content %></p>
+                    </div>
+                  <% end %>
+                </div>
               </div>
-              
             </div>
           </div>
-          
         </div> 
       <% end %>
+      <div id="map"
+      style="width: 50%; height: 650px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
 </div>
-
-

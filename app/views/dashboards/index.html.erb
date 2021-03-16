@@ -3,9 +3,9 @@
     <div class="col-12 d-flex align-items-center">
       <div class="dashboard-user-img__container">
         <% if current_user.photo.attached? %>
-          <%= image_tag current_user.photo.key %>
+          <%= cl_image_tag current_user.photo.key %>
         <% else %>
-          <%= image_tag 'profile-picture.png'%>
+          <%= cl_image_tag 'profile-picture.png'%>
         <% end %>
       </div>
       <div class="dashboard-user-info__container">

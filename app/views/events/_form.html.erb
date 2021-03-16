@@ -1,18 +1,18 @@
 <div class="container">
  <div class="add-event-form d-flex justify-content-center">
-			<%= simple_form_for @event, html: { class: "sports-form"} do |f| %>
-				<%= f.input :title, placeholder: "Title your event", label: false %>
-				<%= f.input :description, input_html: {class: "descript"}, placeholder: "Add a description", label: false %>
-				<%= f.input :location, placeholder: "Whats the address?", label: false %>
-				<%= f.input :sport, :collection => %w[Basketball Badminton Netball Tennis], prompt: "Select your Sport", label: false %>
-				<%= f.input :skill_level, :collection => %w[Basic Intermediate Advanced], prompt: "Rate your skill ", label: false %>
-				<%= f.input :number_of_participants, placeholder: "How many people can join this event?", input_html: { min: '1', step: 'any' }, label: false  %>
-				<%# f.input :starts_at, as: :date_picker , label: false %>
-				<%= f.input :starts_at, as: :datetime placeholder: "Date", :order => [:day, :month, :year], label: false %>
-				<%= f.input	:duration,  as: :select, collection: (1..5), prompt: "How many hours?", label: false %>
-				<%= f.input :photo, as: :file %>
-				<%= f.button :submit %>
-			<% end %>
+		<%= simple_form_for @event, html: { class: "sports-form"} do |f| %>
+			<%= f.input :title, placeholder: "Title your event", label: false %>
+			<%= f.input :description, input_html: {class: "descript"}, placeholder: "Add a description", label: false %>
+			<%= f.input :location, placeholder: "Whats the address?", label: false %>
+			<%= f.input :sport, :collection => %w[Basketball Badminton Netball Tennis], prompt: "Select your Sport", label: false %>
+			<%= f.input :skill_level, :collection => %w[Basic Intermediate Advanced], prompt: "Rate your skill ", label: false %>
+			<%= f.input :number_of_participants, placeholder: "How many people can join this event?", input_html: { min: '1', step: 'any' }, label: false  %>
+			<%# f.input :starts_at, as: :date_picker , label: false %>
+			<%= f.input :starts_at, placeholder: "Date", :order => [:day, :month, :year], label: false %>
+			<%= f.input	:duration,  as: :select, collection: (1..5), prompt: "How many hours?", label: false %>
+			<%= f.input :photo, as: :file %>
+			<%= f.button :submit %>
+		<% end %>
 
 	</div>
 </div>
