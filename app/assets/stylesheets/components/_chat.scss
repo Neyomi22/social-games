@@ -39,6 +39,10 @@
 				padding: 40px 0 65px 0;
 				overflow-y: scroll;
 				font-size: 14px;
+				&::-webkit-scrollbar {
+					width: 0;
+					background: transparent;
+				}
 			}
 			form {
 				position: absolute;
