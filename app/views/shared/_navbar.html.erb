@@ -36,7 +36,11 @@
                   <% end %>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%# current_user.notifications.last(5) %>
+                <div class="notification-cards">
+                  <% Notification.where(recipient: current_user).each do |n| %>
+                    <%= render "notifications/notification", notification: n %>
+                  <% end %>
+                </div>
               </div>
             </li>
               <%# link_to 'Bookings', bookings_path, class: "nav-link" %>

@@ -1,7 +1,7 @@
-<div class="notification" id="notification-<%= notification.id %>">
+<div class="notification notification-card" id="notification-<%= notification.id %>">
     <% if notification.notifiable_type == "Message" %>
-        <p>Hey! <%= notification.actor.email.capitalize %> just commented on your event</p>
+      <p>Hey! <%= notification.actor.name %> just commented on your event</p>
     <%  elsif notification.notifiable_type == "Badge" %> 
-        <p>Congratulations! You just earned a badge!</p>
+      <p>Congratulations! You just earned a badge!</p>
     <% end %>
 </div>

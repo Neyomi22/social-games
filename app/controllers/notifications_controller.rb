@@ -5,6 +5,9 @@ class NotificationsController < ApplicationController
 		@notifications = Notification.where(recipient: current_user).all
 		mark_as_read
 	end
+
+	def create
+	end
 	
 	def show
 		@notifications = Notification.where(recipient: current_user)
