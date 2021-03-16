@@ -42,7 +42,7 @@
             <div class="dashboard-event__card">
               <h5><%= event.title %></h5>
               <%= link_to event_path(event), class: "btn btn-link mr-2" do %>
-                <i class="fas fa-pen"></i>
+                  <i class="<%= @owner ? "fas fa-pen" : "far fa-eye"%>"></i>
               <% end %>
             </div>
             <% end %>
