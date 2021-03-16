@@ -8,7 +8,6 @@
 	width: 300px;
 	max-height: 500px;
 	bottom: 10px;
-	visibility: visible;
 	.messages-container {
 		position: relative;
 		height: 100%;
@@ -16,6 +15,7 @@
 			position: sticky;
 			top: 0;
 			height: 30px;
+			opacity: 1;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -72,4 +72,9 @@
 
 .message__container {
 	margin: 0 8px;
+}
+
+.toggle-visibility-chat {
+	visibility: hidden;
+	height: 0 !important;
 }
