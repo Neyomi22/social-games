@@ -37,8 +37,12 @@
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <div class="notification-cards">
-                  <% Notification.where(recipient: current_user).each do |n| %>
-                    <%= render "notifications/notification", notification: n %>
+                  <% if current_user.notifications.count == 0 %>
+                    <p>No messages</p>
+                  <% else %>
+                    <% Notification.where(recipient: current_user).each do |n| %>
+                      <%= render "notifications/notification", notification: n %>
+                    <% end %>
                   <% end %>
                 </div>
               </div>

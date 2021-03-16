@@ -2,8 +2,6 @@
   <% if notification.notifiable_type == "Message" %>
     <p>Hey! <%= notification.actor.name %> just commented on your event</p>
   <% elsif notification.notifiable_type == "Badge" %> 
-     <p>Congratulations! You just earned a badge!</p>
-  <% else %>
-    <p>No messages</p>
+    <p>Congratulations! You just earned a badge!</p>
   <% end %>
 </div>
