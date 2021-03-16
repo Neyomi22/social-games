@@ -53,7 +53,7 @@
           </div>
           <div class="info">
             <p><span>Organiser</span></p>
-            <p><%= @event.user.name %></p>
+            <p><%= link_to @event.user.name, dashboard_path(@event.user.id) %></p>
           </div>
           <div class="info">
             <p><span>Maximum Participants</span></p>
