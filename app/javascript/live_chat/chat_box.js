@@ -6,8 +6,6 @@ const initChatBox = () => {
 		chatBoxDom.addEventListener('click', () => {
 			chatContainerDom.style.visibility = 'visible';
 		});
-	}
-	if (chatHeaderDom && chatContainerDom) {
 		chatHeaderDom.addEventListener('click', () => {
 			chatContainerDom.style.visibility = 'hidden';
 		});
