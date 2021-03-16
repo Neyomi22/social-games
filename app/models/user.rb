@@ -17,8 +17,9 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :bookings, through: :events
   has_many :notifications, foreign_key: :recipient_id
+  
   def name
-    if first_name.nil? || last_name.nil?
+    if first_name.nil? || last_name.nil? || first_name.empty? || last_name.empty?
       email.split("@").first.capitalize
     else
       "#{first_name} #{last_name}".strip
