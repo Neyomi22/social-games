@@ -28,6 +28,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initSearchBar } from '../component/search_bar';
 import { initChatBox } from '../live_chat/chat_box';
 import { initNotificationCable } from '../channels/notification_channel';
+import { initPhotoPicker } from '../component/photo_picker';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,8 +36,14 @@ document.addEventListener('turbolinks:load', () => {
 	// Call your functions here, e.g:
 	// initSelect2();
 	initSearchBar();
-	initMapbox();
+
+	// Fixes issue with half the map not loading due to an unknown layout issue on the show event page.
+	setTimeout(() => {
+		initMapbox();
+	}, 50);
+
 	initAutocomplete();
 	initNotificationCable();
+	initPhotoPicker();
 	initChatBox();
 });

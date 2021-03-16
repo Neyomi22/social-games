@@ -56,15 +56,15 @@
             <h2 class="no-booking-text">No Bookings</h2>
           <% else %>
             <div class="row">
-              <div class="col-sm-4"><p class="text-center"><strong>Booked event</strong></p></div> 
-              <div class="col-sm-4"><p class="text-center"><strong>Date & Time</strong></p></div> 
-              <div class="col-sm-2"><p class="text-center"><strong>Participants</strong></p></div> 
-              <div class="col-sm-2"><p class="text-center"><strong>Action</strong></p></div> 
+              <div class="col-sm-4"><p><strong>Booked event</strong></p></div> 
+              <div class="col-sm-4"><p><strong>Date & Time</strong></p></div> 
+              <div class="col-sm-2"><p><strong>Participants</strong></p></div> 
+              <div class="col-sm-2"><p><strong>Action</strong></p></div> 
             </div>
             <% @bookings.each do |booking| %>
                 <div class="row px-2">
-                  <div class="col-sm-4"><p class="text-center"><%= link_to booking.event.title, event_path(booking.event) %></p></div> 
-                  <div class="col-sm-4"><p class="text-center"><%= booking.event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p></div> 
+                  <div class="col-sm-4"><p><%= link_to booking.event.title, event_path(booking.event) %></p></div> 
+                  <div class="col-sm-4"><p><%= booking.event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p></div> 
                   <div class="col-sm-2"><p class="text-center"><%= booking.event.booked_participants %>/ <%= booking.event.number_of_participants %></p></div> 
                   <div class="col-sm-2">
                     <div class="d-flex justify-content-between">
