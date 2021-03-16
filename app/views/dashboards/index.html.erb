@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row py-5 dashboard-banner mt-3">
+  <div class="row py-5 dashboard-banner mt-5 mx-3">
     <div class="col-12 d-flex align-items-center">
       <div class="dashboard-user-img__container">
         <% if current_user.photo.attached? %>
@@ -85,8 +85,8 @@
       </div>
     </div>
   <div class="row my-5">
-    <div class="col-12 bg-white rounded">
-      <div class="badges-container">
+    <div class="col-12">
+      <div class="badges-container bg-white mx-3">
         <h2 class="text-left ml-3 mb-2">My Badges (<%= current_user.badges.size %>)</h2>
           <div class="badge-cards">
             <% current_user.badges.each do |badge| %>
