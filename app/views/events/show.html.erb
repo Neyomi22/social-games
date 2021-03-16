@@ -1,5 +1,6 @@
 <div class="show-event__container">
   <div class="container my-3">
+    <div class="d-flex">
     <div class="main__container">
       <div class="event-image__container">
         <% if @event.photo.attached? %>
@@ -125,5 +126,6 @@
       style="width: 50%; height: 650px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
   </div>
 </div>
