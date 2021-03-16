@@ -1,5 +1,6 @@
 <div class="show-event__container">
   <div class="container my-3">
+    <div class="d-flex">
     <div class="main__container">
       <div class="event-image__container">
         <% if @event.photo.attached? %>
@@ -94,27 +95,23 @@
           </div>
         </div>
       </div> 
-      <% if current_user == @event.user || !Booking.where(event: @event, user: current_user).empty? %>          
-        <div class="message-icon">
-          <%= image_tag 'chat.png' %>
-        </div>
-          <div class="message-body__container">
-            <div class="messages-container">
-              <div class="close-message">
-                <p>Group Message</p>
-              </div> 
-              <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-                <div class="messages">
-                  <% @chatroom.messages.each do |message| %>
-                    <div class="message__container" id="message-<%= message.id %>">
-                      <i class="author">
-                        <span><%= message.user.email.split("@").first.upcase %></span>
-                        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-                      </i>
-                      <p><%= message.content %></p>
-                    </div>
-                  <% end %>
-                </div>
+        <% if current_user == @event.user || !Booking.where(event: @event, user: current_user).empty? %>          
+        <div class="message-body__container">
+          <div class="messages-container">
+            <div class="close-message">
+              <p>Group Message</p>
+            </div> 
+            <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+              <div class="messages">
+                <% @chatroom.messages.each do |message| %>
+                  <div class="message__container" id="message-<%= message.id %>">
+                    <i class="author">
+                      <span><%= message.user.email.split("@").first.upcase %></span>
+                      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                    </i>
+                    <p><%= message.content %></p>
+                  </div>
+                <% end %>
                 <%= simple_form_for [ @chatroom, @message ] do |f| %>
                   <%= f.input :content, label: false, placeholder: "Type your message" %>
                   <%= f.button :submit, class: "btn btn-primary rounded" %>
@@ -122,8 +119,10 @@
               </div>
             </div>
           </div>
+          
         </div> 
       <% end %>
+     </div>
       <div id="map"
       style="width: 50%; height: 650px;"
       data-markers="<%= @markers.to_json %>"

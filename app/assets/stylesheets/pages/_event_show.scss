@@ -11,16 +11,15 @@
 			width: 60%;
 			position: relative;
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			background-color: white;
 			border-radius: 8px;
 			.event-image__container {
-				position: absolute;
-				left: -200px;
 				img {
 					height: 400px;
-					width: 300px;
+					width: 100%;
 					border-radius: 12px;
 					object-fit: cover;
 				}
@@ -37,16 +36,17 @@
 			.event-body__container {
 				width: 100%;
 				border-radius: 8px;
-				background-color: $purple-secondary;
+				background-color: white;
 				.event__card {
-					margin: 80px 120px;
+					margin: 20px 40px;
 					background-color: white;
 					border-radius: 8px;
 					padding: 16px 8px;
 					.info {
 						margin-bottom: 12px;
 						p {
-							font-size: 12px;
+							font-size: 17px;
+							font-weight: 100;
 							margin-bottom: 0;
 							span {
 								font-size: 14px;

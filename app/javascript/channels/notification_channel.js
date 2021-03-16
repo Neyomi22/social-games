@@ -5,7 +5,6 @@ const initNotificationCable = () => {
     console.log("initNotificationCable");
     const notificationsContainer = document.getElementById('notifications');
     if (notificationsContainer) {
-        console.log(`notifications:${currentUserId}`);
         // let currentUserId = parseInt(notificationsContainer.dataset.notificationUser);
         consumer.subscriptions.create({ channel: `NotificationChannel`, user_id: currentUserId }, {
             received(data) {
@@ -21,6 +20,20 @@ const initNotificationCable = () => {
             rejected() {
                 console.log('rejected!')
             }
+        });
+    }
+    const notificationBell = document.getElementById('notification-bell');
+    if (notificationBell) {
+        // let currentUserId = parseInt(notificationBell.dataset.notificationUser);
+        consumer.subscriptions.create({ channel: `NotificationChannel`, user_id: currentUserId }, {
+            received(data) {
+                console.log("notification-bell", notificationBell);
+                notificationBell.classList.add('active')
+            },
+            connected() {
+                console.log("connected!")
+            },
+        
         });
     }
 }

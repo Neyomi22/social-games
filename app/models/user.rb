@@ -24,4 +24,9 @@ class User < ApplicationRecord
       "#{first_name} #{last_name}".strip
     end
   end
+  
+  def notifications_count
+     self.notifications.unread.count   
+  end
+  
 end

@@ -1,5 +1,5 @@
 .dashboard-banner {
-	background: #ffedff;
+	background: white;
 	color: black;
 	padding: 0 12px;
 	margin-top: 15px;
@@ -51,7 +51,7 @@
 
 .dashboard-event__cards {
 	max-height: 300px;
-	h4 {
+	h5 {
 		flex-wrap: wrap;
 		flex-grow: 1;
 	}
@@ -99,12 +99,14 @@
 	justify-content: flex-start;
 	align-items: center;
 	overflow-x: scroll;
+	&::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
 	width: 100%;
+	height: 80%;
 	padding-top: 16px;
 	padding-left: 16px;
-	&::-webkit-scrollbar {
-		background-color: lightgray;
-	}
 	.badge-card {
 		display: flex;
 		margin-right: 24px;
@@ -113,12 +115,12 @@
 		align-items: center;
 		padding: 8px 4px;
 		min-width: 300px;
-		border: 2px solid $purple-primary;
 		border-radius: 8px;
 		.badge-img__container {
 			width: 75px;
 			img {
 				width: 100%;
+				object-fit: cover;
 			}
 		}
 	}
@@ -126,7 +128,14 @@
 
 .my-booking-column,
 .my-games-column {
-	border: 2px solid $purple-primary;
-	padding-top: 12px;
+	border: 2px solid transparent;
+	padding: 12px;
 	border-radius: 8px;
+	height: 100%;
+}
+
+.badges-container {
+	padding-top: 16px;
+	border-radius: 8px;
+	height: 250px;
 }
