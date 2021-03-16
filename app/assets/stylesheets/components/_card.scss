@@ -11,6 +11,7 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+		transition: all .1;
 		.card {
 			background-color: transparent;
 			display: flex;
@@ -44,4 +45,32 @@
 
 .booking-new-card {
 	text-align: center;
+}
+.edit-profile_container {
+
+	.card {
+		padding: 24px;
+		margin: 22px;
+		border-radius: 8px;
+		box-shadow: 2px 2px #784bd4a8;
+
+	}
+}
+.edit-user-form {
+
+	.card {
+		padding: 24px;
+		margin: 22px;
+		border-radius: 8px;
+		box-shadow: 2px 2px #784bd4a8;
+	}
+}
+.cancel-btn {
+
+	.card {
+		padding: 24px;
+		margin: 22px;
+		border-radius: 8px;
+		align-items: flex-start;
+	}
 }
