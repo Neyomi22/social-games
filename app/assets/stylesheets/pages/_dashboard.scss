@@ -114,12 +114,12 @@
 		align-items: center;
 		padding: 8px 4px;
 		min-width: 300px;
-		border: 2px solid $purple-primary;
 		border-radius: 8px;
 		.badge-img__container {
 			width: 75px;
 			img {
 				width: 100%;
+				object-fit: cover;
 			}
 		}
 	}
