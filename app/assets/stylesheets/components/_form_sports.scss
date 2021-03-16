@@ -1,6 +1,6 @@
 // .sports-form {
 //     margin-top: 50px;
-    
+
 //     input, select {
 //         background-color: white;
 //         color:black;
@@ -14,28 +14,27 @@
 //         font-family: sans-serif;
 //         font-weight: 300;
 //     }
- .add-event-form {
-    padding-top: 50px;
+.add-event-form {
+	padding-top: 50px;
 
-    .form-control {
-        border-radius: 20px;
-    }
- }
+	.form-control {
+		border-radius: 8px;
+	}
+}
 
-    input[type=submit] {
-        color: white;
-        border-radius: 20px;
-        background-color: rgba(179, 48, 255, 0.7);
-        padding: 3px;
-        width: 100%;
-    }
+input[type='submit'] {
+	color: white;
+	border-radius: 8px;
+	background-color: rgba(179, 48, 255, 0.7);
+	padding: 3px;
+	width: 100%;
+	box-shadow: 2px 2px purple;
+}
 
-    // }
+// }
 // }
 //     .descript {
 //         border-radius: 30px;
 //     }
 
-
 // }
-

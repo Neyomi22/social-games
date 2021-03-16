@@ -1,113 +1,114 @@
 <div class="container">
-  <div class="row py-5 dashboard-banner mt-5 mx-3">
-    <div class="col-12 d-flex align-items-center">
-      <div class="dashboard-user-img__container">
-        <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key %>
-        <% else %>
-          <%= image_tag 'profile-picture.png'%>
-        <% end %>
-      </div>
-      <div class="dashboard-user-info__container">
-        <p class="user-info__welcome"><%= "Welcome," if @owner %> <%= user.name %></p>
-        <div class="user-info">
-          <div class="info">
-            <h6><%= "Your" if @owner %> Games</h6>
-            <p class="text-center"><%= Event.where(user: user).count %></p>
-          </div>
-          <div class="info">
-            <h6><%= "Your" if @owner %> Bookings</h6>
-            <p class="text-center"><%= Booking.where(user: user).count %></p>
-          </div>
-        </div>
-      </div>
-      <div class="dashboard-user-info__container">
-        <h2 class="text-center"><%= "Your" if @owner %> Badge</h2>
-        <div class="d-flex flex-column align-items-center">
-          <% unless user.badges.empty? %>
-            <%= image_tag user.badges.last.custom_fields[:image_url], width: "75px" %>
-            <%= user.badges.last.description %>
+  <div class="dashboard-main__container">    
+    <div class="row py-5 dashboard-banner mt-5 mx-3">
+      <div class="col-12 d-flex align-items-center">
+        <div class="dashboard-user-img__container">
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key %>
+          <% else %>
+            <%= image_tag 'profile-picture.png'%>
           <% end %>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="row mt-5 px-3 py-2">
-    <div class="col-12 col-md-4">
-      <div class="my-games-column bg-white">
-        <h2 class="mb-5"><%= "Your" if @owner %> Games (<%= @events.size %>)</h2>
-        <div class="d-flex flex-column dashboard-event__cards">
-          <% @events.each do |event| %>
-          <div class="dashboard-event__card">
-            <h5><%= event.title %></h5>
-            <%= link_to event_path(event), class: "btn btn-link mr-2" do %>
-              <i class="fas fa-pen"></i>
+        <div class="dashboard-user-info__container">
+          <p class="user-info__welcome"><%= "Welcome," if @owner %> <%= user.name %></p>
+          <div class="user-info">
+            <div class="info">
+              <h6><%= "Your" if @owner %> Games</h6>
+              <p class="text-center"><%= Event.where(user: user).count %></p>
+            </div>
+            <div class="info">
+              <h6><%= "Your" if @owner %> Bookings</h6>
+              <p class="text-center"><%= Booking.where(user: user).count %></p>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-user-info__container">
+          <h2 class="text-center"><%= "Your" if @owner %> Badge</h2>
+          <div class="d-flex flex-column align-items-center">
+            <% unless user.badges.empty? %>
+              <%= image_tag user.badges.last.custom_fields[:image_url], width: "75px" %>
+              <%= user.badges.last.description %>
             <% end %>
           </div>
-          <% end %>
-        </div>
-      </div>
-      </div>
-    <div class="col-12 col-md-8">
-      <div class="my-booking-column bg-white">
-        <h2 class="mb-5"><%= "Your" if @owner %> Bookings (<%= @bookings.size %>)</h2>
-        <div class="dashboard-booking__cards">
-          <% if @bookings.empty? %>
-            <h2 class="no-booking-text">No Bookings</h2>
-          <% else %>
-            <div class="row">
-              <div class="col-sm-4"><p class="text-center"><strong>Booked event</strong></p></div> 
-              <div class="col-sm-4"><p class="text-center"><strong>Date & Time</strong></p></div> 
-              <div class="col-sm-2"><p class="text-center"><strong>Participants</strong></p></div> 
-              <div class="col-sm-2"><p class="text-center"><strong>Action</strong></p></div> 
-            </div>
-            <% @bookings.each do |booking| %>
-                <div class="row px-2">
-                  <div class="col-sm-4"><p class="text-center"><%= link_to booking.event.title, event_path(booking.event) %></p></div> 
-                  <div class="col-sm-4"><p class="text-center"><%= booking.event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p></div> 
-                  <div class="col-sm-2"><p class="text-center"><%= booking.event.booked_participants %>/ <%= booking.event.number_of_participants %></p></div> 
-                  <div class="col-sm-2">
-                    <div class="d-flex justify-content-center">
-                      <% if @owner %>
-                        <%= link_to booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn rounded-circle btn-danger", reload: true do %>
-                          <i class="fas fa-times"></i>
-                        <% end %>
-                      <% end %>
-                      <%= link_to event_path(booking.event), class: "btn rounded-circle btn-light", reload: true do %>
-                        <i class="far fa-eye"></i>
-                      <% end %>
-                    </div>
-                  </div> 
-                </div>
-              <% end %>  
-              </div>
-
-          <% end %>
         </div>
       </div>
     </div>
-  
-  <% if @owner %>
-    <div class="row my-5">
-      <div class="col-12">
-        <div class="badges-container bg-white mx-3">
-          <h2 class="text-left ml-3 mb-2">My Badges (<%= current_user.badges.size %>)</h2>
-            <div class="badge-cards">
-              <% current_user.badges.each do |badge| %>
-                <div class="badge-card">
-                  <%= badge.name %>
-                  <div class="badge-img__container">
-                    <%= image_tag badge.custom_fields[:image_url] %>
-                  </div>
-                  <%= badge.description %>
-                </div>
+    <div class="row mt-5 px-3 py-2">
+      <div class="col-12 col-md-4">
+        <div class="my-games-column bg-white">
+          <h2 class="mb-5"><%= "Your" if @owner %> Games (<%= @events.size %>)</h2>
+          <div class="d-flex flex-column dashboard-event__cards">
+            <% @events.each do |event| %>
+            <div class="dashboard-event__card">
+              <h5><%= event.title %></h5>
+              <%= link_to event_path(event), class: "btn btn-link mr-2" do %>
+                <i class="fas fa-pen"></i>
               <% end %>
             </div>
+            <% end %>
+          </div>
+        </div>
+        </div>
+      <div class="col-12 col-md-8">
+        <div class="my-booking-column bg-white">
+          <h2 class="mb-5"><%= "Your" if @owner %> Bookings (<%= @bookings.size %>)</h2>
+          <div class="dashboard-booking__cards">
+            <% if @bookings.empty? %>
+              <h2 class="no-booking-text">No Bookings</h2>
+            <% else %>
+              <div class="row">
+                <div class="col-sm-4"><p class="text-center"><strong>Booked event</strong></p></div> 
+                <div class="col-sm-4"><p class="text-center"><strong>Date & Time</strong></p></div> 
+                <div class="col-sm-2"><p class="text-center"><strong>Participants</strong></p></div> 
+                <div class="col-sm-2"><p class="text-center"><strong>Action</strong></p></div> 
+              </div>
+              <% @bookings.each do |booking| %>
+                  <div class="row px-2">
+                    <div class="col-sm-4"><p class="text-center"><%= link_to booking.event.title, event_path(booking.event) %></p></div> 
+                    <div class="col-sm-4"><p class="text-center"><%= booking.event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p></div> 
+                    <div class="col-sm-2"><p class="text-center"><%= booking.event.booked_participants %>/ <%= booking.event.number_of_participants %></p></div> 
+                    <div class="col-sm-2">
+                      <div class="d-flex justify-content-center">
+                        <% if @owner %>
+                          <%= link_to booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn rounded-circle btn-danger", reload: true do %>
+                            <i class="fas fa-times"></i>
+                          <% end %>
+                        <% end %>
+                        <%= link_to event_path(booking.event), class: "btn rounded-circle btn-light", reload: true do %>
+                          <i class="far fa-eye"></i>
+                        <% end %>
+                      </div>
+                    </div> 
+                  </div>
+                <% end %>  
+                </div>
+
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% else %>
-    <div class="mb-5"></div>
-  <% end %>
-
+    
+    <% if @owner %>
+      <div class="row my-5">
+        <div class="col-12">
+          <div class="badges-container bg-white mx-3">
+            <h2 class="text-left ml-3 mb-2">My Badges (<%= current_user.badges.size %>)</h2>
+              <div class="badge-cards">
+                <% current_user.badges.each do |badge| %>
+                  <div class="badge-card">
+                    <%= badge.name %>
+                    <div class="badge-img__container">
+                      <%= image_tag badge.custom_fields[:image_url] %>
+                    </div>
+                    <%= badge.description %>
+                  </div>
+                <% end %>
+              </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="mb-5"></div>
+    <% end %>
+  </div>
 </div>
