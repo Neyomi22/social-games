@@ -10,3 +10,37 @@
 .navbar-lewagon .navbar-brand img {
 	width: 40px;
 }
+#notification-bell {
+	background: lightgrey;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0px;
+	border-radius: 15px;
+	position: relative;
+	margin: 0px 5px;
+	svg {
+		width: 24px;
+	}
+	.notify-dot {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		height: 10px;
+		width: 10px;
+		border-radius: 50%;
+		background-color: $purple-primary;
+		box-shadow: 0px 1px 5px $purple-secondary;
+		display: none;
+	}
+	
+}
+#notification-bell.active {
+	background: #f4e0ff;
+	.notify-dot {
+		display: block;
+	}
+}
+
