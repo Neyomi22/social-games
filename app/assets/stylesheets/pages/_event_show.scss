@@ -9,6 +9,7 @@
 		.main__container {
 			margin: 0 auto;
 			width: 60%;
+			flex-shrink: 0;
 			position: relative;
 			display: flex;
 			flex-direction: column;
