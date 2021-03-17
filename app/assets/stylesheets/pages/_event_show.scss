@@ -43,8 +43,21 @@
 					background-color: white;
 					border-radius: 8px;
 					padding: 16px 8px;
+
 					.info {
 						margin-bottom: 12px;
+					
+							.btn {
+							border: none;
+							border-radius: 8px imp !important;
+							width: 26%;
+							background-color: rgba(179, 48, 255, 0.7);
+							.rounded-pill {
+								border-radius: 8px !important;
+							}
+							}
+					
+					
 						p {
 							font-size: 17px;
 							font-weight: 100;
@@ -64,6 +77,15 @@
 .info-container {
 	display: flex;
 	justify-content: space-between;
+	.btn {
+		border: none;
+		// border-radius: 8px;
+		width: 26%;
+		background-color: rgba(179, 48, 255, 0.7);
+		.rounded-pill {
+			border-radius: 8px;
+		}
+		}
 	.participants {
 		display: flex;
 		flex-wrap: wrap;

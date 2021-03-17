@@ -47,3 +47,4 @@ document.addEventListener('turbolinks:load', () => {
 	initPhotoPicker();
 	initChatBox();
 });
+import 'controllers'
