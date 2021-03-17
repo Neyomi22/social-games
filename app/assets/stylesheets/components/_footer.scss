@@ -26,3 +26,14 @@
 .footer-links a:hover {
 	color: rgba(202, 202, 202, 0.897);
 }
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.footer-links {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center !important;
+		margin-bottom: 28px;
+	}
+}
