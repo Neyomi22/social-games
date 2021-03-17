@@ -14,7 +14,7 @@
 		margin-bottom: 16px;
 
 		.card-body {
-			box-shadow: 4px 4px 4px purple;
+			box-shadow: 4px 4px 4px $box-shadow;
 		}
 	}
 }
@@ -33,5 +33,7 @@ input[type='submit'] {
 		width: 80%;
 		object-fit: contain;
 		border: none;
+		border-radius: 8px;
+		box-shadow: 2px 2px 4px #ffddff;
 	}
 }
