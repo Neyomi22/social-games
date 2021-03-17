@@ -11,38 +11,37 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-
-		}
-		.card {
-			background-color: transparent;
-			display: flex;
-			border-radius: 12px;
-			flex-direction: column;
-			align-items: center;
-			border: none;
-			width: 300px;
-			padding: 16px 24px;
-			transition: all .3s;
-			box-shadow: 4px 4px 6px rgb(223, 201, 223);
-			&:hover {
+	}
+	.card {
+		background-color: transparent;
+		display: flex;
+		border-radius: 12px;
+		flex-direction: column;
+		align-items: center;
+		border: none;
+		width: 300px;
+		padding: 16px 24px;
+		transition: all 0.3s;
+		box-shadow: 4px 4px 6px rgb(223, 201, 223);
+		&:hover {
 			z-index: 5;
 			transform: scale(1.02);
 			box-shadow: 4px 10px 4px #ffddff;
-			}
-			img {
-				width: 64px;
-				max-height: 64px;
-				margin-bottom: 36px;
+		}
+		img {
+			width: 64px;
+			max-height: 64px;
+			margin-bottom: 36px;
 		}
 	}
 }
 
 .event-index-card {
-  display: grid;
-  grid-template-columns: 1fr;
-  flex-grow: 1;
-  width : 50%;
-  margin-left: 20px;
+	display: grid;
+	grid-template-columns: 1fr;
+	flex-grow: 1;
+	width: 50%;
+	margin-left: 20px;
 
 	img {
 		margin-top: 10px;
@@ -53,17 +52,14 @@
 	text-align: center;
 }
 .edit-profile_container {
-
 	.card {
 		padding: 24px;
 		margin: 22px;
 		border-radius: 8px;
 		box-shadow: 2px 2px #784bd4a8;
-
 	}
 }
 .edit-user-form {
-
 	.card {
 		padding: 24px;
 		margin: 22px;
@@ -72,11 +68,11 @@
 	}
 }
 .cancel-btn {
-
 	.card {
 		padding: 24px;
 		margin: 22px;
 		border-radius: 8px;
 		align-items: flex-start;
+		width: 35%;
 	}
 }
