@@ -88,4 +88,11 @@
 
 // Laptop Screen Size
 @media (max-width: 1650px) {
+	.landing-card__container {
+		padding-bottom: 40px;
+
+		.card {
+			padding: 10px;
+		}
+	}
 }
