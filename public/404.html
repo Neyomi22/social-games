@@ -1,67 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+	<head>
+		<title>The page you were looking for doesn't exist (404)</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="styles/main.css" />
+	</head>
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+	<body class="rails-default-error-page">
+		<div class="container">
+			<!-- about -->
+			<div class="about">
+				<a
+					class="bg_links social portfolio"
+					href="https://www.rafaelalucas.com"
+					target="_blank"
+				>
+					<span class="icon"></span>
+				</a>
+				<a
+					class="bg_links social dribbble"
+					href="https://dribbble.com/rafaelalucas"
+					target="_blank"
+				>
+					<span class="icon"></span>
+				</a>
+				<a
+					class="bg_links social linkedin"
+					href="https://www.linkedin.com/in/rafaelalucas/"
+					target="_blank"
+				>
+					<span class="icon"></span>
+				</a>
+				<a class="bg_links logo"></a>
+			</div>
+			<!-- end about -->
+			<section class="wrapper">
+				<div class="container">
+					<div id="scene" class="scene" data-hover-only="false">
+						<div class="circle" data-depth="1.2"></div>
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+						<div class="one" data-depth="0.9">
+							<div class="content">
+								<span class="piece"></span>
+								<span class="piece"></span>
+								<span class="piece"></span>
+							</div>
+						</div>
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+						<div class="two" data-depth="0.60">
+							<div class="content">
+								<span class="piece"></span>
+								<span class="piece"></span>
+								<span class="piece"></span>
+							</div>
+						</div>
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
+						<div class="three" data-depth="0.40">
+							<div class="content">
+								<span class="piece"></span>
+								<span class="piece"></span>
+								<span class="piece"></span>
+							</div>
+						</div>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+						<p class="p404" data-depth="0.50">404</p>
+						<p class="p404" data-depth="0.10">404</p>
+					</div>
+
+					<div class="text">
+						<article>
+							<p>
+								Uh oh! Looks like you got lost. <br />Go back to the homepage if
+								you dare!
+							</p>
+							<button class="homepage">i dare!</button>
+						</article>
+					</div>
+				</div>
+			</section>
+		</div>
+		<script>
+			document.querySelector('.homepage').addEventListener('click', () => {
+				window.location.replace('/');
+			});
+		</script>
+	</body>
 </html>
