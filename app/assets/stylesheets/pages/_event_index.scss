@@ -115,3 +115,33 @@
 		-moz-box-shadow: 1px -1px 5px 22px rgba(255, 253, 255, 0.2);
 	}
 }
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.event_container {
+		.event_inside_container {
+			h3 {
+				text-align: center;
+			}
+		}
+		.container {
+			padding-left: 0;
+			padding-right: 0;
+			.events__container {
+				.events-cards {
+					margin: 0 auto;
+					width: 90vw;
+					.event-card {
+						flex-direction: column;
+						margin: 18px 0;
+						.event-card__body {
+							h4 {
+								font-size: 16px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
