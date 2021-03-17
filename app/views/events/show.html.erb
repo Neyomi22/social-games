@@ -1,10 +1,10 @@
 <div class="show-event__container">
   <div class="container my-3">
-    <div class="d-flex">
+    <div class="d-flex w-100">
     <div class="main__container">
       <div class="event-image__container">
         <% if @event.photo.attached? %>
-            <%= cl_image_tag(@event.photo.key, width: 300,:quality=>"auto", :fetch_format=>:auto ) %>
+            <%= cl_image_tag(@event.photo.key) %>
         <% else %>
           <%= image_tag('https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg') %>
         <% end %>
@@ -106,8 +106,8 @@
                 <% @chatroom.messages.each do |message| %>
                   <div class="message__container" id="message-<%= message.id %>">
                     <i class="author">
-                      <span><%= message.user.email.split("@").first.upcase %></span>
-                      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                      <span><%= message.user.name.upcase %></span>
+                      <small><%= message.created_time %></small>
                     </i>
                     <p><%= message.content %></p>
                   </div>
