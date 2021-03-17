@@ -1,3 +1,23 @@
 .search_container {
-  box-shadow: 4px 8px 4px  rgb(255, 224, 255);
+	box-shadow: 4px 8px 4px rgb(255, 224, 255);
+}
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.search_container {
+		.row {
+			width: 100%;
+			margin: 0 auto;
+		}
+		form {
+			flex-direction: column;
+			.form-control {
+				margin-bottom: 7px;
+				border-radius: 8px !important;
+			}
+			.btn-search {
+				padding: 8px 4px;
+			}
+		}
+	}
 }
