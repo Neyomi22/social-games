@@ -1,0 +1,149 @@
+.dashboard-banner {
+	background: white;
+	color: black;
+	padding: 0 12px;
+	margin-top: 15px;
+	border-radius: 8px;
+}
+
+.dashboard-user-img__container {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 50%;
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.dashboard-user-info__container {
+	margin-left: 50px;
+	.user-info {
+		display: flex;
+		justify-content: space-between;
+		.info {
+			h6 {
+				font-weight: bold;
+				font-size: 18px;
+			}
+		}
+	}
+	.user-info__welcome {
+		font-size: 30px;
+	}
+}
+.dashboard-user-info__container {
+	flex-grow: 1;
+	&:last-child {
+		border-left: 8px solid lightgray;
+	}
+}
+
+.my-games-column {
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
+	overflow-x: hidden;
+}
+
+.dashboard-event__cards {
+	max-height: 300px;
+	h5 {
+		flex-wrap: wrap;
+		flex-grow: 1;
+	}
+	.dashboard-event__card {
+		margin-bottom: 28px;
+		margin-left: 16px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+		a {
+			font-size: 20px;
+			color: $purple-primary;
+			&:hover {
+				color: $purple-secondary;
+			}
+		}
+	}
+}
+
+.dashboard-booking__cards {
+	max-height: 400px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 20px;
+	.dashboard-booking__card {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: 15px;
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.badge-cards {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	overflow-x: scroll;
+	&::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
+	width: 100%;
+	height: 80%;
+	padding-top: 16px;
+	padding-left: 16px;
+	.badge-card {
+		display: flex;
+		margin-right: 24px;
+		margin-bottom: 16px;
+		flex-direction: column;
+		align-items: center;
+		padding: 8px 4px;
+		min-width: 300px;
+		border-radius: 8px;
+		.badge-img__container {
+			width: 75px;
+			img {
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+.my-booking-column,
+.my-games-column {
+	border: 2px solid transparent;
+	padding: 12px;
+	border-radius: 8px;
+	height: 100%;
+}
+
+.badges-container {
+	padding-top: 16px;
+	border-radius: 8px;
+	height: 250px;
+}
+
+.dashboard-main__container {
+	background-color: purple;
+	padding: 24px;
+	margin: 24px 0;
+	box-shadow: 2px 2px 16px darken($color: purple, $amount: 10%);
+	border-radius: 8px;
+}

@@ -1,0 +1,28 @@
+.footer {
+	background: #522952;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 100px;
+	padding: 20px 50px;
+	color: rgba(255, 255, 255, 0.897);
+}
+.footer-links {
+	display: flex;
+	align-items: center;
+	i {
+		margin-right: 12px;
+		font-size: 24px;
+	}
+}
+.footer-links a {
+	color: rgba(255, 255, 255, 0.897);
+	opacity: 1;
+	text-decoration: none;
+	font-size: 14px;
+	padding: 0px 10px;
+	vertical-align: middle;
+}
+.footer-links a:hover {
+	color: rgba(202, 202, 202, 0.897);
+}
