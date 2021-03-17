@@ -88,3 +88,9 @@
 	border-radius: 50%;
 	object-fit: cover;
 }
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.navbar {
+		padding: 8px 4px;
+	}
+}
