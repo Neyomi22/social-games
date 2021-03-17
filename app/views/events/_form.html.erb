@@ -5,17 +5,10 @@
 			<div class="col-md-6">
 				<%= f.input :photo, as: :file, input_html: { class: 'js-photo-input' } %>
 				<img class="js-photo-preview" />
-	<script>
-		var loadFile = function(event) {
-			var output = document.getElementById('output');
-			output.src = URL.createObjectURL(event.target.files[0]);
-			output.onload = function() {
-				URL.revokeObjectURL(output.src) // free memory
-			}
-		};
-	</script>
 			</div>
 			<div class="col-md-6">
+			<div class="form-body">
+			
 		  <div class="card mb-4">
 				<div class="card-body">
 				  <h3>Add your game</h3>
@@ -44,15 +37,16 @@
 			<%= f.input	:duration,  as: :select, collection: (1..5), prompt: "How many hours?", label: false %>
 			</div>
 			</div>
-			<div class="mb-4 card">
-				<div class="card-body">
-				<h3>How many peeps (keep it covid-safe y'all)</h3>
-			<%= f.input :number_of_participants, placeholder: "How many people can join this event?", input_html: { min: '1', step: 'any' }, label: false  %>
-			<%# f.input :starts_at, as: :date_picker , label: false %>
+				<div class="mb-4 card">
+					<div class="card-body">
+					<h3>How many peeps (keep it covid-safe y'all)</h3>
+				<%= f.input :number_of_participants, placeholder: "How many people can join this event?", input_html: { min: '1', step: 'any' }, label: false  %>
+				<%# f.input :starts_at, as: :date_picker , label: false %>
+				</div>
 			</div>
 			</div>
 			<div class="mb-4">
-			<%= f.button :submit %>
+				<%= f.button :submit %>
 			</div>
 			</div>
 		<% end %>
