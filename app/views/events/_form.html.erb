@@ -11,7 +11,7 @@
 				
 				<div class="card mb-4">
 					<div class="card-body">
-						<h3>Add your game</h3>
+						<h3><%= form_heading %> your game</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<%= f.input :sport, :collection => %w[Basketball Badminton Netball Tennis], prompt: "Select your Sport", label: false %>
@@ -54,6 +54,3 @@
 		</div>
 	</div>
 </div>
-
-<%# <%= f.input :sport, :collection => %w[Mike Nick Jason Other] %>
-<%# <%= f.input :sport, :as => :hidden, :input_html => { :sport => "Other" }%> 
