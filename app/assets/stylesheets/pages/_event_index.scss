@@ -132,11 +132,26 @@
 					margin: 0 auto;
 					width: 90vw;
 					.event-card {
+						.badge {
+							margin: 4px;
+							font-size: 12px;
+						}
 						flex-direction: column;
 						margin: 18px 0;
+						.event-card__image {
+							width: 100%;
+							padding: 0;
+							img {
+								width: 100%;
+							}
+						}
 						.event-card__body {
+							width: 100%;
 							h4 {
 								font-size: 16px;
+							}
+							p {
+								margin: 4px;
 							}
 						}
 					}
