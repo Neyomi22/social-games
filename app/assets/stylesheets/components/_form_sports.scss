@@ -37,3 +37,19 @@ input[type='submit'] {
 		box-shadow: 2px 2px 4px #ffddff;
 	}
 }
+
+.container-login {
+	background: white;
+	padding: 20px 12px;
+	input {
+		border-radius: 5px;
+		outline: none;
+	}
+}
+
+.shared-links {
+	display: flex;
+	margin: 4px 0;
+	padding-top: 16px;
+	flex-direction: column;
+}
