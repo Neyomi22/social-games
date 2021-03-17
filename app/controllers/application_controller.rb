@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     session[:user_id] = current_user.id if current_user
   end
   
+  def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+end
+  
 end
