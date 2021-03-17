@@ -47,8 +47,12 @@
 					padding: 8px 12px;
 					font-weight: bold;
 					font-size: 24px;
+					box-shadow: 2px 2px 4px #dfc9df;
+				
 					&:hover {
 						background: rgb(147, 38, 211);
+						box-shadow: 4px 4px 6px #dfc9df;
+						transition: all 0.3s;
 					}
 				}
 			}

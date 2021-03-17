@@ -11,6 +11,8 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+
+		}
 		.card {
 			background-color: transparent;
 			display: flex;
@@ -20,12 +22,17 @@
 			border: none;
 			width: 300px;
 			padding: 16px 24px;
+			transition: all .3s;
 			box-shadow: 4px 4px 6px rgb(223, 201, 223);
+			&:hover {
+			z-index: 5;
+			transform: scale(1.02);
+			box-shadow: 4px 10px 4px #ffddff;
+			}
 			img {
 				width: 64px;
 				max-height: 64px;
 				margin-bottom: 36px;
-			}
 		}
 	}
 }
@@ -44,4 +51,32 @@
 
 .booking-new-card {
 	text-align: center;
+}
+.edit-profile_container {
+
+	.card {
+		padding: 24px;
+		margin: 22px;
+		border-radius: 8px;
+		box-shadow: 2px 2px #784bd4a8;
+
+	}
+}
+.edit-user-form {
+
+	.card {
+		padding: 24px;
+		margin: 22px;
+		border-radius: 8px;
+		box-shadow: 2px 2px #784bd4a8;
+	}
+}
+.cancel-btn {
+
+	.card {
+		padding: 24px;
+		margin: 22px;
+		border-radius: 8px;
+		align-items: flex-start;
+	}
 }
