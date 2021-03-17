@@ -1,7 +1,7 @@
 <div class="container">
- <div class="add-event-form d-flex justify-content-center">
+<div class="add-event-form d-flex justify-content-center">
 		<%= simple_form_for @event, html: { class: "sports-form"} do |f| %>
-		<div class="row">
+		<div class="row no-gutters">
 			<div class="col-md-6">
 				<%= f.input :photo, as: :file, input_html: { class: 'js-photo-input' } %>
 				<img class="js-photo-preview" />
