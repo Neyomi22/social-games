@@ -119,6 +119,9 @@
 // Mobile Screen Size iphone 10+
 @media (max-width: 436px) {
 	.event_container {
+		width: 100vw;
+		padding-bottom: 0;
+		margin-bottom: 0;
 		.event_inside_container {
 			h3 {
 				text-align: center;
