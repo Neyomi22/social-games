@@ -98,5 +98,18 @@
 }
 
 // Mobile Screen Size iphone 10+
-@media (max-width: 436) {
+@media (max-width: 436px) {
+	.landing-card__container {
+		padding-top: 0 !important;
+		margin-top: 0;
+		padding-bottom: 40px;
+		.card {
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		.cards {
+			flex-direction: column;
+			margin-top: 30px;
+		}
+	}
 }

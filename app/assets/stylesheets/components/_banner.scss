@@ -2,9 +2,9 @@
 	min-height: 90vh;
 	// background: url("https://image.freepik.com/free-vector/gradient-background-with-dynamic-shapes_23-2148215374.jpg") no-repeat center center fixed;
 	// -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
+	// -moz-background-size: cover;
+	// -o-background-size: cover;
+	// background-size: cover;
 	display: flex;
 	flex-direction: column;
 	.container {
@@ -48,13 +48,40 @@
 					font-weight: bold;
 					font-size: 24px;
 					box-shadow: 2px 2px 4px #dfc9df;
-				
+
 					&:hover {
 						background: rgb(147, 38, 211);
 						box-shadow: 4px 4px 6px #dfc9df;
 						transition: all 0.3s;
 					}
 				}
+			}
+		}
+	}
+}
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.banner {
+		min-height: 80vh;
+		overflow-y: hidden;
+		.container {
+			margin: 0;
+			.heading-container {
+				align-items: flex-end;
+				border-radius: 8px;
+				justify-content: center;
+				height: 55vh;
+				.heading {
+					a {
+						width: 100%;
+					}
+				}
+			}
+
+			.landing-page {
+				width: 100%;
+				height: 50%;
 			}
 		}
 	}
