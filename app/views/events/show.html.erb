@@ -9,11 +9,6 @@
           <%= image_tag('https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg') %>
         <% end %>
       </div>
-      <% if @event.user.photo.attached? %>
-        <div class="user-image__container">
-              <%= cl_image_tag @event.user.photo.key%>
-        </div>
-      <% end %>
       <div class="event-body__container">
         <div class="event__card">
           <h2 class="text-center"><%= @event.title %></h2>
@@ -51,9 +46,18 @@
             <p><span>Location</span></p>
             <p><%= @event.location %></p>      
           </div>
-          <div class="info">
-            <p><span>Organiser</span></p>
-            <p><%= link_to @event.user.name, dashboard_path(@event.user.id) %></p>
+          <div class="info-container">
+            <div class="info">
+              <p><span>Organiser</span></p>
+              <p><%= link_to @event.user.name, dashboard_path(@event.user.id) %></p>
+            </div>
+            <div class="info">
+              <% if @event.user.photo.attached? %>
+                <div class="user-image__container">
+                      <%= cl_image_tag @event.user.photo.key%>
+                </div>
+              <% end %>
+            </div>
           </div>
           <div class="info">
             <p><span>Maximum Participants</span></p>
@@ -88,10 +92,6 @@
               <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
               <%= link_to "Your Dashboard", dashboards_path %>
             <% end %>
-            <%# <%= simple_form_for [ @chatroom, @message ] do |f| %>
-                <%# <%= f.input :content, label: false, placeholder: "Type your message" %>
-                <%# <%= f.button :submit, class: "btn btn-primary rounded" %> 
-              <%# <% end %> 
           </div>
         </div>
       </div> 
