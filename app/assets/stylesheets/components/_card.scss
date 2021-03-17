@@ -11,7 +11,8 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		transition: all .1;
+
+		}
 		.card {
 			background-color: transparent;
 			display: flex;
@@ -21,12 +22,17 @@
 			border: none;
 			width: 300px;
 			padding: 16px 24px;
+			transition: all .3s;
 			box-shadow: 4px 4px 6px rgb(223, 201, 223);
+			&:hover {
+			z-index: 5;
+			transform: scale(1.02);
+			box-shadow: 4px 10px 4px #ffddff;
+			}
 			img {
 				width: 64px;
 				max-height: 64px;
 				margin-bottom: 36px;
-			}
 		}
 	}
 }
