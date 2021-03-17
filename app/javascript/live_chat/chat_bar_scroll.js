@@ -21,6 +21,8 @@ const initChatBarScroll = () => {
 				messageContainerDom.style.bottom = `${
 					10 + currentScrollPostion - remainingWindow
 				}px`;
+			} else {
+				messageContainerDom.style.bottom = '10px';
 			}
 		});
 	}
