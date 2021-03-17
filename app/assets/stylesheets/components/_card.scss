@@ -85,3 +85,31 @@
 	justify-content: center;
 	align-items: center;
 }
+
+// Laptop Screen Size
+@media (max-width: 1650px) {
+	.landing-card__container {
+		padding-bottom: 40px;
+
+		.card {
+			padding: 10px;
+		}
+	}
+}
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.landing-card__container {
+		padding-top: 0 !important;
+		margin-top: 0;
+		padding-bottom: 40px;
+		.card {
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		.cards {
+			flex-direction: column;
+			margin-top: 30px;
+		}
+	}
+}
