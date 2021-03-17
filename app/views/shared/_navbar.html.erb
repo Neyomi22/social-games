@@ -23,9 +23,9 @@
               <li> 
           
               </li>
-              <li class="nav-item dropdown" >
+              <li class="nav-item dropdown" data-controller="notifications" >
                 <% active_notification = current_user.notifications_count >= 1 ? "active" : ""   %>
-                <%= link_to notifications_path, class: "nav-link  #{active_notification}", id:"notification-bell" , data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+                <%= link_to notifications_path, class: "nav-link  #{active_notification}", id:"notification-bell" , data: { toggle: "dropdown", action: "click->notifications#markAsRead", notifications_target: "alert" }, 'aria-haspopup': true, 'aria-expanded': false do %>
 
                   <div class="notify-dot"></div>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
