@@ -106,8 +106,8 @@
                 <% @chatroom.messages.each do |message| %>
                   <div class="message__container" id="message-<%= message.id %>">
                     <i class="author">
-                      <span><%= message.user.email.split("@").first.upcase %></span>
-                      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                      <span><%= message.user.name.upcase %></span>
+                      <small><%= message.created_time %></small>
                     </i>
                     <p><%= message.content %></p>
                   </div>

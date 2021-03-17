@@ -4,7 +4,11 @@ class Message < ApplicationRecord
   belongs_to :chatroom 
   belongs_to :user
 
-   private
+  def created_time
+    self.created_at.in_time_zone("Australia/Melbourne").strftime("%a %b %e at %l:%M %p")
+  end
+
+  private
 
   def recipients
     # Up to your own implementation
@@ -22,7 +26,6 @@ class Message < ApplicationRecord
     add_notification(event_owner)
   end
 
-  private
   def add_notification(recipient)
     notification = Notification.new(recipient: recipient, actor: self.user,
       action: 'messaged', notifiable: self)
