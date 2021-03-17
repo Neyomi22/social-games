@@ -38,9 +38,11 @@ input[type='submit'] {
 	}
 }
 
-.container-login {
+.container-login,
+.sign-up-container {
 	background: white;
-	padding: 20px 12px;
+	padding: 40px;
+	border-radius: 8px;
 	input {
 		border-radius: 5px;
 		outline: none;
