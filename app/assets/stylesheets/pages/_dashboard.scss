@@ -152,7 +152,8 @@
 .dashboard-main__container {
 	background-color: purple;
 	padding: 24px;
-	margin: 24px 0;
+	width: 80%;
+	margin: 24px auto;
 	box-shadow: 2px 2px 16px darken($color: purple, $amount: 10%);
 	border-radius: 8px;
 }
