@@ -6,6 +6,12 @@
 	border-radius: 8px;
 }
 
+.my-booking-column,
+.my-games-column {
+	h2 {
+		margin-bottom: 3rem !important;
+	}
+}
 .dashboard-user-img__container {
 	width: 200px;
 	height: 200px;
@@ -174,6 +180,10 @@
 		h2 {
 			font-size: 1.2rem !important;
 			text-align: center;
+			margin-bottom: 12px !important;
 		}
+	}
+
+	.my-booking-column {
 	}
 }
