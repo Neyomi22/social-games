@@ -1,11 +1,17 @@
 .dashboard-banner {
 	background: white;
 	color: black;
-	padding: 0 12px;
-	margin-top: 15px;
+	padding: 12px;
+	margin: 3rem 1rem 0 1rem;
 	border-radius: 8px;
 }
 
+.my-booking-column,
+.my-games-column {
+	h2 {
+		margin-bottom: 3rem !important;
+	}
+}
 .dashboard-user-img__container {
 	width: 200px;
 	height: 200px;
@@ -35,9 +41,6 @@
 }
 .dashboard-user-info__container {
 	flex-grow: 1;
-	&:last-child {
-		border-left: 8px solid lightgray;
-	}
 }
 
 .my-games-column {
@@ -125,6 +128,11 @@
 		}
 	}
 }
+.booking-card {
+	display: flex;
+	width: 100%;
+	align-items: center;
+}
 
 .my-booking-column,
 .my-games-column {
@@ -138,12 +146,75 @@
 	padding-top: 16px;
 	border-radius: 8px;
 	height: 250px;
+	margin-top: 3rem !important;
 }
 
 .dashboard-main__container {
 	background-color: purple;
 	padding: 24px;
-	margin: 24px 0;
+	width: 80%;
+	margin: 24px auto;
 	box-shadow: 2px 2px 16px darken($color: purple, $amount: 10%);
 	border-radius: 8px;
+}
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.dashboard-main__container {
+		padding: 4px;
+		margin: 28px auto;
+	}
+	.dashboard-user-info__container {
+		margin: 0;
+		h2 {
+			font-size: 1rem !important;
+		}
+		.user-info__welcome {
+			font-size: 20px;
+			text-align: center;
+			margin-top: 12px;
+		}
+	}
+	.dashboard-event__card {
+		h5 {
+			font-size: 16px !important;
+		}
+	}
+	.my-games-column,
+	.my-booking-column {
+		overflow-y: scroll;
+		margin-bottom: 32px;
+		max-height: 300px;
+		h2 {
+			font-size: 1.2rem !important;
+			text-align: center;
+			margin-bottom: 12px !important;
+		}
+	}
+
+	.dashboard-booking__cards {
+		.booking-card {
+			display: none;
+		}
+		.booking-card__values {
+			.row {
+				div {
+					p {
+						text-align: start !important;
+					}
+				}
+				div + div {
+					display: none;
+				}
+			}
+		}
+	}
+	.badges-container {
+		margin-top: -9px !important;
+		margin-bottom: 1rem !important;
+	}
+	.dashboard-main__container {
+		background-color: transparent;
+		box-shadow: 2px 2px 16px transparent;
+	}
 }

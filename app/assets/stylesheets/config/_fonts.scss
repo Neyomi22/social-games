@@ -3,15 +3,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,100&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap');
 
 // Define fonts for body and headers
-$body-font: 'Roboto Slab', sans-serif;
-$headers-font: 'Roboto Slab', sans-serif;
-// $body-font: 'Montserrat', 'Work Sans', 'Helvetica', 'sans-serif';
-// $headers-font: 'Montserrat', 'Nunito', 'Helvetica', 'sans-serif';
+// $body-font: 'Slab Roboto', sans-serif;
+// $headers-font: 'Slab Roboto', sans-serif;
+$body-font: 'Montserrat', 'Work Sans', 'Helvetica', 'sans-serif';
+$headers-font: 'Montserrat', 'Nunito', 'Helvetica', 'sans-serif';
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

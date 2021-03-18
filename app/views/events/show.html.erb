@@ -23,7 +23,7 @@
             </div>
             <div class="info">
               <p><span>Duration</span></p>
-              <p><%= @event.duration %> hours</p>
+              <p class="text-right"><%= @event.duration %> hours</p>
             </div>
           </div>
           <div class="info-container">
@@ -33,7 +33,7 @@
             </div>
             <div class="info">
               <p><span>Skill Level</span></p>
-              <p><%= @event.skill_level %></p>
+              <p class="text-right"><%= @event.skill_level %></p>
             </div>
           </div>
           <% unless true || @event.private.nil? || @event.private.empty? %>
@@ -90,7 +90,7 @@
             <% else %> 
               <%= link_to "Edit Event", edit_event_path %>
               <%= link_to "Delete Event", event_path(@event), :confirm => "Are you sure?", :method => :delete %>
-              <%= link_to "Your Dashboard", dashboards_path %>
+              <%# link_to "Your Dashboard", dashboards_path %>
             <% end %>
           </div>
         </div>
@@ -99,7 +99,7 @@
         <div class="message-body__container">
           <div class="messages-container">
             <div class="close-message">
-              <p>Group Message</p>
+              <p>Close Message</p>
             </div> 
             <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
               <div class="messages">
@@ -121,8 +121,8 @@
           </div>
         </div> 
       <% end %>
-     </div>
-      <div id="map"
+     </div> 
+      <div id="map" class="event-map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
