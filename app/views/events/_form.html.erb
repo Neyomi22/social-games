@@ -35,7 +35,7 @@
 					<div class="card-body">
 					<h3>How's this going down?</h3>
 				<%= f.input :location, placeholder: "Whats the address?", label: false %>
-				<%= f.input :starts_at, placeholder: "Date", :order => [:day, :month, :year], label: false %>
+				<%= f.input :starts_at, as: :string, placeholder: "Event date", :order => [:day, :month, :year], label: false, input_html: { class: 'datepicker' }   %>
 				<%= f.input	:duration,  as: :select, collection: (1..5), prompt: "How many hours?", label: false %>
 				</div>
 				</div>
@@ -43,7 +43,6 @@
 						<div class="card-body">
 						<h3>How many peeps (keep it covid-safe y'all)</h3>
 					<%= f.input :number_of_participants, placeholder: "How many people can join this event?", input_html: { min: '1', step: 'any' }, label: false  %>
-					<%# f.input :starts_at, as: :date_picker , label: false %>
 					</div>
 				</div>
 				</div>

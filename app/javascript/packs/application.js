@@ -22,11 +22,11 @@ require('channels');
 
 // External imports
 import 'bootstrap';
-import flatpickr from 'flatpickr';
 
 // Internal imports
-import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initMapbox } from '../plugins/init_mapbox';
+import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initSearchBar } from '../component/search_bar';
 import { initChatBox } from '../live_chat/chat_box';
 import { initChatBarScroll } from '../live_chat/chat_bar_scroll';
@@ -40,12 +40,11 @@ document.addEventListener('turbolinks:load', () => {
 	// Call your functions here, e.g:
 	// initSelect2();
 	initSearchBar();
-
 	// Fixes issue with half the map not loading due to an unknown layout issue on the show event page.
 	setTimeout(() => {
 		initMapbox();
 	}, 50);
-
+	initFlatpickr();
 	initAutocomplete();
 	initNotificationCable();
 	initPhotoPicker();
