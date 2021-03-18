@@ -23,7 +23,7 @@
             </div>
             <div class="info">
               <p><span>Duration</span></p>
-              <p><%= @event.duration %> hours</p>
+              <p class="text-right"><%= @event.duration %> hours</p>
             </div>
           </div>
           <div class="info-container">
@@ -33,7 +33,7 @@
             </div>
             <div class="info">
               <p><span>Skill Level</span></p>
-              <p><%= @event.skill_level %></p>
+              <p class="text-right"><%= @event.skill_level %></p>
             </div>
           </div>
           <% unless true || @event.private.nil? || @event.private.empty? %>

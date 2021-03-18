@@ -19,13 +19,13 @@
 			background-color: white;
 			border-radius: 12px;
 			.event-image__container {
-				border-radius: 12px;
+				border-top-left-radius: 12px;
+				border-top-right-radius: 12px;
 				overflow: hidden;
 				width: 100%;
 				img {
 					height: 400px;
 					width: 100%;
-					border-radius: 12px;
 					object-fit: cover;
 				}
 			}
