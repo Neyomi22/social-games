@@ -22,7 +22,9 @@ require('channels');
 
 // External imports
 import 'bootstrap';
+import flatpickr from 'flatpickr';
 
+// Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initSearchBar } from '../component/search_bar';
@@ -30,6 +32,7 @@ import { initChatBox } from '../live_chat/chat_box';
 import { initChatBarScroll } from '../live_chat/chat_bar_scroll';
 import { initNotificationCable } from '../channels/notification_channel';
 import { initPhotoPicker } from '../component/photo_picker';
+import 'controllers';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -49,4 +52,3 @@ document.addEventListener('turbolinks:load', () => {
 	initChatBox();
 	initChatBarScroll();
 });
-import 'controllers';
