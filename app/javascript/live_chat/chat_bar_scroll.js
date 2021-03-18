@@ -19,10 +19,10 @@ const initChatBarScroll = () => {
 			let currentScrollPostion = window.scrollY;
 			if (remainingWindow <= currentScrollPostion) {
 				messageContainerDom.style.bottom = `${
-					10 + currentScrollPostion - remainingWindow
+					currentScrollPostion - remainingWindow
 				}px`;
 			} else {
-				messageContainerDom.style.bottom = '10px';
+				messageContainerDom.style.bottom = '0px';
 			}
 		});
 	}

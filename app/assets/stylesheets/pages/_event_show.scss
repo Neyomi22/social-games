@@ -92,6 +92,7 @@
 	.message-body__container {
 		width: 270px;
 		right: 10px;
+		bottom: 0px;
 	}
 }
 
@@ -103,7 +104,7 @@
 	}
 
 	.show-event__container {
-		margin: 30px 0;
+		margin: 40px 0;
 		.container {
 			padding: 0;
 			.main__container {
@@ -120,5 +121,9 @@
 				}
 			}
 		}
+	}
+	.message-body__container {
+		width: 100%;
+		right: 0;
 	}
 }
