@@ -63,3 +63,10 @@ input[type='submit'] {
 	width: 100%;
 	margin-right: 8px;
 }
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.add-image__container {
+		margin-bottom: 18px;
+	}
+}
