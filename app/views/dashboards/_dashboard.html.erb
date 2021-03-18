@@ -1,7 +1,7 @@
-<div class="container">
-  <div class="dashboard-main__container">    
-    <div class="row py-5 dashboard-banner mt-5 mx-3">
-      <div class="col-12 d-flex align-items-center">
+<div class="dashboard-main__container">    
+  <div class="container">
+    <div class="row dashboard-banner">
+      <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
         <div class="dashboard-user-img__container">
           <% if user.photo.attached? %>
             <%= cl_image_tag user.photo.key %>
@@ -9,6 +9,8 @@
             <%= image_tag 'profile-picture.png'%>
           <% end %>
         </div>
+      </div>
+      <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
         <div class="dashboard-user-info__container">
           <p class="user-info__welcome"><%= "Welcome," if @owner %> <%= user.name %></p>
           <div class="user-info">
@@ -22,12 +24,16 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
         <div class="dashboard-user-info__container">
           <h2 class="text-center"><%= "Your" if @owner %> Badge</h2>
           <div class="d-flex flex-column align-items-center">
             <% unless user.badges.empty? %>
               <%= image_tag user.badges.last.custom_fields[:image_url], width: "75px" %>
               <%= user.badges.last.description %>
+              <% else %>
+              <p>No Badges</p>
             <% end %>
           </div>
         </div>

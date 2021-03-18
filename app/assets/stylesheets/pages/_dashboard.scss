@@ -1,8 +1,8 @@
 .dashboard-banner {
 	background: white;
 	color: black;
-	padding: 0 12px;
-	margin-top: 15px;
+	padding: 12px;
+	margin: 3rem 1rem 0 1rem;
 	border-radius: 8px;
 }
 
@@ -35,9 +35,6 @@
 }
 .dashboard-user-info__container {
 	flex-grow: 1;
-	&:last-child {
-		border-left: 8px solid lightgray;
-	}
 }
 
 .my-games-column {
@@ -146,4 +143,37 @@
 	margin: 24px 0;
 	box-shadow: 2px 2px 16px darken($color: purple, $amount: 10%);
 	border-radius: 8px;
+}
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.dashboard-main__container {
+		padding: 4px;
+		margin: 28px 0;
+	}
+	.dashboard-user-info__container {
+		margin: 0;
+		h2 {
+			font-size: 1rem !important;
+		}
+		.user-info__welcome {
+			font-size: 20px;
+			text-align: center;
+			margin-top: 12px;
+		}
+	}
+	.dashboard-event__card {
+		h5 {
+			font-size: 16px !important;
+		}
+	}
+	.my-games-column,
+	.my-booking-column {
+		margin-bottom: 8px;
+		max-height: 300px;
+		h2 {
+			font-size: 1.2rem !important;
+			text-align: center;
+		}
+	}
 }
