@@ -89,7 +89,6 @@
 		width: 80%;
 		margin: 0 auto;
 	}
-
 	.message-body__container {
 		width: 270px;
 		right: 10px;
@@ -98,7 +97,28 @@
 
 // Mobile Screen Size iphone 10+
 @media (max-width: 436px) {
-	a {
-		color: black;
+	.show-event {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.show-event__container {
+		margin: 30px 0;
+		.container {
+			padding: 0;
+			.main__container {
+				width: 100%;
+				.event-body__container {
+					.event__card {
+						margin: -20px 20px 0 20px;
+						.info {
+							p {
+								font-size: 14px;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
