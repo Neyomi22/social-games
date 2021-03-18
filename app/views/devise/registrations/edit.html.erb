@@ -1,5 +1,7 @@
 <div class="container">
-    <div class="edit-user-form d-flex justify-content-center">
+  <div class="full-height">
+    <div class="edit-user-form d-flex flex-column justify-content-center">
+      <h2 class="text-center">Edit Setting</h2>
       <div class="mb-5 card">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.error_notification %>
@@ -30,7 +32,8 @@
         <% end %>
       </div>
     </div>
-    <div class="cancel-btn d-flex justify-content-center">
+  </div>
+    <div class="cancel-btn d-flex justify-content-center style="margin-top: -30px">
       <div class="mb-5 card">
         <h3>Cancel my account</h3>
 
@@ -39,4 +42,5 @@
         <%= link_to "Back", :back, class: 'btn badge-pill btn-info' %>
       </div>
     </div>
+ 
 </div>

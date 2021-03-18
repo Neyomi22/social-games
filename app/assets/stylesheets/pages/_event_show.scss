@@ -77,3 +77,28 @@
 		}
 	}
 }
+
+.show-event {
+	width: 100%;
+	display: flex;
+}
+
+// 1540px Screen Size iphone 10+
+@media (max-width: 1540px) {
+	.show-event {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.message-body__container {
+		width: 270px;
+		right: 10px;
+	}
+}
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	a {
+		color: black;
+	}
+}

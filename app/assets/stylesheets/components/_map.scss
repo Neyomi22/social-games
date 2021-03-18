@@ -24,3 +24,10 @@
 .mapboxgl-ctrl-top-right {
 	visibility: hidden;
 }
+
+// Mobile Screen Size iphone 10+
+@media (max-width: 436px) {
+	.event-map {
+		display: none;
+	}
+}
