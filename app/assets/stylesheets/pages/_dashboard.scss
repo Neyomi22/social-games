@@ -141,6 +141,7 @@
 	padding-top: 16px;
 	border-radius: 8px;
 	height: 250px;
+	margin-top: 3rem !important;
 }
 
 .dashboard-main__container {
@@ -175,7 +176,8 @@
 	}
 	.my-games-column,
 	.my-booking-column {
-		margin-bottom: 8px;
+		overflow-y: scroll;
+		margin-bottom: 32px;
 		max-height: 300px;
 		h2 {
 			font-size: 1.2rem !important;
@@ -184,6 +186,29 @@
 		}
 	}
 
-	.my-booking-column {
+	.dashboard-booking__cards {
+		.booking-card {
+			display: none;
+		}
+		.booking-card__values {
+			.row {
+				div {
+					p {
+						text-align: start !important;
+					}
+				}
+				div + div {
+					display: none;
+				}
+			}
+		}
+	}
+	.badges-container {
+		margin-top: -9px !important;
+		margin-bottom: 1rem !important;
+	}
+	.dashboard-main__container {
+		background-color: transparent;
+		box-shadow: 2px 2px 16px transparent;
 	}
 }

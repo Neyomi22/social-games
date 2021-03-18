@@ -63,39 +63,43 @@
               <h2 class="no-booking-text">No Bookings</h2>
             <% else %>
               <div class="row">
-                <div class="col-sm-4"><p class="text-center"><strong>Booked event</strong></p></div> 
-                <div class="col-sm-4"><p class="text-center"><strong>Date & Time</strong></p></div> 
-                <div class="col-sm-2"><p class="text-center"><strong>Participants</strong></p></div> 
-                <div class="col-sm-2"><p class="text-center"><strong>Action</strong></p></div> 
-              </div>
-              <% @bookings.each do |booking| %>
-                  <div class="row px-2">
-                    <div class="col-sm-4"><p class="text-center"><%= link_to booking.event.title, event_path(booking.event) %></p></div> 
-                    <div class="col-sm-4"><p class="text-center"><%= booking.event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p></div> 
-                    <div class="col-sm-2"><p class="text-center"><%= booking.event.booked_participants %>/ <%= booking.event.number_of_participants %></p></div> 
-                    <div class="col-sm-2">
-                      <div class="d-flex justify-content-center">
-                        <% if @owner %>
-                          <%= link_to booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn rounded-circle btn-danger", reload: true do %>
-                            <i class="fas fa-times"></i>
-                          <% end %>
-                        <% end %>
-                        <%= link_to event_path(booking.event), class: "btn rounded-circle btn-light", reload: true do %>
-                          <i class="far fa-eye"></i>
-                        <% end %>
-                      </div>
-                    </div> 
-                  </div>
-                <% end %>  
+                <div class="booking-card">
+                  <div class="col-sm-4"><p class="text-center"><strong>Booked event</strong></p></div> 
+                  <div class="col-sm-4"><p class="text-center"><strong>Date & Time</strong></p></div> 
+                  <div class="col-sm-2"><p class="text-center"><strong>Participants</strong></p></div> 
+                  <div class="col-sm-2"><p class="text-center"><strong>Action</strong></p></div> 
                 </div>
+              </div>
+              <div class="booking-card__values">
+                <% @bookings.each do |booking| %>
+                    <div class="row px-2">
+                      <div class="col-sm-4"><p class="text-center"><%= link_to booking.event.title, event_path(booking.event) %></p></div> 
+                      <div class="col-sm-4"><p class="text-center"><%= booking.event.starts_at.strftime("%A, %d %b %Y at %I:%M%p") %></p></div> 
+                      <div class="col-sm-2"><p class="text-center"><%= booking.event.booked_participants %>/ <%= booking.event.number_of_participants %></p></div> 
+                      <div class="col-sm-2">
+                        <div class="d-flex justify-content-center">
+                          <% if @owner %>
+                            <%= link_to booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn rounded-circle btn-danger", reload: true do %>
+                              <i class="fas fa-times"></i>
+                            <% end %>
+                          <% end %>
+                          <%= link_to event_path(booking.event), class: "btn rounded-circle btn-light", reload: true do %>
+                            <i class="far fa-eye"></i>
+                          <% end %>
+                        </div>
+                      </div> 
+                    </div>
+                  <% end %>  
+                  </div>
 
-            <% end %>
+                <% end %>
+            </div>
           </div>
         </div>
       </div>
     
     <% if @owner %>
-      <div class="row my-5">
+      <div class="row">
         <div class="col-12">
           <div class="badges-container bg-white mx-3">
             <h2 class="text-left ml-3 mb-2">My Badges (<%= current_user.badges.size %>)</h2>
