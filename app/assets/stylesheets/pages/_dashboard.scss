@@ -216,5 +216,8 @@
 	.dashboard-main__container {
 		background-color: transparent;
 		box-shadow: 2px 2px 16px transparent;
+		.container {
+			padding: 0;
+		}
 	}
 }

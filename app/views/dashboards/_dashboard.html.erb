@@ -33,7 +33,7 @@
               <%= image_tag user.badges.last.custom_fields[:image_url], width: "75px" %>
               <%= user.badges.last.description %>
               <% else %>
-              <p>No Badges</p>
+              <p><em>No Badges</em></p>
             <% end %>
           </div>
         </div>
@@ -104,7 +104,7 @@
           <div class="badges-container bg-white mx-3">
             <h2 class="text-left ml-3 mb-2">My Badges (<%= current_user.badges.size %>)</h2>   
               <% if current_user.badges.empty? %>
-                <p class="text-center">No Badges awarded</p>
+                <p class="text-center"><em>No Badges awarded</em></p>
               <% else %>
                 <div class="badge-cards">
                   <% current_user.badges.each do |badge| %>
