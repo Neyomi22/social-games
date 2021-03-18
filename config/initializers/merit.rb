@@ -32,14 +32,14 @@ Merit::Badge.create!(
   id: 1,
   name: "THE JOINER",
   description: "HOORAY!!! You joined your first event",
-  custom_fields: { difficulty: :bronze, color: "blue", image_url: 'purple-first.png' }
+  custom_fields: { difficulty: :bronze, color: "blue", image_url: 'ribbon.svg' }
 )
 
 Merit::Badge.create!(
   id: 2,
   name: "THE COMMITED",
   description: "GREAT! You booked your first event",
-  custom_fields: { difficulty: :bronze, color: "blue", image_url: "purple-gold.png" }
+  custom_fields: { difficulty: :bronze, color: "blue", image_url: "medal.svg" }
 )
 Merit::Badge.create!(
   id:3,
